@@ -12,6 +12,7 @@
   "scripts": {
     "watch": "tsc --watch",
     "develop": "webpack-dev-server --mode development",
+    "prepublishOnly": "rm -rf ./dist && tsc",
     "build": "rm -rf ./dist && tsc && webpack",
     "deploy": "lint-staged && npm run build && gh-pages -d examples/dist",
     "prettify": "prettier --write './src/**/*.{js,jsx,ts,tsx,json,css,md}'"
@@ -76,6 +77,7 @@
     "url": "https://github.com/alexandrtovmach/react-figma-plugin-ds"
   },
   "dependencies": {
-    "figma-plugin-ds": "https://github.com/thomas-lowry/figma-plugin-ds.git"
+    "figma-plugin-ds": "https://github.com/thomas-lowry/figma-plugin-ds.git",
+    "react-figma-plugin-ds": "^0.0.1"
   }
 }
