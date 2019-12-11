@@ -77,7 +77,6 @@
     "url": "https://github.com/alexandrtovmach/react-figma-plugin-ds"
   },
   "dependencies": {
-    "figma-plugin-ds": "https://github.com/thomas-lowry/figma-plugin-ds.git",
-    "react-figma-plugin-ds": "^0.0.1"
+    "figma-plugin-ds": "https://github.com/thomas-lowry/figma-plugin-ds.git"
   }
 }
