@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Button } from "../../dist";
-import "figma-plugin-ds/figma-plugin-ds.min.css";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
