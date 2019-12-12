@@ -10,6 +10,6 @@ export default class DetailsPanel extends React.Component {
   }
 
   render() {
-    return <aside className="details-panel"></aside>;
+    return <aside className="details-panel">/* code of selected component */</aside>;
   }
 }
