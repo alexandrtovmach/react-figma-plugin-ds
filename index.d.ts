@@ -7,6 +7,15 @@ interface ButtonProps {
   destructive?: boolean;
 }
 
+interface CheckboxProps {
+  label: string;
+  checkbox?: boolean;
+  defaultValue?: boolean;
+  disabled?: boolean;
+  onChange?: () => void;
+}
+
 export {
-  ButtonProps
+  ButtonProps,
+	CheckboxProps
 };

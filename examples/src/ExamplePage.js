@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from "../../dist";
+import { Button, Checkbox } from "../../dist";
 import Layout from "./components/Layout";
 
 export default class ExaplePage extends React.Component {
@@ -27,7 +27,18 @@ export default class ExaplePage extends React.Component {
 
 				<section id="checkbox" className="viewport">
 					<div className="frame">
-						<Button>checkbox</Button>
+						<Checkbox
+							defaultValue={true}
+							checkbox
+							label="Checkbox"
+						/>
+						<Checkbox
+							label="Switch"
+						/>
+						<Checkbox
+							onChange={console.log}
+							label="with handler"
+						/>
 					</div>
 				</section>
       </Layout>
