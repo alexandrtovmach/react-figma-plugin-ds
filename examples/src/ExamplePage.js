@@ -21,7 +21,7 @@ export default class ExaplePage extends React.Component {
 						<Button destructive disabled>Start</Button>
 						<Button secondary>Start</Button>
 						<Button secondary destructive>Start</Button>
-						<Button secondary destructive disabled>Start</Button>
+						<Button secondary destructive onClick={console.log}>Start</Button>
 					</div>
 				</section>
 

@@ -6,6 +6,7 @@ const Button: React.SFC<ButtonProps> = ({
   children,
   secondary,
   disabled,
+  onClick,
   destructive
 }) => {
   const level = secondary ? "secondary" : "primary";
@@ -13,6 +14,7 @@ const Button: React.SFC<ButtonProps> = ({
 
   return (
     <button
+      onClick={onClick}
       className={`button button--${level}${modificator}`}
       disabled={disabled}
     >

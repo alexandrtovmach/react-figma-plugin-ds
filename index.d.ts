@@ -5,6 +5,7 @@ interface ButtonProps {
   secondary: boolean;
   disabled?: boolean;
   destructive?: boolean;
+  onClick?: () => void;
 }
 
 interface CheckboxProps {
