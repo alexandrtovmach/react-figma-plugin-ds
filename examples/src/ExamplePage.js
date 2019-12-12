@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button } from "../../dist";
+import Layout from "./components/Layout";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
@@ -12,14 +13,14 @@ export default class ExaplePage extends React.Component {
   render() {
     const { } = this.state;
     return (
-      <div className="viewport">
+      <Layout>
         <Button>Start</Button>
         <Button destructive>Start</Button>
         <Button destructive disabled>Start</Button>
         <Button secondary>Start</Button>
         <Button secondary destructive>Start</Button>
         <Button secondary destructive disabled>Start</Button>
-      </div>
+      </Layout>
     );
   }
 }

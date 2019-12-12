@@ -1,0 +1,21 @@
+@import "../../variables.scss";
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  z-index: 7;
+  color: $figma-white;
+  background-color: $figma-toolbar;
+}
+
+.header-compensator {
+  height: $header-height;
+}

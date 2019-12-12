@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+.details-panel {
+	width: 240px;
+	height: 100%;
+  background-color: $figma-white;
+	border-left: 1px solid $figma-silver;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+	
+	@media (max-width: 980px) {
+		display: none;
+	}
+}

@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.content {
+  display: flex;
+	height: calc(100% - #{$header-height});
+
+	.main-content {
+		background-color: $figma-grey;
+		flex: auto;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+}
