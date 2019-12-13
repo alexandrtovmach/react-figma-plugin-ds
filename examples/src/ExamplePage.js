@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Checkbox, Disclosure, Input } from "../../dist";
+import { Button, Checkbox, Disclosure, Input, Icon } from "../../dist";
 import Layout from "./components/Layout";
 
 export default class ExaplePage extends React.Component {
@@ -47,6 +47,14 @@ export default class ExaplePage extends React.Component {
             <Input placeholder="Placeholder" defaultValue="value" icon="alert" />
             <Input placeholder="Placeholder" defaultValue="value" icon="alert" iconColor="blue" />
             <Input placeholder="Placeholder" defaultValue="value" icon="alert" onChange={console.log} />
+          </div>
+        </section>
+
+        <section id="icon" className="viewport">
+          <div className="frame">
+            <Icon name="alert" />
+            <Icon name="alert" color="blue" />
+            <Icon text="K" color="blue" />
           </div>
         </section>
       </Layout>

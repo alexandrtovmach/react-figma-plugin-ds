@@ -5,7 +5,7 @@ type IconColors = "blue" | "white" | "black-3";
 
 interface ButtonProps {
   children: React.Component;
-  isSecondary: boolean;
+  isSecondary?: boolean;
   isDisabled?: boolean;
   isDestructive?: boolean;
   onClick?: () => void;
@@ -36,9 +36,16 @@ interface InputProps {
   onChange?: () => void;
 }
 
+interface IconProps {
+	name: Icons;
+	color?: IconColors;
+	text?: string;
+}
+
 export {
   ButtonProps,
 	CheckboxProps,
 	DisclosureProps,
-	InputProps
+	InputProps,
+	IconProps,
 };
