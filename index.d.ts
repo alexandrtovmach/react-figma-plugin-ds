@@ -1,5 +1,8 @@
 import * as React from "react";
 
+type Icons = "adjust" | "alert";
+type IconColors = "blue" | "white" | "black-3";
+
 interface ButtonProps {
   children: React.Component;
   isSecondary: boolean;
@@ -24,8 +27,18 @@ interface DisclosureProps {
   onExpandChange?: (state: boolean) => void;
 }
 
+interface InputProps {
+	placeholder: string;
+	icon?: Icons;
+	iconColor?: IconColors;
+	defaultValue?: any;
+	isDisabled?: boolean;
+  onChange?: () => void;
+}
+
 export {
   ButtonProps,
 	CheckboxProps,
-	DisclosureProps
+	DisclosureProps,
+	InputProps
 };

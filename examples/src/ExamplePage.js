@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Checkbox, Disclosure } from "../../dist";
+import { Button, Checkbox, Disclosure, Input } from "../../dist";
 import Layout from "./components/Layout";
 
 export default class ExaplePage extends React.Component {
@@ -32,11 +32,21 @@ export default class ExaplePage extends React.Component {
           </div>
         </section>
 
-        <section id="checkbox" className="viewport">
+        <section id="disclosure" className="viewport">
           <div className="frame">
             <Disclosure label="Disclosure">Panel content here</Disclosure>
             <Disclosure label="Disclosure" isSection isDefaultExpanded>Panel content here</Disclosure>
             <Disclosure label="Disclosure" isSection onExpandChange={console.log}>Panel content here</Disclosure>
+          </div>
+        </section>
+
+        <section id="input" className="viewport">
+          <div className="frame">
+            <Input placeholder="Email" />
+            <Input placeholder="Placeholder" defaultValue="value" />
+            <Input placeholder="Placeholder" defaultValue="value" icon="alert" />
+            <Input placeholder="Placeholder" defaultValue="value" icon="alert" iconColor="blue" />
+            <Input placeholder="Placeholder" defaultValue="value" icon="alert" onChange={console.log} />
           </div>
         </section>
       </Layout>
