@@ -35,8 +35,16 @@ export default class ExaplePage extends React.Component {
         <section id="disclosure" className="viewport">
           <div className="frame">
             <Disclosure label="Disclosure">Panel content here</Disclosure>
-            <Disclosure label="Disclosure" isSection isDefaultExpanded>Panel content here</Disclosure>
-            <Disclosure label="Disclosure" isSection onExpandChange={console.log}>Panel content here</Disclosure>
+            <Disclosure label="Disclosure" isSection isDefaultExpanded>
+              Panel content here
+            </Disclosure>
+            <Disclosure
+              label="Disclosure"
+              isSection
+              onExpandChange={console.log}
+            >
+              Panel content here
+            </Disclosure>
           </div>
         </section>
 
@@ -44,9 +52,23 @@ export default class ExaplePage extends React.Component {
           <div className="frame">
             <Input placeholder="Email" />
             <Input placeholder="Placeholder" defaultValue="value" />
-            <Input placeholder="Placeholder" defaultValue="value" icon="alert" />
-            <Input placeholder="Placeholder" defaultValue="value" icon="alert" iconColor="blue" />
-            <Input placeholder="Placeholder" defaultValue="value" icon="alert" onChange={console.log} />
+            <Input
+              placeholder="Placeholder"
+              defaultValue="value"
+              icon="alert"
+            />
+            <Input
+              placeholder="Placeholder"
+              defaultValue="value"
+              icon="alert"
+              iconColor="blue"
+            />
+            <Input
+              placeholder="Placeholder"
+              defaultValue="value"
+              icon="alert"
+              onChange={console.log}
+            />
           </div>
         </section>
 
@@ -55,6 +77,9 @@ export default class ExaplePage extends React.Component {
             <Icon name="alert" />
             <Icon name="alert" color="blue" />
             <Icon text="K" color="blue" />
+            <Icon text="K" color="blue" onClick={console.log} />
+            <Icon text="K" color="blue" onClick={console.log} isDisabled />
+            <Icon text="K" color="blue" onClick={console.log} isSelected />
           </div>
         </section>
       </Layout>

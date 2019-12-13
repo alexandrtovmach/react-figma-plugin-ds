@@ -39,7 +39,10 @@ interface InputProps {
 interface IconProps {
 	name: Icons;
 	color?: IconColors;
+	isSelected?: boolean;
+	isDisabled?: boolean;
 	text?: string;
+  onClick?: () => void;
 }
 
 export {
