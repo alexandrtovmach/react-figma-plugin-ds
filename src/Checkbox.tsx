@@ -2,16 +2,16 @@ import React from "react";
 
 import { CheckboxProps } from "../index";
 
-const Button: React.SFC<CheckboxProps> = ({
-  checkbox,
-  disabled,
+const Checkbox: React.SFC<CheckboxProps> = ({
+  isCheckbox,
+  isDisabled,
   label,
   defaultValue,
   onChange
 }) => {
-  const type = checkbox ? "checkbox" : "switch";
-  const inputClass = checkbox ? "checkbox__box" : "switch__toggle";
-  const labelClass = checkbox ? "checkbox__label" : "switch__label";
+  const type = isCheckbox ? "checkbox" : "switch";
+  const inputClass = isCheckbox ? "checkbox__box" : "switch__toggle";
+  const labelClass = isCheckbox ? "checkbox__label" : "switch__label";
   const uniqueId = `${type}--${(Math.random() * 100000000).toFixed(0)}`;
 
   return (
@@ -22,7 +22,7 @@ const Button: React.SFC<CheckboxProps> = ({
         className={inputClass}
         type="checkbox"
         id={uniqueId}
-        disabled={disabled}
+        disabled={isDisabled}
       />
       <label className={labelClass} htmlFor={uniqueId}>
         {label}
@@ -31,4 +31,4 @@ const Button: React.SFC<CheckboxProps> = ({
   );
 };
 
-export default Button;
+export default Checkbox;
