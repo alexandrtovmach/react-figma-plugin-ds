@@ -3,6 +3,7 @@ import React from "react";
 import { CheckboxProps } from "../index";
 
 const Checkbox: React.SFC<CheckboxProps> = ({
+  className,
   isCheckbox,
   isDisabled,
   label,
@@ -15,7 +16,7 @@ const Checkbox: React.SFC<CheckboxProps> = ({
   const uniqueId = `${type}--${(Math.random() * 100000000).toFixed(0)}`;
 
   return (
-    <div className={type}>
+    <div className={`${type} ${className}`}>
       <input
         defaultChecked={defaultValue}
         onChange={onChange}

@@ -3,6 +3,7 @@ import React from "react";
 import { IconProps } from "../index";
 
 const Icon: React.SFC<IconProps> = ({
+  className,
   name,
   color,
   text,
@@ -22,14 +23,16 @@ const Icon: React.SFC<IconProps> = ({
         }}
         disabled={isDisabled}
         onClick={onClick}
-        className={`icon icon--button ${iconClass} ${colorClass} ${selectedClass}`}
+        className={`icon icon--button ${iconClass} ${colorClass} ${selectedClass} ${className}`}
       >
         {text}
       </button>
     );
   } else {
     return (
-      <div className={`icon ${iconClass} ${colorClass} ${selectedClass}`}>
+      <div
+        className={`icon ${iconClass} ${colorClass} ${selectedClass} ${className}`}
+      >
         {text}
       </div>
     );

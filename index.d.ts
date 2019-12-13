@@ -5,6 +5,7 @@ type IconColors = "blue" | "white" | "black-3";
 
 interface ButtonProps {
   children: React.Component;
+	className?: string;
   isSecondary?: boolean;
   isDisabled?: boolean;
   isDestructive?: boolean;
@@ -13,6 +14,7 @@ interface ButtonProps {
 
 interface CheckboxProps {
   label: string;
+	className?: string;
   isCheckbox?: boolean;
   isDisabled?: boolean;
   defaultValue?: boolean;
@@ -22,6 +24,7 @@ interface CheckboxProps {
 interface DisclosureProps {
   children: React.Component;
   label: string;
+	className?: string;
   isSection?: boolean;
   isDefaultExpanded?: boolean;
   onExpandChange?: (state: boolean) => void;
@@ -29,15 +32,20 @@ interface DisclosureProps {
 
 interface InputProps {
 	placeholder: string;
-	icon?: Icons;
-	iconColor?: IconColors;
+	className?: string;
 	defaultValue?: any;
 	isDisabled?: boolean;
   onChange?: () => void;
 }
 
+interface InputWithIconProps extends InputProps {
+	icon?: Icons;
+	iconColor?: IconColors;
+}
+
 interface IconProps {
 	name: Icons;
+	className?: string;
 	color?: IconColors;
 	isSelected?: boolean;
 	isDisabled?: boolean;
@@ -50,5 +58,6 @@ export {
 	CheckboxProps,
 	DisclosureProps,
 	InputProps,
+	InputWithIconProps,
 	IconProps,
 };

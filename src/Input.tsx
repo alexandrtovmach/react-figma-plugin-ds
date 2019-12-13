@@ -1,8 +1,27 @@
 import React from "react";
 
-import { InputProps } from "../index";
+import { InputProps, InputWithIconProps } from "../index";
+import { Icon } from "./";
 
-const Input: React.SFC<InputProps> = ({
+const InputComponent: React.SFC<InputProps> = ({
+  className,
+  defaultValue,
+  placeholder,
+  isDisabled,
+  onChange
+}) => (
+  <input
+    type="input"
+    className={className}
+    placeholder={placeholder}
+    defaultValue={defaultValue}
+    disabled={isDisabled}
+    onChange={onChange}
+  />
+);
+
+const Input: React.SFC<InputWithIconProps> = ({
+  className,
   icon,
   iconColor = "black-3",
   defaultValue,
@@ -11,27 +30,33 @@ const Input: React.SFC<InputProps> = ({
   onChange
 }) => {
   const inputClass = icon ? "input-icon__input" : "input";
-  const inputEl = (
-    <input
-      type="input"
-      className={inputClass}
-      placeholder={placeholder}
-      defaultValue={defaultValue}
-      disabled={isDisabled}
-      onChange={onChange}
-    />
-  );
 
-  return icon ? (
-    <div className="input-icon">
-      <div className="input-icon__icon">
-        <div className={`icon icon--${icon} icon--${iconColor}`}></div>
+  if (icon) {
+    return (
+      <div className="input-icon">
+        <div className="input-icon__icon">
+          <Icon name={icon} color={iconColor} />
+        </div>
+        <InputComponent
+          className={`${inputClass} ${className}`}
+          defaultValue={defaultValue}
+          placeholder={placeholder}
+          isDisabled={isDisabled}
+          onChange={onChange}
+        />
       </div>
-      {inputEl}
-    </div>
-  ) : (
-    inputEl
-  );
+    );
+  } else {
+    return (
+      <InputComponent
+        className={`${inputClass} ${className}`}
+        defaultValue={defaultValue}
+        placeholder={placeholder}
+        isDisabled={isDisabled}
+        onChange={onChange}
+      />
+    );
+  }
 };
 
 export default Input;

@@ -4,6 +4,7 @@ import { ButtonProps } from "../index";
 
 const Button: React.SFC<ButtonProps> = ({
   children,
+  className,
   isSecondary,
   isDisabled,
   onClick,
@@ -15,7 +16,7 @@ const Button: React.SFC<ButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`button button--${level}${modificator}`}
+      className={`button button--${level}${modificator} ${className}`}
       disabled={isDisabled}
     >
       {children}
