@@ -104,7 +104,7 @@ interface DisclosureProps {
   className?: string;
   isSection?: boolean;
   isDefaultExpanded?: boolean;
-  onExpandChange?: (state: boolean) => void;
+  onExpand?: (state: boolean) => void;
 }
 
 interface InputProps {
@@ -173,6 +173,18 @@ interface TipProps {
   iconColor: IconColors;
 }
 
+interface SelectOption {
+  value: string | number | boolean;
+  label: string
+}
+interface SelectProps {
+  options: SelectOption[];
+  className?: string;
+  defaultValue?: string | number | boolean;
+  onExpand?: (state: boolean) => void;
+  onChange?: () => void;
+}
+
 export {
   ButtonProps,
   CheckboxProps,
@@ -186,4 +198,5 @@ export {
   TextProps,
   TipProps,
   TextareaProps,
+  SelectProps,
 };

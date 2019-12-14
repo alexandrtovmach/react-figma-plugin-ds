@@ -15,6 +15,7 @@ import {
 } from "../../dist";
 import Layout from "./components/Layout";
 import Component from "./components/Component";
+import Select from "../../dist/Select";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
@@ -55,7 +56,9 @@ export default class ExaplePage extends React.Component {
               name="Button"
               description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
             >
-              <Button isSecondary isDestructive>Secondary destructive</Button>
+              <Button isSecondary isDestructive>
+                Secondary destructive
+              </Button>
             </Component>
             <Component
               onSelectComponent={console.log}
@@ -81,11 +84,7 @@ export default class ExaplePage extends React.Component {
             <Disclosure label="Disclosure" isSection isDefaultExpanded>
               Panel content here
             </Disclosure>
-            <Disclosure
-              label="Disclosure"
-              isSection
-              onExpandChange={console.log}
-            >
+            <Disclosure label="Disclosure" isSection onExpand={console.log}>
               Panel content here
             </Disclosure>
           </div>
@@ -118,6 +117,16 @@ export default class ExaplePage extends React.Component {
               defaultValue="Initial textarea value"
               onChange={console.log}
             />
+            <Select
+              options={[
+                {
+                  value: 1,
+                  label: "Item 1"
+                },
+                { value: 2, label: "Item 2" },
+                { value: 3, label: "Item 3" }
+              ]}
+            />
           </div>
         </section>
 
@@ -146,7 +155,7 @@ export default class ExaplePage extends React.Component {
             <Tip iconName="warning">Onboarding tip can look like this</Tip>
           </div>
         </section>
-        
+
         <section id="icon" className="viewport">
           <div className="frame">
             <Icon name="alert" />

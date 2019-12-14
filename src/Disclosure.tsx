@@ -13,8 +13,8 @@ class Disclosure extends React.Component<DisclosureProps, DisclosureState> {
 
   componentDidUpdate(prevProps: DisclosureProps, prevState: DisclosureState) {
     if (prevState.isExpanded !== this.state.isExpanded) {
-      const { onExpandChange } = this.props;
-      onExpandChange && onExpandChange(this.state.isExpanded);
+      const { onExpand } = this.props;
+      onExpand && onExpand(this.state.isExpanded);
     }
   }
 
