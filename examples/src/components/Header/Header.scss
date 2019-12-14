@@ -14,6 +14,34 @@
   z-index: 7;
   color: $figma-white;
   background-color: $figma-toolbar;
+  padding: 0 1em;
+
+  .links {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      display: block;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      overflow: hidden;
+      margin-right: 24px;
+      >img {
+        width: 100%;
+      }
+    }
+
+    .button {
+      margin-right: 24px;
+    }
+
+    .version {
+      color: inherit;
+      text-decoration: none;
+      opacity: 0.6;
+    }
+  }
 }
 
 .header-compensator {
