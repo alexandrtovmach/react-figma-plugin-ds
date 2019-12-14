@@ -7,5 +7,16 @@ import Icon from "./Icon";
 import Divider from "./Divider";
 import Section from "./Section";
 import Label from "./Label";
+import Text from "./Text";
 
-export { Button, Checkbox, Disclosure, Input, Icon, Divider, Section, Label };
+export {
+  Button,
+  Checkbox,
+  Disclosure,
+  Input,
+  Icon,
+  Divider,
+  Section,
+  Label,
+  Text
+};

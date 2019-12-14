@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Checkbox, Disclosure, Input, Icon, Divider, Section, Label } from "../../dist";
+import { Button, Checkbox, Disclosure, Input, Icon, Divider, Section, Label, Text } from "../../dist";
 import Layout from "./components/Layout";
 
 export default class ExaplePage extends React.Component {
@@ -76,7 +76,7 @@ export default class ExaplePage extends React.Component {
           <div className="frame">
             <Icon name="alert" />
             <Icon name="alert" color="blue" />
-            <Icon text="K" color="blue" />
+            <Icon text="K" />
             <Icon text="K" color="blue" onClick={console.log} />
             <Icon text="K" color="blue" onClick={console.log} isDisabled />
             <Icon text="K" color="blue" onClick={console.log} isSelected />
@@ -88,6 +88,8 @@ export default class ExaplePage extends React.Component {
             <Divider />
             <Section>Section</Section>
             <Label>Label</Label>
+            <Text size="medium" weight="bold" >Bold</Text>
+            <Text size="xlarge" weight="normal" >Bold</Text>
           </div>
         </section>
       </Layout>
