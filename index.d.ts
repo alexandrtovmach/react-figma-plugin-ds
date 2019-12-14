@@ -115,6 +115,16 @@ interface InputProps {
   onChange?: () => void;
 }
 
+interface TextareaProps {
+  placeholder: string;
+  cols: number;
+  rows: number;
+  className?: string;
+  defaultValue?: any;
+  isDisabled?: boolean;
+  onChange?: () => void;
+}
+
 interface InputWithIconProps extends InputProps {
   icon?: Icons;
   iconColor?: IconColors;
@@ -174,5 +184,6 @@ export {
   TitleProps,
   LabelProps,
   TextProps,
-  TipProps
+  TipProps,
+  TextareaProps,
 };

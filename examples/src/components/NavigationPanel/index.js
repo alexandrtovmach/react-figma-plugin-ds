@@ -16,7 +16,6 @@ export default class NavigationPanel extends React.Component {
         <a href="#checkbox">Checkbox</a>
         <a href="#disclosure">Disclosure</a>
         <a href="#input">Input</a>
-        <a href="#textarea">Textarea</a>
         <a href="#text">Text</a>
         <a href="#icon">Icon</a>
       </aside>

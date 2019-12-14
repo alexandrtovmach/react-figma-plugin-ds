@@ -9,6 +9,7 @@ import Title from "./Title";
 import Label from "./Label";
 import Text from "./Text";
 import Tip from "./Tip";
+import Textarea from "./Textarea";
 
 export {
   Button,
@@ -20,5 +21,6 @@ export {
   Title,
   Label,
   Text,
-  Tip
+  Tip,
+  Textarea
 };

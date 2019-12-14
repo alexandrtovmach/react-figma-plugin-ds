@@ -10,7 +10,8 @@ import {
   Title,
   Label,
   Text,
-  Tip
+  Tip,
+  Textarea,
 } from "../../dist";
 import Layout from "./components/Layout";
 
@@ -80,6 +81,7 @@ export default class ExaplePage extends React.Component {
               icon="alert"
               onChange={console.log}
             />
+            <Textarea rows={4} cols={3} defaultValue="Initial textarea value" onChange={console.log}/>
           </div>
         </section>
 
