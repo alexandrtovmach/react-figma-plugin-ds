@@ -5,7 +5,7 @@ import Disclosure from "./Disclosure";
 import Input from "./Input";
 import Icon from "./Icon";
 import Divider from "./Divider";
-import Section from "./Section";
+import Title from "./Title";
 import Label from "./Label";
 import Text from "./Text";
 import Tip from "./Tip";
@@ -17,7 +17,7 @@ export {
   Input,
   Icon,
   Divider,
-  Section,
+  Title,
   Label,
   Text,
   Tip

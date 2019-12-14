@@ -19,7 +19,6 @@ export default class NavigationPanel extends React.Component {
         <a href="#textarea">Textarea</a>
         <a href="#text">Text</a>
         <a href="#icon">Icon</a>
-        <a href="#notification">Notification</a>
       </aside>
     );
   }

@@ -134,14 +134,19 @@ interface DividerProps {
   className?: string;
 }
 
-interface SectionProps {
+interface TitleProps {
   children: React.Component;
   className?: string;
+  size: Sizes;
+  level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  weight: Weights;
 }
 
 interface LabelProps {
   children: React.Component;
   className?: string;
+  size: Sizes;
+  weight: Weights;
 }
 
 interface TextProps {
@@ -166,7 +171,7 @@ export {
   InputWithIconProps,
   IconProps,
   DividerProps,
-  SectionProps,
+  TitleProps,
   LabelProps,
   TextProps,
   TipProps

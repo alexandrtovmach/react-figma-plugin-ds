@@ -7,7 +7,7 @@ import {
   Input,
   Icon,
   Divider,
-  Section,
+  Title,
   Label,
   Text,
   Tip
@@ -97,8 +97,13 @@ export default class ExaplePage extends React.Component {
         <section id="text" className="viewport">
           <div className="frame">
             <Divider />
-            <Section>Section</Section>
+            <Title>Header 1</Title>
+            <Title level="h2">Header 2</Title>
+            <Title level="h2" size="xlarge">Header 2 (xlarge)</Title>
+            <Title level="h2" size="xlarge" weight="bold">Header 2 (xlarge, bold)</Title>
             <Label>Label</Label>
+            <Label size="xlarge">Label</Label>
+            <Label size="xlarge" weight="bold">Label</Label>
             <Text size="medium" weight="bold">
               Bold
             </Text>
