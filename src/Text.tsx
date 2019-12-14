@@ -3,7 +3,7 @@ import React from "react";
 import { TextProps } from "../index";
 
 const Text: React.SFC<TextProps> = ({
-  className,
+  className = "",
   children,
   size = "small",
   weight = "normal"

@@ -4,7 +4,7 @@ import { TipProps } from "../index";
 import { Icon } from "./";
 
 const Text: React.SFC<TipProps> = ({
-  className,
+  className = "",
   children,
   iconName,
   iconColor

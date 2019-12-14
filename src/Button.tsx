@@ -4,7 +4,7 @@ import { ButtonProps } from "../index";
 
 const Button: React.SFC<ButtonProps> = ({
   children,
-  className,
+  className = "",
   isSecondary,
   isDisabled,
   onClick,

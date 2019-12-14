@@ -3,7 +3,7 @@ import React from "react";
 import { CheckboxProps } from "../index";
 
 const Checkbox: React.SFC<CheckboxProps> = ({
-  className,
+  className = "",
   isCheckbox,
   isDisabled,
   label,

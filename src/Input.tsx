@@ -4,7 +4,7 @@ import { InputProps, InputWithIconProps } from "../index";
 import { Icon } from "./";
 
 const InputComponent: React.SFC<InputProps> = ({
-  className,
+  className = "",
   defaultValue,
   placeholder,
   isDisabled,
@@ -21,7 +21,7 @@ const InputComponent: React.SFC<InputProps> = ({
 );
 
 const Input: React.SFC<InputWithIconProps> = ({
-  className,
+  className = "",
   icon,
   iconColor = "black-3",
   defaultValue,

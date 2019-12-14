@@ -3,7 +3,7 @@ import React from "react";
 import { IconProps } from "../index";
 
 const Icon: React.SFC<IconProps> = ({
-  className,
+  className = "",
   name,
   color,
   text,
