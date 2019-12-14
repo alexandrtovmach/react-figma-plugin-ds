@@ -151,6 +151,13 @@ interface TextProps {
   weight: Weights;
 }
 
+interface TipProps {
+  children: React.Component;
+  className?: string;
+  iconName?: Icons;
+  iconColor: IconColors;
+}
+
 export {
   ButtonProps,
   CheckboxProps,
@@ -161,5 +168,6 @@ export {
   DividerProps,
   SectionProps,
   LabelProps,
-  TextProps
+  TextProps,
+  TipProps,
 };

@@ -8,6 +8,7 @@ import Divider from "./Divider";
 import Section from "./Section";
 import Label from "./Label";
 import Text from "./Text";
+import Tip from "./Tip";
 
 export {
   Button,
@@ -18,5 +19,6 @@ export {
   Divider,
   Section,
   Label,
-  Text
+  Text,
+  Tip
 };

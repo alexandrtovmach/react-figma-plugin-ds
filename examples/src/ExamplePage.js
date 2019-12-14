@@ -2,6 +2,7 @@ import React from "react";
 
 import { Button, Checkbox, Disclosure, Input, Icon, Divider, Section, Label, Text } from "../../dist";
 import Layout from "./components/Layout";
+import Tip from "../../dist/Tip";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
@@ -90,6 +91,7 @@ export default class ExaplePage extends React.Component {
             <Label>Label</Label>
             <Text size="medium" weight="bold" >Bold</Text>
             <Text size="xlarge" weight="normal" >Bold</Text>
+            <Tip iconName="warning">Onboarding tip can look like this</Tip>
           </div>
         </section>
       </Layout>
