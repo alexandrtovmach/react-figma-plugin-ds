@@ -169,5 +169,5 @@ export {
   SectionProps,
   LabelProps,
   TextProps,
-  TipProps,
+  TipProps
 };
