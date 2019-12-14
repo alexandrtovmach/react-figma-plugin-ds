@@ -16,7 +16,7 @@ export default class Header extends React.Component {
 				<header className="header">
 					<div></div>
 					<div>
-						React Figma Plugin / Icons
+						React Figma Plugin / Examples
 					</div>
 					<div>
 						<Button>GitHub</Button>

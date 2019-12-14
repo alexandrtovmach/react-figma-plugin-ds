@@ -17,11 +17,10 @@ const Textarea: React.SFC<TextareaProps> = ({
       cols={cols}
       className={`textarea ${className}`}
       placeholder={placeholder}
+      defaultValue={defaultValue}
       disabled={isDisabled}
       onChange={onChange}
-    >
-      {defaultValue}
-    </textarea>
+    />
   );
 };
 
