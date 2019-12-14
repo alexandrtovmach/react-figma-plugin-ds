@@ -1,0 +1,22 @@
+@import "../../variables.scss";
+
+.card {
+  flex: 1 0 250px;
+  margin: 20px;
+  padding: 5px;
+  box-shadow: 0 0 5px $figma-black-1;
+  border-radius: 2px;
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  .card-footer {
+    text-align: center;
+  }
+}

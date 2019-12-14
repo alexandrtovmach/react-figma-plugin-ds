@@ -11,9 +11,10 @@ import {
   Label,
   Text,
   Tip,
-  Textarea,
+  Textarea
 } from "../../dist";
 import Layout from "./components/Layout";
+import Component from "./components/Component";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
@@ -28,11 +29,41 @@ export default class ExaplePage extends React.Component {
       <Layout>
         <section id="buttons" className="viewport">
           <div className="frame">
-            <Button>Start</Button>
-            <Button isDestructive>Start</Button>
-            <Button isSecondary isDestructive onClick={console.log}>
-              Start
-            </Button>
+            <Component
+              onSelectComponent={console.log}
+              name="Button"
+              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
+            >
+              <Button>Primary</Button>
+            </Component>
+            <Component
+              onSelectComponent={console.log}
+              name="Button"
+              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
+            >
+              <Button isDestructive>Destructive</Button>
+            </Component>
+            <Component
+              onSelectComponent={console.log}
+              name="Button"
+              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
+            >
+              <Button isSecondary>Secondary</Button>
+            </Component>
+            <Component
+              onSelectComponent={console.log}
+              name="Button"
+              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
+            >
+              <Button isSecondary isDestructive>Secondary destructive</Button>
+            </Component>
+            <Component
+              onSelectComponent={console.log}
+              name="Button"
+              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
+            >
+              <Button isDisabled>Disabled</Button>
+            </Component>
           </div>
         </section>
 
@@ -81,18 +112,12 @@ export default class ExaplePage extends React.Component {
               icon="alert"
               onChange={console.log}
             />
-            <Textarea rows={4} cols={3} defaultValue="Initial textarea value" onChange={console.log}/>
-          </div>
-        </section>
-
-        <section id="icon" className="viewport">
-          <div className="frame">
-            <Icon name="alert" />
-            <Icon name="alert" color="blue" />
-            <Icon text="K" />
-            <Icon text="K" color="blue" onClick={console.log} />
-            <Icon text="K" color="blue" onClick={console.log} isDisabled />
-            <Icon text="K" color="blue" onClick={console.log} isSelected />
+            <Textarea
+              rows={4}
+              cols={3}
+              defaultValue="Initial textarea value"
+              onChange={console.log}
+            />
           </div>
         </section>
 
@@ -101,11 +126,17 @@ export default class ExaplePage extends React.Component {
             <Divider />
             <Title>Header 1</Title>
             <Title level="h2">Header 2</Title>
-            <Title level="h2" size="xlarge">Header 2 (xlarge)</Title>
-            <Title level="h2" size="xlarge" weight="bold">Header 2 (xlarge, bold)</Title>
+            <Title level="h2" size="xlarge">
+              Header 2 (xlarge)
+            </Title>
+            <Title level="h2" size="xlarge" weight="bold">
+              Header 2 (xlarge, bold)
+            </Title>
             <Label>Label</Label>
             <Label size="xlarge">Label</Label>
-            <Label size="xlarge" weight="bold">Label</Label>
+            <Label size="xlarge" weight="bold">
+              Label
+            </Label>
             <Text size="medium" weight="bold">
               Bold
             </Text>
@@ -113,6 +144,17 @@ export default class ExaplePage extends React.Component {
               Bold
             </Text>
             <Tip iconName="warning">Onboarding tip can look like this</Tip>
+          </div>
+        </section>
+        
+        <section id="icon" className="viewport">
+          <div className="frame">
+            <Icon name="alert" />
+            <Icon name="alert" color="blue" />
+            <Icon text="K" />
+            <Icon text="K" color="blue" onClick={console.log} />
+            <Icon text="K" color="blue" onClick={console.log} isDisabled />
+            <Icon text="K" color="blue" onClick={console.log} isSelected />
           </div>
         </section>
       </Layout>
