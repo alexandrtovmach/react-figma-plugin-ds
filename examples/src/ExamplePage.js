@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Checkbox, Disclosure, Input, Icon } from "../../dist";
+import { Button, Checkbox, Disclosure, Input, Icon, Divider, Section, Label } from "../../dist";
 import Layout from "./components/Layout";
 
 export default class ExaplePage extends React.Component {
@@ -80,6 +80,14 @@ export default class ExaplePage extends React.Component {
             <Icon text="K" color="blue" onClick={console.log} />
             <Icon text="K" color="blue" onClick={console.log} isDisabled />
             <Icon text="K" color="blue" onClick={console.log} isSelected />
+          </div>
+        </section>
+
+        <section id="text" className="viewport">
+          <div className="frame">
+            <Divider />
+            <Section>Section</Section>
+            <Label>Label</Label>
           </div>
         </section>
       </Layout>

@@ -53,6 +53,20 @@ interface IconProps {
   onClick?: () => void;
 }
 
+interface DividerProps {
+	className?: string;
+}
+
+interface SectionProps {
+  children: React.Component;
+	className?: string;
+}
+
+interface LabelProps {
+  children: React.Component;
+	className?: string;
+}
+
 export {
   ButtonProps,
 	CheckboxProps,
@@ -60,4 +74,7 @@ export {
 	InputProps,
 	InputWithIconProps,
 	IconProps,
+	DividerProps,
+	SectionProps,
+	LabelProps,
 };
