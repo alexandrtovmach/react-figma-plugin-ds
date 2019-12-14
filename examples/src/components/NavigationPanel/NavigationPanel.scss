@@ -13,4 +13,20 @@
 	@media (max-width: 980px) {
 		display: none;
 	}
+
+  a {
+    color: inherit !important;
+    text-decoration: none;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: transparent;
+
+    &:hover {
+      outline-color: $figma-blue;
+    }
+
+    &:active {
+      background-color: $figma-blue-3;
+    }
+  }
 }
