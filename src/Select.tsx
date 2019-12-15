@@ -23,6 +23,14 @@ class Select extends React.Component<SelectProps, SelectState> {
       const { onExpand } = this.props;
       onExpand && onExpand(this.state.isExpanded);
     }
+    if (
+      this.state.selectedOption &&
+      (prevState.selectedOption && prevState.selectedOption.value) !==
+        this.state.selectedOption.value
+    ) {
+      const { onChange } = this.props;
+      onChange && onChange(this.state.selectedOption);
+    }
   }
 
   handleExpandClick = () => {
@@ -32,7 +40,6 @@ class Select extends React.Component<SelectProps, SelectState> {
   };
 
   handleOutsideClick = () => {
-    console.log("outside");
     this.setState({
       isExpanded: false
     });

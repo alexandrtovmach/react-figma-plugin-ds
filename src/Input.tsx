@@ -5,13 +5,14 @@ import { Icon } from "./";
 
 const InputComponent: React.SFC<InputProps> = ({
   className = "",
+  type = "text",
   defaultValue,
   placeholder,
   isDisabled,
   onChange
 }) => (
   <input
-    type="input"
+    type={type}
     className={className}
     placeholder={placeholder}
     defaultValue={defaultValue}
@@ -22,6 +23,7 @@ const InputComponent: React.SFC<InputProps> = ({
 
 const Input: React.SFC<InputWithIconProps> = ({
   className = "",
+  type,
   icon,
   iconColor = "black-3",
   defaultValue,
@@ -35,10 +37,11 @@ const Input: React.SFC<InputWithIconProps> = ({
     return (
       <div className="input-icon">
         <div className="input-icon__icon">
-          <Icon name={icon} color={iconColor} />
+          <Icon name={icon} color={iconColor} isDisabled={isDisabled} />
         </div>
         <InputComponent
           className={`${inputClass} ${className}`}
+          type={type}
           defaultValue={defaultValue}
           placeholder={placeholder}
           isDisabled={isDisabled}
@@ -50,6 +53,7 @@ const Input: React.SFC<InputWithIconProps> = ({
     return (
       <InputComponent
         className={`${inputClass} ${className}`}
+        type={type}
         defaultValue={defaultValue}
         placeholder={placeholder}
         isDisabled={isDisabled}

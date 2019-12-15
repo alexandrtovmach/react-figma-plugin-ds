@@ -12,7 +12,7 @@ const Icon: React.SFC<IconProps> = ({
   onClick
 }) => {
   const iconClass = !text ? `icon--${name}` : "icon--text";
-  const colorClass = color ? `icon--${color}` : "";
+  const colorClass = !isDisabled && color ? `icon--${color}` : "icon--black-3";
   const selectedClass = isSelected ? "icon--selected" : "";
 
   if (onClick) {

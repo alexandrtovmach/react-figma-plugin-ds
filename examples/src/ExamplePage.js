@@ -41,51 +41,60 @@ export default class ExaplePage extends React.Component {
               <Button isSecondary isDisabled>Button</Button>
               <Button isSecondary isDestructive isDisabled>Button</Button>
             </ExamplesBoard>
-            <Playground component={<Button />} options={api.button}/>
+            <Playground component={<Button />} options={api.button} />
           </div>
         </section>
 
         <section id="checkbox" className="viewport">
           <div className="frame">
-            <Checkbox defaultValue={true} isCheckbox label="Checkbox" />
-            <Checkbox label="Switch" />
-            <Checkbox onChange={console.log} label="with handler" />
+            <ExamplesBoard>
+              <Checkbox label="Toggle me" />
+              <Checkbox label="Toggle me" isCheckbox />
+              <Checkbox label="Toggle me" defaultValue={true} />
+              <Checkbox label="Toggle me" isCheckbox defaultValue={true} />
+              <Checkbox label="Toggle me" isDisabled />
+              <Checkbox label="Toggle me" isCheckbox isDisabled />
+            </ExamplesBoard>
+            <Playground component={<Checkbox />} options={api.checkbox} />
           </div>
         </section>
 
         <section id="disclosure" className="viewport">
           <div className="frame">
-            <Disclosure label="Disclosure">Panel content here</Disclosure>
-            <Disclosure label="Disclosure" isSection isDefaultExpanded>
-              Panel content here
-            </Disclosure>
-            <Disclosure label="Disclosure" isSection onExpand={console.log}>
-              Panel content here
-            </Disclosure>
+            <ExamplesBoard>
+              <Disclosure label="Expand me">Disclosure content</Disclosure>
+              <Disclosure label="Expand me" isSection>Disclosure content</Disclosure>
+              <Disclosure label="Expand me" isDefaultExpanded>Disclosure content</Disclosure>
+              <Disclosure label="Expand me" isSection isDefaultExpanded>Disclosure content</Disclosure>
+            </ExamplesBoard>
+            <Playground component={<Disclosure />} options={api.disclosure} />
           </div>
         </section>
 
         <section id="input" className="viewport">
           <div className="frame">
-            <Input placeholder="Email" />
-            <Input placeholder="Placeholder" defaultValue="value" />
-            <Input
-              placeholder="Placeholder"
-              defaultValue="value"
-              icon="alert"
-            />
-            <Input
-              placeholder="Placeholder"
-              defaultValue="value"
-              icon="alert"
-              iconColor="blue"
-            />
-            <Input
-              placeholder="Placeholder"
-              defaultValue="value"
-              icon="alert"
-              onChange={console.log}
-            />
+            <ExamplesBoard>
+              <Input placeholder="Placeholder" />
+              <Input placeholder="Disabled" isDisabled />
+              <Input placeholder="Placeholder" icon="alert" iconColor="blue" />
+              <Input placeholder="Disabled" icon="alert" iconColor="blue" isDisabled />
+            </ExamplesBoard>
+            <Playground component={<Input />} options={api.input} />
+          </div>
+        </section>
+
+        <section id="textarea" className="viewport">
+          <div className="frame">
+            <ExamplesBoard>
+              <Textarea placeholder="Here you can enter text..." rows={2} cols={3} />
+              <Textarea placeholder="Here you can't enter text..." rows={2} cols={3} isDisabled />
+              <Textarea placeholder="Here you can enter text..." rows={2} cols={3} defaultValue="Default text" />
+              <Textarea placeholder="Here you can enter text..." rows={2} cols={3} defaultValue="Default disabled text" isDisabled />
+            </ExamplesBoard>
+            <Playground component={<Textarea />} options={api.textarea} />
+          </div>
+        </section>
+        {/* 
             <Textarea
               rows={4}
               cols={3}
@@ -108,9 +117,7 @@ export default class ExaplePage extends React.Component {
                 { value: 8, label: "Item GroupB 2" },
                 { value: 9, label: "Item GroupB 3" },
               ]}
-            />
-          </div>
-        </section>
+            /> */}
 
         <section id="text" className="viewport">
           <div className="frame">

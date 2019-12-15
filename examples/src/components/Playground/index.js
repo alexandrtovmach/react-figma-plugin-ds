@@ -19,7 +19,7 @@ export default class Playground extends React.Component {
     this.renderPropInput = this.renderPropInput.bind(this);
   }
 
-  renderPropInput({ name, type, defaultValue }, i) {
+  renderPropInput({ name, type, defaultValue, options }, i) {
     switch (type) {
       case "text":
         return (
@@ -30,6 +30,16 @@ export default class Playground extends React.Component {
             onChange={value => this.handleChangePropValue(name, value)}
           />
         );
+      case "number":
+        return (
+          <Input
+            key={`controller--${i}`}
+            type="number"
+            defaultValue={defaultValue}
+            placeholder={name}
+            onChange={value => this.handleChangePropValue(name, Number(value))}
+          />
+        );
       case "switch":
         return (
           <Checkbox
@@ -37,6 +47,16 @@ export default class Playground extends React.Component {
             defaultValue={defaultValue}
             label={name}
             onChange={value => this.handleChangePropValue(name, value)}
+          />
+        );
+      case "select":
+        return (
+          <Select
+            key={`controller--${i}`}
+            defaultValue={defaultValue}
+            placeholder={`Select ${name}`}
+            options={options.map(opt => ({ value: opt, label: opt }))}
+            onChange={({ value }) => this.handleChangePropValue(name, value)}
           />
         );
       case "function":

@@ -8,7 +8,7 @@ type Icons =
   | "align-top"
   | "angle"
   | "animated-fill"
-  | "arrow-left-righ"
+  | "arrow-left-right"
   | "arrow-up-down"
   | "blend-empty"
   | "blend"
@@ -110,9 +110,15 @@ interface DisclosureProps {
 interface InputProps {
   placeholder: string;
   className?: string;
+  type?: "text" | "number" | "password";
   defaultValue?: any;
   isDisabled?: boolean;
   onChange?: (value: string, event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+interface InputWithIconProps extends InputProps {
+  icon?: Icons;
+  iconColor?: IconColors;
 }
 
 interface TextareaProps {
@@ -122,12 +128,7 @@ interface TextareaProps {
   className?: string;
   defaultValue?: any;
   isDisabled?: boolean;
-  onChange?: () => void;
-}
-
-interface InputWithIconProps extends InputProps {
-  icon?: Icons;
-  iconColor?: IconColors;
+  onChange?: (value: string, event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 interface IconProps {
@@ -184,7 +185,7 @@ interface SelectProps {
   className?: string;
   defaultValue?: string | number | boolean;
   onExpand?: (state: boolean) => void;
-  onChange?: () => void;
+  onChange?: (option: SelectOption) => void;
 }
 
 export {

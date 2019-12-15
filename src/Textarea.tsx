@@ -19,7 +19,7 @@ const Textarea: React.SFC<TextareaProps> = ({
       placeholder={placeholder}
       defaultValue={defaultValue}
       disabled={isDisabled}
-      onChange={onChange}
+      onChange={event => onChange && onChange(event.target.value, event)}
     />
   );
 };

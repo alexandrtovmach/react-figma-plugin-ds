@@ -25,6 +25,9 @@ export default class NavigationPanel extends React.Component {
         <a href="#input">
           <Tip iconName="frame">Input</Tip>
         </a>
+        <a href="#textarea">
+          <Tip iconName="frame">Textarea</Tip>
+        </a>
         <a href="#text">
           <Tip iconName="frame">Text</Tip>
         </a>
