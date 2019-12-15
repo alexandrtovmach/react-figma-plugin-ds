@@ -131,49 +131,6 @@ interface TextareaProps {
   onChange?: (value: string, event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-interface IconProps {
-  name: Icons;
-  className?: string;
-  color?: IconColors;
-  isSelected?: boolean;
-  isDisabled?: boolean;
-  text?: string;
-  onClick?: () => void;
-}
-
-interface DividerProps {
-  className?: string;
-}
-
-interface TitleProps {
-  children: React.Component;
-  className?: string;
-  size: Sizes;
-  level: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  weight: Weights;
-}
-
-interface LabelProps {
-  children: React.Component;
-  className?: string;
-  size: Sizes;
-  weight: Weights;
-}
-
-interface TextProps {
-  children: React.Component;
-  className?: string;
-  size: Sizes;
-  weight: Weights;
-}
-
-interface TipProps {
-  children: React.Component;
-  className?: string;
-  iconName?: Icons;
-  iconColor: IconColors;
-}
-
 interface SelectOption {
   divider: string | boolean;
   value: string | number | boolean;
@@ -183,9 +140,53 @@ interface SelectProps {
   options: SelectOption[];
   placeholder: string;
   className?: string;
+  isDisabled?: boolean;
   defaultValue?: string | number | boolean;
   onExpand?: (state: boolean) => void;
   onChange?: (option: SelectOption) => void;
+}
+
+interface DividerProps {
+  className?: string;
+}
+
+interface TitleProps {
+  children: React.Component;
+  className?: string;
+  size?: Sizes;
+  level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  weight?: Weights;
+}
+
+interface LabelProps {
+  children: React.Component;
+  className?: string;
+  size?: Sizes;
+  weight?: Weights;
+}
+
+interface TextProps {
+  children: React.Component;
+  className?: string;
+  size?: Sizes;
+  weight?: Weights;
+}
+
+interface TipProps {
+  children: React.Component;
+  className?: string;
+  iconName?: Icons;
+  iconColor: IconColors;
+}
+
+interface IconProps {
+  name: Icons;
+  className?: string;
+  color?: IconColors;
+  isSelected?: boolean;
+  isDisabled?: boolean;
+  text?: string;
+  onClick?: () => void;
 }
 
 export {

@@ -3,7 +3,7 @@ import React from "react";
 import { IconProps } from "../index";
 
 const Icon: React.SFC<IconProps> = ({
-  className = "",
+  className,
   name,
   color,
   text,
@@ -11,6 +11,7 @@ const Icon: React.SFC<IconProps> = ({
   isDisabled,
   onClick
 }) => {
+  className = className || "";
   const iconClass = !text ? `icon--${name}` : "icon--text";
   const colorClass = !isDisabled && color ? `icon--${color}` : "icon--black-3";
   const selectedClass = isSelected ? "icon--selected" : "";

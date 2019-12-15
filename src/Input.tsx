@@ -5,7 +5,7 @@ import { Icon } from "./";
 
 const InputComponent: React.SFC<InputProps> = ({
   className = "",
-  type = "text",
+  type,
   defaultValue,
   placeholder,
   isDisabled,
@@ -22,7 +22,7 @@ const InputComponent: React.SFC<InputProps> = ({
 );
 
 const Input: React.SFC<InputWithIconProps> = ({
-  className = "",
+  className,
   type,
   icon,
   iconColor = "black-3",
@@ -31,6 +31,8 @@ const Input: React.SFC<InputWithIconProps> = ({
   isDisabled,
   onChange
 }) => {
+  className = className || "";
+  type = type || "text";
   const inputClass = icon ? "input-icon__input" : "input";
 
   if (icon) {

@@ -4,11 +4,12 @@ import { TipProps } from "../index";
 import { Icon } from "./";
 
 const Text: React.SFC<TipProps> = ({
-  className = "",
+  className,
   children,
   iconName,
   iconColor
 }) => {
+  className = className || "";
   return (
     <div className={`onboarding-tip ${className}`}>
       {iconName && (

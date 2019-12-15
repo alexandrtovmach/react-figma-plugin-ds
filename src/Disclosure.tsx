@@ -25,13 +25,13 @@ class Disclosure extends React.Component<DisclosureProps, DisclosureState> {
   };
 
   render() {
-    const { className = "", label, children, isSection } = this.props;
+    const { className, label, children, isSection } = this.props;
     const { isExpanded } = this.state;
     const labelClass = isSection ? "disclosure--section" : "";
     const expandClass = isExpanded ? "disclosure--expanded" : "";
 
     return (
-      <div className={`disclosure ${className}`}>
+      <div className={`disclosure ${className || ""}`}>
         <div className={`disclosure__item ${expandClass} ${labelClass}`}>
           <div
             className="disclosure__label"

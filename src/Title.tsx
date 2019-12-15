@@ -3,12 +3,16 @@ import React from "react";
 import { TitleProps } from "../index";
 
 const Title: React.SFC<TitleProps> = ({
-  className = "",
+  className,
   children,
-  level = "h1",
-  size = "small",
-  weight = "normal"
+  level,
+  size,
+  weight
 }) => {
+  className = className || "";
+  level = level || "h1";
+  size = size || "small";
+  weight = weight || "normal";
   switch (level) {
     case "h1":
       return (

@@ -55,20 +55,23 @@ export default class Playground extends React.Component {
             key={`controller--${i}`}
             defaultValue={defaultValue}
             placeholder={`Select ${name}`}
-            options={options.map(opt => ({ value: opt, label: opt }))}
+            options={options.map(opt => ({
+              value: opt.value === undefined ? opt: opt.value,
+              label: opt.label === undefined ? opt: opt.label
+            }))}
             onChange={({ value }) => this.handleChangePropValue(name, value)}
           />
         );
       case "function":
         return (
-          <Title key={`controller--${i}`}>
+          <Title level="h3" key={`controller--${i}`}>
             {name}: {defaultValue.toString()}
           </Title>
         );
       default:
         return (
-          <Title key={`controller--${i}`}>
-            {name}: {defaultValue}
+          <Title level="h3" key={`controller--${i}`}>
+            {name}: {JSON.stringify(defaultValue)}
           </Title>
         );
     }

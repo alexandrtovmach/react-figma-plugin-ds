@@ -3,7 +3,7 @@ import React from "react";
 import { TextareaProps } from "../index";
 
 const Textarea: React.SFC<TextareaProps> = ({
-  className = "",
+  className,
   rows = 2,
   cols = 2,
   defaultValue,
@@ -11,6 +11,7 @@ const Textarea: React.SFC<TextareaProps> = ({
   isDisabled,
   onChange
 }) => {
+  className = className || "";
   return (
     <textarea
       rows={rows}

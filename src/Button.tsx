@@ -4,12 +4,13 @@ import { ButtonProps } from "../index";
 
 const Button: React.SFC<ButtonProps> = ({
   children,
-  className = "",
+  className,
   isSecondary,
   isDisabled,
   onClick,
   isDestructive
 }) => {
+  className = className || "";
   const level = isSecondary ? "secondary" : "primary";
   const modificator = isDestructive ? "-destructive" : "";
 

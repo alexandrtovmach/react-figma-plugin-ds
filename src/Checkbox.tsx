@@ -3,13 +3,14 @@ import React from "react";
 import { CheckboxProps } from "../index";
 
 const Checkbox: React.SFC<CheckboxProps> = ({
-  className = "",
+  className,
   isCheckbox,
   isDisabled,
   label,
   defaultValue,
   onChange
 }) => {
+  className = className || "";
   const type = isCheckbox ? "checkbox" : "switch";
   const inputClass = isCheckbox ? "checkbox__box" : "switch__toggle";
   const labelClass = isCheckbox ? "checkbox__label" : "switch__label";
