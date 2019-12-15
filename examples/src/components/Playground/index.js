@@ -56,8 +56,8 @@ export default class Playground extends React.Component {
             defaultValue={defaultValue}
             placeholder={`Select ${name}`}
             options={options.map(opt => ({
-              value: opt.value === undefined ? opt: opt.value,
-              label: opt.label === undefined ? opt: opt.label
+              value: opt.value === undefined ? opt : opt.value,
+              label: opt.label === undefined ? opt : opt.label
             }))}
             onChange={({ value }) => this.handleChangePropValue(name, value)}
           />
@@ -90,8 +90,10 @@ export default class Playground extends React.Component {
     return (
       <div className="playground">
         <header className="playground-header">
-          <Title>Playground</Title>
-          <Icon name="play" onClick={() => onSelectComponent(name)} />
+          <Title level="h2" weight="bold" size="xlarge">
+            {name} Playground
+          </Title>
+          {/* <Icon name="play" onClick={() => onSelectComponent(name)} /> */}
         </header>
         <div className="playground-content">
           <section className="playground-controls">

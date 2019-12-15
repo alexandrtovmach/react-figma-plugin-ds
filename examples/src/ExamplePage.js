@@ -30,7 +30,7 @@ export default class ExaplePage extends React.Component {
     const {} = this.state;
     return (
       <Layout>
-        <section id="buttons" className="viewport">
+        <section id="button" className="viewport">
           <div className="frame">
             <ExamplesBoard>
               <Button>Button</Button>
@@ -47,7 +47,7 @@ export default class ExaplePage extends React.Component {
                 Button
               </Button>
             </ExamplesBoard>
-            <Playground component={<Button />} options={api.button} />
+            <Playground name="Button" component={<Button />} options={api.button} />
           </div>
         </section>
 
@@ -61,7 +61,7 @@ export default class ExaplePage extends React.Component {
               <Checkbox label="Toggle me" isDisabled />
               <Checkbox label="Toggle me" isCheckbox isDisabled />
             </ExamplesBoard>
-            <Playground component={<Checkbox />} options={api.checkbox} />
+            <Playground name="Checkbox" component={<Checkbox />} options={api.checkbox} />
           </div>
         </section>
 
@@ -79,7 +79,7 @@ export default class ExaplePage extends React.Component {
                 Disclosure content
               </Disclosure>
             </ExamplesBoard>
-            <Playground component={<Disclosure />} options={api.disclosure} />
+            <Playground name="Disclosure" component={<Disclosure />} options={api.disclosure} />
           </div>
         </section>
 
@@ -96,7 +96,7 @@ export default class ExaplePage extends React.Component {
                 isDisabled
               />
             </ExamplesBoard>
-            <Playground component={<Input />} options={api.input} />
+            <Playground name="Input" component={<Input />} options={api.input} />
           </div>
         </section>
 
@@ -128,7 +128,7 @@ export default class ExaplePage extends React.Component {
                 isDisabled
               />
             </ExamplesBoard>
-            <Playground component={<Textarea />} options={api.textarea} />
+            <Playground name="Textarea" component={<Textarea />} options={api.textarea} />
           </div>
         </section>
 
@@ -184,7 +184,7 @@ export default class ExaplePage extends React.Component {
                 ]}
               />
             </ExamplesBoard>
-            <Playground component={<Select />} options={api.select} />
+            <Playground name="Select" component={<Select />} options={api.select} />
           </div>
         </section>
 
@@ -201,7 +201,7 @@ export default class ExaplePage extends React.Component {
                 <Text>Just take a look how it's beautiful.</Text>
               </div>
             </ExamplesBoard>
-            <Playground component={<Divider />} options={api.divider} />
+            <Playground name="Divider" component={<Divider />} options={api.divider} />
           </div>
         </section>
 
@@ -221,7 +221,7 @@ export default class ExaplePage extends React.Component {
               <Title size="xlarge" weight="medium">Title</Title>
               <Title size="xlarge" weight="bold">Title</Title>
             </ExamplesBoard>
-            <Playground component={<Title />} options={api.title} />
+            <Playground name="Title" component={<Title />} options={api.title} />
           </div>
         </section>
 
@@ -241,7 +241,7 @@ export default class ExaplePage extends React.Component {
               <Label size="xlarge" weight="medium">Label</Label>
               <Label size="xlarge" weight="bold">Label</Label>
             </ExamplesBoard>
-            <Playground component={<Label />} options={api.label} />
+            <Playground name="Label" component={<Label />} options={api.label} />
           </div>
         </section>
 
@@ -261,7 +261,7 @@ export default class ExaplePage extends React.Component {
               <Text size="xlarge" weight="medium">Text</Text>
               <Text size="xlarge" weight="bold">Text</Text>
             </ExamplesBoard>
-            <Playground component={<Text />} options={api.text} />
+            <Playground name="Text" component={<Text />} options={api.text} />
           </div>
         </section>
 
@@ -272,7 +272,7 @@ export default class ExaplePage extends React.Component {
               <Tip iconName="alert">Tip text with icon</Tip>
               <Tip iconName="alert" iconColor="blue">Tip text with icon</Tip>
             </ExamplesBoard>
-            <Playground component={<Tip />} options={api.tip} />
+            <Playground name="Tip" component={<Tip />} options={api.tip} />
           </div>
         </section>
 
@@ -287,7 +287,7 @@ export default class ExaplePage extends React.Component {
               <Icon text="K" color="blue" isDisabled />
               <Icon text="K" color="blue" isSelected isDisabled onClick={console.log} />
             </ExamplesBoard>
-            <Playground component={<Icon />} options={api.icon} />
+            <Playground name="Icon" component={<Icon />} options={api.icon} />
           </div>
         </section>
       </Layout>

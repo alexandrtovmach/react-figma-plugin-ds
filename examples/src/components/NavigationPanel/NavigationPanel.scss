@@ -25,7 +25,7 @@
       outline-color: $figma-blue;
     }
 
-    &:active {
+    &.active-link {
       background-color: $figma-blue-3;
     }
   }
