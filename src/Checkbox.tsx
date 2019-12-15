@@ -19,7 +19,7 @@ const Checkbox: React.SFC<CheckboxProps> = ({
     <div className={`${type} ${className}`}>
       <input
         defaultChecked={defaultValue}
-        onChange={onChange}
+        onChange={event => onChange && onChange(event.target.checked, event)}
         className={inputClass}
         type="checkbox"
         id={uniqueId}

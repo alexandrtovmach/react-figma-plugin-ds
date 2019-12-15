@@ -16,7 +16,7 @@ const InputComponent: React.SFC<InputProps> = ({
     placeholder={placeholder}
     defaultValue={defaultValue}
     disabled={isDisabled}
-    onChange={onChange}
+    onChange={event => onChange && onChange(event.target.value, event)}
   />
 );
 

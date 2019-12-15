@@ -95,7 +95,7 @@ interface CheckboxProps {
   isCheckbox?: boolean;
   isDisabled?: boolean;
   defaultValue?: boolean;
-  onChange?: () => void;
+  onChange?: (value: boolean, event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface DisclosureProps {
@@ -112,7 +112,7 @@ interface InputProps {
   className?: string;
   defaultValue?: any;
   isDisabled?: boolean;
-  onChange?: () => void;
+  onChange?: (value: string, event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface TextareaProps {

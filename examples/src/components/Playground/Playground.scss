@@ -31,9 +31,11 @@
     }
 
     .playground-controls {
-      background-color: rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
     }
     .playground-result {
+      background-color: rgba(0,0,0,0.1);
       display: flex;
       justify-content: center;
       align-items: center;
