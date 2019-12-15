@@ -174,11 +174,13 @@ interface TipProps {
 }
 
 interface SelectOption {
+  divider: string | boolean;
   value: string | number | boolean;
   label: string
 }
 interface SelectProps {
   options: SelectOption[];
+  placeholder: string;
   className?: string;
   defaultValue?: string | number | boolean;
   onExpand?: (state: boolean) => void;
@@ -199,4 +201,5 @@ export {
   TipProps,
   TextareaProps,
   SelectProps,
+  SelectOption,
 };

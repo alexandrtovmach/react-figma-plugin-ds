@@ -118,13 +118,20 @@ export default class ExaplePage extends React.Component {
               onChange={console.log}
             />
             <Select
+              placeholder="Select something"
               options={[
-                {
-                  value: 1,
-                  label: "Item 1"
-                },
+                { value: 1, label: "Item 1" },
+                { divider: true },
                 { value: 2, label: "Item 2" },
-                { value: 3, label: "Item 3" }
+                { value: 3, label: "Item 3" },
+                { divider: "Group" },
+                { value: 4, label: "Item Group 1" },
+                { value: 5, label: "Item Group 2" },
+                { value: 6, label: "Item Group 3" },
+                { divider: "Group B" },
+                { value: 7, label: "Item GroupB 1" },
+                { value: 8, label: "Item GroupB 2" },
+                { value: 9, label: "Item GroupB 3" },
               ]}
             />
           </div>
