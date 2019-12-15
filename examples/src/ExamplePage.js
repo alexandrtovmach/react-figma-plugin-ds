@@ -11,11 +11,13 @@ import {
   Label,
   Text,
   Tip,
-  Textarea
+  Textarea,
+  Select
 } from "../../dist";
 import Layout from "./components/Layout";
-import Component from "./components/Component";
-import Select from "../../dist/Select";
+import Playground from "./components/Playground";
+import ExamplesBoard from "./components/ExamplesBoard";
+import { api } from "./apiDocs";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
@@ -30,43 +32,16 @@ export default class ExaplePage extends React.Component {
       <Layout>
         <section id="buttons" className="viewport">
           <div className="frame">
-            <Component
-              onSelectComponent={console.log}
-              name="Button"
-              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
-            >
-              <Button>Primary</Button>
-            </Component>
-            <Component
-              onSelectComponent={console.log}
-              name="Button"
-              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
-            >
-              <Button isDestructive>Destructive</Button>
-            </Component>
-            <Component
-              onSelectComponent={console.log}
-              name="Button"
-              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
-            >
-              <Button isSecondary>Secondary</Button>
-            </Component>
-            <Component
-              onSelectComponent={console.log}
-              name="Button"
-              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
-            >
-              <Button isSecondary isDestructive>
-                Secondary destructive
-              </Button>
-            </Component>
-            <Component
-              onSelectComponent={console.log}
-              name="Button"
-              description="Description will be here, but not for now. I hope to complete all of that in a few weeks"
-            >
-              <Button isDisabled>Disabled</Button>
-            </Component>
+            <ExamplesBoard>
+              <Button>Button</Button>
+              <Button isDestructive>Button</Button>
+              <Button isSecondary>Button</Button>
+              <Button isSecondary isDestructive>Button</Button>
+              <Button isDisabled>Button</Button>
+              <Button isSecondary isDisabled>Button</Button>
+              <Button isSecondary isDestructive isDisabled>Button</Button>
+            </ExamplesBoard>
+            <Playground component={<Button />} options={api.button}/>
           </div>
         </section>
 

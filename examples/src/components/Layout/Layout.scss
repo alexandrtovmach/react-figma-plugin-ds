@@ -20,16 +20,8 @@
 			.frame {
 				width: 800px;
 				height: 600px;
-				background-color: $figma-white;
-				outline-width: 2px;
-				outline-style: solid;
-				outline-color: transparent;
         display: flex;
-        flex-wrap: wrap;
-
-				&:hover {
-					outline-color: $figma-blue;
-				}
+        flex-direction: column;
 			}
 		}
 	}

@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.examples-board {
+  flex: 1 0 auto;
+  padding: 5px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > * {
+    margin: 5px;
+  }
+}

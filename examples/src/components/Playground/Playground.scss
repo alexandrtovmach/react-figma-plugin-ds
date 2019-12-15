@@ -1,0 +1,42 @@
+@import "../../variables.scss";
+
+.playground {
+  flex: 10 0 auto;
+  padding: 5px;
+  background-color: $figma-white;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: transparent;
+  &:hover {
+    outline-color: $figma-blue;
+  }
+
+  .playground-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .playground-content {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    > section {
+      flex: 1 0 auto;
+      height: 100%;
+      padding: 5px;
+      display: flex;
+    }
+
+    .playground-controls {
+      background-color: rgba(0,0,0,0.1);
+    }
+    .playground-result {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
