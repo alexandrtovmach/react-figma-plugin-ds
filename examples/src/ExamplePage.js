@@ -24,17 +24,17 @@ export default class ExaplePage extends React.Component {
     super(props, context);
 
     this.state = {
-			selectedComponentCode: ""
-		};
+      selectedComponentCode: ""
+    };
 
-		this.handleSelectComponent = this.handleSelectComponent.bind(this);
+    this.handleSelectComponent = this.handleSelectComponent.bind(this);
   }
 
-	handleSelectComponent(componentCode) {
-		this.setState({
-			selectedComponentCode: componentCode
-		})
-	}
+  handleSelectComponent(componentCode) {
+    this.setState({
+      selectedComponentCode: componentCode
+    });
+  }
 
   render() {
     const { selectedComponentCode } = this.state;
@@ -57,7 +57,12 @@ export default class ExaplePage extends React.Component {
                 Button
               </Button>
             </ExamplesBoard>
-            <Playground name="Button" component={<Button />} options={api.button} onSelectComponent={this.handleSelectComponent} />
+            <Playground
+              name="Button"
+              component={<Button />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.button}
+            />
           </div>
         </section>
 
@@ -71,7 +76,12 @@ export default class ExaplePage extends React.Component {
               <Checkbox label="Toggle me" isDisabled />
               <Checkbox label="Toggle me" isCheckbox isDisabled />
             </ExamplesBoard>
-            <Playground name="Checkbox" component={<Checkbox />} options={api.checkbox} />
+            <Playground
+              name="Checkbox"
+              component={<Checkbox />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.checkbox}
+            />
           </div>
         </section>
 
@@ -89,7 +99,12 @@ export default class ExaplePage extends React.Component {
                 Disclosure content
               </Disclosure>
             </ExamplesBoard>
-            <Playground name="Disclosure" component={<Disclosure />} options={api.disclosure} />
+            <Playground
+              name="Disclosure"
+              component={<Disclosure />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.disclosure}
+            />
           </div>
         </section>
 
@@ -106,17 +121,19 @@ export default class ExaplePage extends React.Component {
                 isDisabled
               />
             </ExamplesBoard>
-            <Playground name="Input" component={<Input />} options={api.input} />
+            <Playground
+              name="Input"
+              component={<Input />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.input}
+            />
           </div>
         </section>
 
         <section id="textarea" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Textarea
-                placeholder="Here you can enter text..."
-                rows={2}
-              />
+              <Textarea placeholder="Here you can enter text..." rows={2} />
               <Textarea
                 placeholder="Here you can't enter text..."
                 rows={2}
@@ -134,7 +151,12 @@ export default class ExaplePage extends React.Component {
                 isDisabled
               />
             </ExamplesBoard>
-            <Playground name="Textarea" component={<Textarea />} options={api.textarea} />
+            <Playground
+              name="Textarea"
+              component={<Textarea />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.textarea}
+            />
           </div>
         </section>
 
@@ -143,6 +165,7 @@ export default class ExaplePage extends React.Component {
             <ExamplesBoard>
               <Select
                 placeholder="Select something..."
+                onSelectComponent={this.handleSelectComponent}
                 options={[
                   { value: 1, label: "Item 1" },
                   { value: 2, label: "Item 2" },
@@ -152,6 +175,7 @@ export default class ExaplePage extends React.Component {
               <Select
                 placeholder="Select something..."
                 defaultValue={2}
+                onSelectComponent={this.handleSelectComponent}
                 options={[
                   { value: 1, label: "Item 1" },
                   { value: 2, label: "Item 2" },
@@ -162,6 +186,7 @@ export default class ExaplePage extends React.Component {
                 placeholder="Select something..."
                 defaultValue={2}
                 isDisabled
+                onSelectComponent={this.handleSelectComponent}
                 options={[
                   { value: 1, label: "Item 1" },
                   { value: 2, label: "Item 2" },
@@ -171,6 +196,7 @@ export default class ExaplePage extends React.Component {
               <Select
                 placeholder="With dividers..."
                 defaultValue={2}
+                onSelectComponent={this.handleSelectComponent}
                 options={[
                   { value: 1, label: "Item 1" },
                   { value: 2, label: "Item 2" },
@@ -190,7 +216,12 @@ export default class ExaplePage extends React.Component {
                 ]}
               />
             </ExamplesBoard>
-            <Playground name="Select" component={<Select />} options={api.select} />
+            <Playground
+              name="Select"
+              component={<Select />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.select}
+            />
           </div>
         </section>
 
@@ -207,7 +238,12 @@ export default class ExaplePage extends React.Component {
                 <Text>Just take a look how it's beautiful.</Text>
               </div>
             </ExamplesBoard>
-            <Playground name="Divider" component={<Divider />} options={api.divider} />
+            <Playground
+              name="Divider"
+              component={<Divider />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.divider}
+            />
           </div>
         </section>
 
@@ -218,16 +254,33 @@ export default class ExaplePage extends React.Component {
               <Title weight="medium">Title</Title>
               <Title weight="bold">Title</Title>
               <Title size="medium">Title</Title>
-              <Title size="medium" weight="medium">Title</Title>
-              <Title size="medium" weight="bold">Title</Title>
+              <Title size="medium" weight="medium">
+                Title
+              </Title>
+              <Title size="medium" weight="bold">
+                Title
+              </Title>
               <Title size="large">Title</Title>
-              <Title size="large" weight="medium">Title</Title>
-              <Title size="large" weight="bold">Title</Title>
+              <Title size="large" weight="medium">
+                Title
+              </Title>
+              <Title size="large" weight="bold">
+                Title
+              </Title>
               <Title size="xlarge">Title</Title>
-              <Title size="xlarge" weight="medium">Title</Title>
-              <Title size="xlarge" weight="bold">Title</Title>
+              <Title size="xlarge" weight="medium">
+                Title
+              </Title>
+              <Title size="xlarge" weight="bold">
+                Title
+              </Title>
             </ExamplesBoard>
-            <Playground name="Title" component={<Title />} options={api.title} />
+            <Playground
+              name="Title"
+              component={<Title />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.title}
+            />
           </div>
         </section>
 
@@ -238,16 +291,33 @@ export default class ExaplePage extends React.Component {
               <Label weight="medium">Label</Label>
               <Label weight="bold">Label</Label>
               <Label size="medium">Label</Label>
-              <Label size="medium" weight="medium">Label</Label>
-              <Label size="medium" weight="bold">Label</Label>
+              <Label size="medium" weight="medium">
+                Label
+              </Label>
+              <Label size="medium" weight="bold">
+                Label
+              </Label>
               <Label size="large">Label</Label>
-              <Label size="large" weight="medium">Label</Label>
-              <Label size="large" weight="bold">Label</Label>
+              <Label size="large" weight="medium">
+                Label
+              </Label>
+              <Label size="large" weight="bold">
+                Label
+              </Label>
               <Label size="xlarge">Label</Label>
-              <Label size="xlarge" weight="medium">Label</Label>
-              <Label size="xlarge" weight="bold">Label</Label>
+              <Label size="xlarge" weight="medium">
+                Label
+              </Label>
+              <Label size="xlarge" weight="bold">
+                Label
+              </Label>
             </ExamplesBoard>
-            <Playground name="Label" component={<Label />} options={api.label} />
+            <Playground
+              name="Label"
+              component={<Label />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.label}
+            />
           </div>
         </section>
 
@@ -258,16 +328,33 @@ export default class ExaplePage extends React.Component {
               <Text weight="medium">Text</Text>
               <Text weight="bold">Text</Text>
               <Text size="medium">Text</Text>
-              <Text size="medium" weight="medium">Text</Text>
-              <Text size="medium" weight="bold">Text</Text>
+              <Text size="medium" weight="medium">
+                Text
+              </Text>
+              <Text size="medium" weight="bold">
+                Text
+              </Text>
               <Text size="large">Text</Text>
-              <Text size="large" weight="medium">Text</Text>
-              <Text size="large" weight="bold">Text</Text>
+              <Text size="large" weight="medium">
+                Text
+              </Text>
+              <Text size="large" weight="bold">
+                Text
+              </Text>
               <Text size="xlarge">Text</Text>
-              <Text size="xlarge" weight="medium">Text</Text>
-              <Text size="xlarge" weight="bold">Text</Text>
+              <Text size="xlarge" weight="medium">
+                Text
+              </Text>
+              <Text size="xlarge" weight="bold">
+                Text
+              </Text>
             </ExamplesBoard>
-            <Playground name="Text" component={<Text />} options={api.text} />
+            <Playground
+              name="Text"
+              component={<Text />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.text}
+            />
           </div>
         </section>
 
@@ -276,9 +363,16 @@ export default class ExaplePage extends React.Component {
             <ExamplesBoard>
               <Tip>Tip text</Tip>
               <Tip iconName="alert">Tip text with icon</Tip>
-              <Tip iconName="alert" iconColor="blue">Tip text with icon</Tip>
+              <Tip iconName="alert" iconColor="blue">
+                Tip text with icon
+              </Tip>
             </ExamplesBoard>
-            <Playground name="Tip" component={<Tip />} options={api.tip} />
+            <Playground
+              name="Tip"
+              component={<Tip />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.tip}
+            />
           </div>
         </section>
 
@@ -291,9 +385,20 @@ export default class ExaplePage extends React.Component {
               <Icon text="K" />
               <Icon text="K" color="blue" isSelected onClick={console.log} />
               <Icon text="K" color="blue" isDisabled />
-              <Icon text="K" color="blue" isSelected isDisabled onClick={console.log} />
+              <Icon
+                text="K"
+                color="blue"
+                isSelected
+                isDisabled
+                onClick={console.log}
+              />
             </ExamplesBoard>
-            <Playground name="Icon" component={<Icon />} options={api.icon} />
+            <Playground
+              name="Icon"
+              component={<Icon />}
+              onSelectComponent={this.handleSelectComponent}
+              options={api.icon}
+            />
           </div>
         </section>
       </Layout>

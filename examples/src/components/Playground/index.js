@@ -1,7 +1,8 @@
 import React from "react";
-import reactElementToJSXString from 'react-element-to-jsx-string';
+import { isEqual } from "lodash";
+import reactElementToJSXString from "react-element-to-jsx-string";
 
-import { Title, Select, Input, Checkbox, Text } from "../../../../dist";
+import { Title, Select, Input, Checkbox, Text, Button } from "../../../../dist";
 import "./Playground.scss";
 
 export default class Playground extends React.Component {
@@ -18,6 +19,17 @@ export default class Playground extends React.Component {
 
     this.handleChangePropValue = this.handleChangePropValue.bind(this);
     this.renderPropInput = this.renderPropInput.bind(this);
+    this.getComponent = this.getComponent.bind(this);
+    this.getComponentString = this.getComponentString.bind(this);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!isEqual(prevState, this.state)) {
+      const { component, name, onSelectComponent } = this.props;
+      const demoComponent = this.getComponent(component);
+      const componentCodeString = this.getComponentString(demoComponent, name);
+      onSelectComponent && onSelectComponent(componentCodeString);
+    }
   }
 
   renderPropInput({ name, type, defaultValue, options, isDisabled }) {
@@ -78,6 +90,16 @@ export default class Playground extends React.Component {
     }
   }
 
+  getComponent(component) {
+    return component && React.cloneElement(component, { ...this.state });
+  }
+
+  getComponentString(component, name) {
+    return reactElementToJSXString(component, {
+      displayName: () => name
+    });
+  }
+
   handleChangePropValue(propName, value) {
     this.setState({
       [propName]: value
@@ -85,15 +107,11 @@ export default class Playground extends React.Component {
   }
 
   render() {
-    const { onSelectComponent, component, options } = this.props;
-    const demoComponent =
-      component && React.cloneElement(component, { ...this.state });
+    const { options, component } = this.props;
 
-		const componentCodeString = reactElementToJSXString(demoComponent);
     return (
       <div className="playground">
         <div className="playground-content">
-					<button onClick={() => onSelectComponent(componentCodeString)}></button>
           <section className="playground-controls">
             {options &&
               options.map((opt, i) => (
@@ -110,7 +128,7 @@ export default class Playground extends React.Component {
                 </div>
               ))}
           </section>
-          <section className="playground-result">{demoComponent}</section>
+          <section className="playground-result">{this.getComponent(component)}</section>
         </div>
       </div>
     );

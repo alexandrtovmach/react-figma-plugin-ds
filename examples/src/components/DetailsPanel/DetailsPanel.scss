@@ -5,7 +5,6 @@
 	height: 100%;
   background-color: $figma-white;
 	border-left: 1px solid $figma-silver;
-  user-select: none;
   display: flex;
   flex-direction: column;
   z-index: 2;
@@ -13,4 +12,14 @@
 	@media (max-width: 980px) {
 		display: none;
 	}
+
+  header {
+    display: flex;
+    margin: 15px 15px 7px 15px;
+    user-select: none;
+  }
+
+  .codeblock {
+    padding: 7px 9px 15px 9px;
+  }
 }
