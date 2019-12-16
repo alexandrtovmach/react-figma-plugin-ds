@@ -80,113 +80,111 @@ type IconColors = "blue" | "white" | "black-3";
 type Sizes = "small" | "medium" | "large" | "xlarge";
 type Weights = "normal" | "medium" | "bold";
 
-interface ButtonProps {
-  children: React.Component;
+interface BasicProps {
   className?: string;
+}
+interface ButtonProps extends BasicProps {
+  children: React.Component;
   isSecondary?: boolean;
   isDisabled?: boolean;
   isDestructive?: boolean;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-interface CheckboxProps {
+interface CheckboxProps extends BasicProps {
   label: string;
-  className?: string;
   isCheckbox?: boolean;
   isDisabled?: boolean;
   defaultValue?: boolean;
-  onChange?: (value: boolean, event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (
+    value: boolean,
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => void;
 }
 
-interface DisclosureProps {
+interface DisclosureProps extends BasicProps {
   children: React.Component;
   label: string;
-  className?: string;
   isSection?: boolean;
   isDefaultExpanded?: boolean;
   onExpand?: (state: boolean) => void;
 }
 
-interface InputProps {
+interface InputProps extends BasicProps {
   placeholder: string;
-  className?: string;
   type?: "text" | "number" | "password";
   defaultValue?: any;
   isDisabled?: boolean;
-  onChange?: (value: string, event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (
+    value: string,
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => void;
 }
 
-interface InputWithIconProps extends InputProps {
+interface InputWithIconProps extends InputProps, BasicProps {
   icon?: Icons;
   iconColor?: IconColors;
 }
 
-interface TextareaProps {
+interface TextareaProps extends BasicProps {
   placeholder: string;
-  cols: number;
   rows: number;
-  className?: string;
   defaultValue?: any;
   isDisabled?: boolean;
-  onChange?: (value: string, event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange?: (
+    value: string,
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => void;
 }
 
 interface SelectOption {
   divider: string | boolean;
   value: string | number | boolean;
-  label: string
+  label: string;
 }
-interface SelectProps {
+interface SelectProps extends BasicProps {
   options: SelectOption[];
   placeholder: string;
-  className?: string;
   isDisabled?: boolean;
   defaultValue?: string | number | boolean;
   onExpand?: (state: boolean) => void;
   onChange?: (option: SelectOption) => void;
 }
 
-interface DividerProps {
-  className?: string;
-}
+interface DividerProps extends BasicProps {}
 
-interface TitleProps {
+interface TitleProps extends BasicProps {
   children: React.Component;
-  className?: string;
   size?: Sizes;
   level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   weight?: Weights;
 }
 
-interface LabelProps {
+interface LabelProps extends BasicProps {
   children: React.Component;
-  className?: string;
   size?: Sizes;
   weight?: Weights;
 }
 
-interface TextProps {
+interface TextProps extends BasicProps {
   children: React.Component;
-  className?: string;
   size?: Sizes;
   weight?: Weights;
 }
 
-interface TipProps {
+interface TipProps extends BasicProps {
   children: React.Component;
-  className?: string;
   iconName?: Icons;
   iconColor: IconColors;
 }
 
-interface IconProps {
+interface IconProps extends BasicProps {
   name: Icons;
-  className?: string;
   color?: IconColors;
   isSelected?: boolean;
   isDisabled?: boolean;
   text?: string;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export {
@@ -203,5 +201,5 @@ export {
   TipProps,
   TextareaProps,
   SelectProps,
-  SelectOption,
+  SelectOption
 };

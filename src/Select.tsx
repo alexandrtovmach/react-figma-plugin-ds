@@ -59,6 +59,7 @@ class Select extends React.Component<SelectProps, SelectState> {
     const { isExpanded, selectedOption } = this.state;
     const expandButtonClass = isExpanded ? "select-menu__button--active" : "";
     const expanListClass = isExpanded ? "select-menu__list--active" : "";
+    const disabledColorClass = isDisabled ? "icon--black-3" : "";
 
     return (
       <div className={`select-menu ${className}`}>
@@ -67,17 +68,17 @@ class Select extends React.Component<SelectProps, SelectState> {
           disabled={!isExpanded}
         >
           <button
-            className={`select-menu__button ${expandButtonClass}`}
+            className={`select-menu__button ${expandButtonClass} ${disabledColorClass}`}
             onClick={this.handleExpandClick}
             disabled={isDisabled}
           >
             <span className="select-menu__button-label">
               {(selectedOption && selectedOption.label) || placeholder}
             </span>
-            <span className="select-menu__icon"></span>
+            <span className={`select-menu__icon ${disabledColorClass}`} />
           </button>
           <ul
-            className={`select-menu__list ${expanListClass}`}
+            className={`select-menu__list ${expanListClass} ${disabledColorClass}`}
             style={{ top: "-24px" }}
           >
             {options &&

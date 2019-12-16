@@ -138,6 +138,7 @@ export const api = {
     {
       name: "defaultValue",
       type: "switch",
+			isDisabled: true,
       defaultValue: false
     },
     {
@@ -172,6 +173,7 @@ export const api = {
     {
       name: "isDefaultExpanded",
       type: "switch",
+			isDisabled: true,
       defaultValue: false
     },
     {
@@ -228,12 +230,6 @@ export const api = {
       isRequired: true
     },
     {
-      name: "cols",
-      type: "number",
-      defaultValue: 3,
-      isRequired: true
-    },
-    {
       name: "rows",
       type: "number",
       defaultValue: 2,
@@ -283,6 +279,7 @@ export const api = {
     {
       name: "defaultValue",
       type: "text",
+			isDisabled: true,
       defaultValue: ""
     },
     {

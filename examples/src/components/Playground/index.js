@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Icon, Title, Select, Input, Label, Checkbox } from "../../../../dist";
+import { Icon, Title, Select, Input, Divider, Checkbox } from "../../../../dist";
 import "./Playground.scss";
 
 export default class Playground extends React.Component {
@@ -19,7 +19,7 @@ export default class Playground extends React.Component {
     this.renderPropInput = this.renderPropInput.bind(this);
   }
 
-  renderPropInput({ name, type, defaultValue, options }, i) {
+  renderPropInput({ name, type, defaultValue, options, isDisabled }, i) {
     switch (type) {
       case "text":
         return (
@@ -27,6 +27,7 @@ export default class Playground extends React.Component {
             key={`controller--${i}`}
             defaultValue={defaultValue}
             placeholder={name}
+            isDisabled={isDisabled}
             onChange={value => this.handleChangePropValue(name, value)}
           />
         );
@@ -37,6 +38,7 @@ export default class Playground extends React.Component {
             type="number"
             defaultValue={defaultValue}
             placeholder={name}
+            isDisabled={isDisabled}
             onChange={value => this.handleChangePropValue(name, Number(value))}
           />
         );
@@ -46,6 +48,7 @@ export default class Playground extends React.Component {
             key={`controller--${i}`}
             defaultValue={defaultValue}
             label={name}
+            isDisabled={isDisabled}
             onChange={value => this.handleChangePropValue(name, value)}
           />
         );
@@ -59,6 +62,7 @@ export default class Playground extends React.Component {
               value: opt.value === undefined ? opt : opt.value,
               label: opt.label === undefined ? opt : opt.label
             }))}
+            isDisabled={isDisabled}
             onChange={({ value }) => this.handleChangePropValue(name, value)}
           />
         );
@@ -99,7 +103,9 @@ export default class Playground extends React.Component {
           <section className="playground-controls">
             {options && options.map(this.renderPropInput)}
           </section>
-          <section className="playground-result">{demoComponent}</section>
+          <section className="playground-result">
+						{demoComponent}
+					</section>
         </div>
       </div>
     );

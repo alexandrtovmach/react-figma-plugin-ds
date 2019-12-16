@@ -35,7 +35,7 @@ export default class Header extends React.Component {
               rel="noreferrer noopener"
             >
               <img
-                src="https://www.gravatar.com/avatar/83c2a3f2d5337e5d04680e4150ad2073?size=240&amp;default=https%3A%2F%2Fs3-alpha.figma.com%2Fstatic%2Fuser_1.png"
+                src="https://www.gravatar.com/avatar/83c2a3f2d5337e5d04680e4150ad2073"
               />
             </a>
             <a

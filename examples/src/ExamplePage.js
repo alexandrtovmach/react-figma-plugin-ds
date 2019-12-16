@@ -106,24 +106,20 @@ export default class ExaplePage extends React.Component {
               <Textarea
                 placeholder="Here you can enter text..."
                 rows={2}
-                cols={3}
               />
               <Textarea
                 placeholder="Here you can't enter text..."
                 rows={2}
-                cols={3}
                 isDisabled
               />
               <Textarea
                 placeholder="Here you can enter text..."
                 rows={2}
-                cols={3}
                 defaultValue="Default text"
               />
               <Textarea
                 placeholder="Here you can enter text..."
                 rows={2}
-                cols={3}
                 defaultValue="Default disabled text"
                 isDisabled
               />

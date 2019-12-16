@@ -46,9 +46,9 @@ export default class NavigationPanel extends React.Component {
     const { activeLink } = this.state;
     return (
       <aside className="navigation-panel">
-        {ROUTES.map(route => {
+        {ROUTES.map((route, i) => {
           const path = `#${route.toLowerCase()}`
-          return <a href={path} className={activeLink === path && "active-link"}>
+          return <a key={`nav-link--${i}`} href={path} className={activeLink === path ? "active-link" : ""}>
             <Tip iconName="frame">{route}</Tip>
           </a>
         })}
