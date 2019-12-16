@@ -1,4 +1,5 @@
 import React from "react";
+import reactElementToJSXString from 'react-element-to-jsx-string';
 
 import { Title, Select, Input, Checkbox, Text } from "../../../../dist";
 import "./Playground.scss";
@@ -84,12 +85,15 @@ export default class Playground extends React.Component {
   }
 
   render() {
-    const { onSelectComponent, name, component, options } = this.props;
+    const { onSelectComponent, component, options } = this.props;
     const demoComponent =
       component && React.cloneElement(component, { ...this.state });
+
+		const componentCodeString = reactElementToJSXString(demoComponent);
     return (
       <div className="playground">
         <div className="playground-content">
+					<button onClick={() => onSelectComponent(componentCodeString)}></button>
           <section className="playground-controls">
             {options &&
               options.map((opt, i) => (

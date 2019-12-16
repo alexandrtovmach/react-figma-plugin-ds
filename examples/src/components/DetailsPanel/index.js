@@ -1,5 +1,6 @@
 import React from "react";
 
+import CodePreview from '../CodePreview';
 import "./DetailsPanel.scss";
 
 export default class DetailsPanel extends React.Component {
@@ -10,6 +11,10 @@ export default class DetailsPanel extends React.Component {
   }
 
   render() {
-    return <aside className="details-panel">/* code of selected component */</aside>;
+    return <aside className="details-panel">
+			<CodePreview
+				code={this.props.componentCode}
+			/>
+		</aside>;
   }
 }

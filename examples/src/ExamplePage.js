@@ -23,13 +23,23 @@ export default class ExaplePage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    this.state = {};
+    this.state = {
+			selectedComponentCode: ""
+		};
+
+		this.handleSelectComponent = this.handleSelectComponent.bind(this);
   }
 
+	handleSelectComponent(componentCode) {
+		this.setState({
+			selectedComponentCode: componentCode
+		})
+	}
+
   render() {
-    const {} = this.state;
+    const { selectedComponentCode } = this.state;
     return (
-      <Layout>
+      <Layout componentCode={selectedComponentCode}>
         <section id="button" className="viewport">
           <div className="frame">
             <ExamplesBoard>
@@ -47,7 +57,7 @@ export default class ExaplePage extends React.Component {
                 Button
               </Button>
             </ExamplesBoard>
-            <Playground name="Button" component={<Button />} options={api.button} />
+            <Playground name="Button" component={<Button />} options={api.button} onSelectComponent={this.handleSelectComponent} />
           </div>
         </section>
 

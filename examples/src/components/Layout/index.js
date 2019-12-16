@@ -13,14 +13,14 @@ export default class Layout extends React.Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, componentCode } = this.props;
     return (
       <>
 				<Header />
 				<div className="content">
 					<NavigationPanel />
 					<main className="main-content">{children}</main>
-					<DetailsPanel />
+					<DetailsPanel componentCode={componentCode} />
 				</div>
       </>
     );
