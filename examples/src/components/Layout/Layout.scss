@@ -17,9 +17,15 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+      @media (max-width: 480px) {
+        height: auto;
+        min-height: calc(100vh - #{$header-height});
+        padding: 50px 0;
+      }
+
 			.frame {
-				width: 800px;
-				height: 600px;
+				flex: 0 1 800px;
         display: flex;
         flex-direction: column;
 			}

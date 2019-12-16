@@ -19,11 +19,11 @@ export default class DetailsPanel extends React.Component {
         </Text>
       </header>
       <Divider />
-      <Text className="codeblock">
+      <div className="type type--pos-small-normal codeblock">
         <CodePreview
           code={this.props.componentCode}
         />
-      </Text>
+      </div>
 		</aside>;
   }
 }

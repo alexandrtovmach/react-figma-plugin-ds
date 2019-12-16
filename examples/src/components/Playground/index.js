@@ -111,27 +111,25 @@ export default class Playground extends React.Component {
 
     return (
       <div className="playground">
-        <div className="playground-content">
-          <section className="playground-controls">
-            {options &&
-              options.map((opt, i) => (
-                <div key={`controller--${i}`} className="control-property">
-                  <header className="control-header">
-                    <Text weight="bold" size="large">
-                      {opt.name}
-                      {opt.isRequired && "*"}
-                    </Text>
-                    &nbsp;
-                    <Text>[{opt.type}]</Text>
-                  </header>
-                  {this.renderPropInput(opt)}
-                </div>
-              ))}
-          </section>
-          <section className="playground-result">
-            {this.getComponent(component)}
-          </section>
-        </div>
+        <section className="playground-controls">
+          {options &&
+            options.map((opt, i) => (
+              <div key={`controller--${i}`} className="control-property">
+                <header className="control-header">
+                  <Text weight="bold" size="large">
+                    {opt.name}
+                    {opt.isRequired && "*"}
+                  </Text>
+                  &nbsp;
+                  <Text>[{opt.type}]</Text>
+                </header>
+                {this.renderPropInput(opt)}
+              </div>
+            ))}
+        </section>
+        <section className="playground-result">
+          {this.getComponent(component)}
+        </section>
       </div>
     );
   }

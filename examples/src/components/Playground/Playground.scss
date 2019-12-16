@@ -6,7 +6,8 @@
   background-color: $figma-white;
   border-radius: 2px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
   outline-width: 2px;
   outline-style: solid;
   outline-color: transparent;
@@ -14,43 +15,33 @@
     outline-color: $figma-blue;
   }
 
-  .playground-header {
+  > section {
+    flex: 1 1 300px;
+    margin: 5px;
     display: flex;
-    justify-content: space-between;
   }
-  .playground-content {
-    flex: 1 0 auto;
+
+  .playground-controls {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 
-    > section {
-      flex: 0 0 calc(50% - 5px * 2);
-      height: 100%;
-      margin: 5px;
+    .control-header {
       display: flex;
-    }
-
-    .playground-controls {
-      display: flex;
-      flex-direction: column;
-
-      .control-header {
-        display: flex;
-        align-items: center;
-      }
-      .control-property {
-        padding: 5px 5px 10px 5px;
-
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.03);
-        }
-      }
-    }
-    .playground-result {
-      background-color: rgba(0, 0, 0, 0.03);
-      display: flex;
-      justify-content: center;
       align-items: center;
     }
+    .control-property {
+      padding: 5px 5px 10px 5px;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+    }
+  }
+  .playground-result {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
