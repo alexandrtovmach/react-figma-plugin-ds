@@ -2,7 +2,7 @@ import React from "react";
 import { isEqual } from "lodash";
 import reactElementToJSXString from "react-element-to-jsx-string";
 
-import { Title, Select, Input, Checkbox, Text, Button } from "../../../../dist";
+import { Title, Select, Input, Checkbox, Text } from "../../../../dist";
 import "./Playground.scss";
 
 export default class Playground extends React.Component {
@@ -128,7 +128,9 @@ export default class Playground extends React.Component {
                 </div>
               ))}
           </section>
-          <section className="playground-result">{this.getComponent(component)}</section>
+          <section className="playground-result">
+            {this.getComponent(component)}
+          </section>
         </div>
       </div>
     );
