@@ -17,7 +17,7 @@ import {
 import Layout from "./components/Layout";
 import Playground from "./components/Playground";
 import ExamplesBoard from "./components/ExamplesBoard";
-import { api } from "./apiDocs";
+import { api } from "./api";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
