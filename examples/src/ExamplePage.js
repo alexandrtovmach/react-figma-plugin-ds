@@ -13,7 +13,7 @@ import {
   Tip,
   Textarea,
   Select
-} from "../../dist";
+} from "../..";
 import Layout from "./components/Layout";
 import Playground from "./components/Playground";
 import ExamplesBoard from "./components/ExamplesBoard";

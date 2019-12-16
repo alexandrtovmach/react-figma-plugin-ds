@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Icon, Title, Select, Input, Divider, Checkbox } from "../../../../dist";
+import { Title, Select, Input, Checkbox, Text } from "../../../../dist";
 import "./Playground.scss";
 
 export default class Playground extends React.Component {
@@ -19,14 +19,13 @@ export default class Playground extends React.Component {
     this.renderPropInput = this.renderPropInput.bind(this);
   }
 
-  renderPropInput({ name, type, defaultValue, options, isDisabled }, i) {
+  renderPropInput({ name, type, defaultValue, options, isDisabled }) {
     switch (type) {
-      case "text":
+      case "string":
         return (
           <Input
-            key={`controller--${i}`}
             defaultValue={defaultValue}
-            placeholder={name}
+            placeholder={"Enter string..."}
             isDisabled={isDisabled}
             onChange={value => this.handleChangePropValue(name, value)}
           />
@@ -34,28 +33,25 @@ export default class Playground extends React.Component {
       case "number":
         return (
           <Input
-            key={`controller--${i}`}
             type="number"
             defaultValue={defaultValue}
-            placeholder={name}
+            placeholder={"Enter number..."}
             isDisabled={isDisabled}
             onChange={value => this.handleChangePropValue(name, Number(value))}
           />
         );
-      case "switch":
+      case "boolean":
         return (
           <Checkbox
-            key={`controller--${i}`}
             defaultValue={defaultValue}
-            label={name}
+            label={"false/true"}
             isDisabled={isDisabled}
             onChange={value => this.handleChangePropValue(name, value)}
           />
         );
-      case "select":
+      case "enum":
         return (
           <Select
-            key={`controller--${i}`}
             defaultValue={defaultValue}
             placeholder={`Select ${name}`}
             options={options.map(opt => ({
@@ -68,13 +64,13 @@ export default class Playground extends React.Component {
         );
       case "function":
         return (
-          <Title level="h3" key={`controller--${i}`}>
+          <Title level="h3">
             {name}: {defaultValue.toString()}
           </Title>
         );
       default:
         return (
-          <Title level="h3" key={`controller--${i}`}>
+          <Title level="h3">
             {name}: {JSON.stringify(defaultValue)}
           </Title>
         );
@@ -93,19 +89,24 @@ export default class Playground extends React.Component {
       component && React.cloneElement(component, { ...this.state });
     return (
       <div className="playground">
-        <header className="playground-header">
-          <Title level="h2" weight="bold" size="xlarge">
-            {name} Playground
-          </Title>
-          {/* <Icon name="play" onClick={() => onSelectComponent(name)} /> */}
-        </header>
         <div className="playground-content">
           <section className="playground-controls">
-            {options && options.map(this.renderPropInput)}
+            {options &&
+              options.map((opt, i) => (
+                <div key={`controller--${i}`} className="control-property">
+                  <header className="control-header">
+                    <Text weight="bold" size="large">
+                      {opt.name}
+                      {opt.isRequired && "*"}
+                    </Text>
+                    &nbsp;
+                    <Text>[{opt.type}]</Text>
+                  </header>
+                  {this.renderPropInput(opt)}
+                </div>
+              ))}
           </section>
-          <section className="playground-result">
-						{demoComponent}
-					</section>
+          <section className="playground-result">{demoComponent}</section>
         </div>
       </div>
     );

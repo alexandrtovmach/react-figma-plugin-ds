@@ -83,28 +83,28 @@ export const api = {
   button: [
     {
       name: "children",
-      type: "text",
+      type: "string",
       defaultValue: "Button",
       isRequired: true
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "isSecondary",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
       name: "isDisabled",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
       name: "isDestructive",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
@@ -116,28 +116,28 @@ export const api = {
   checkbox: [
     {
       name: "label",
-      type: "text",
+      type: "string",
       defaultValue: "Toggle me",
       isRequired: true
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "isCheckbox",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
       name: "isDisabled",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
       name: "defaultValue",
-      type: "switch",
+      type: "boolean",
 			isDisabled: true,
       defaultValue: false
     },
@@ -150,29 +150,29 @@ export const api = {
   disclosure: [
     {
       name: "children",
-      type: "text",
+      type: "string",
       defaultValue: "Disclosure content",
       isRequired: true
     },
     {
       name: "label",
-      type: "text",
+      type: "string",
       defaultValue: "Disclosure",
       isRequired: true
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "isSection",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
       name: "isDefaultExpanded",
-      type: "switch",
+      type: "boolean",
 			isDisabled: true,
       defaultValue: false
     },
@@ -185,34 +185,34 @@ export const api = {
   input: [
     {
       name: "placeholder",
-      type: "text",
+      type: "string",
       defaultValue: "Placeholder",
       isRequired: true
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "defaultValue",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "isDisabled",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
       name: "icon",
-      type: "select",
+      type: "enum",
       options: icons,
       defaultValue: ""
     },
     {
       name: "iconColor",
-      type: "select",
+      type: "enum",
       options: iconColors,
       defaultValue: ""
     },
@@ -225,7 +225,7 @@ export const api = {
   textarea: [
     {
       name: "placeholder",
-      type: "text",
+      type: "string",
       defaultValue: "Placeholder text...",
       isRequired: true
     },
@@ -237,17 +237,17 @@ export const api = {
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "defaultValue",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "isDisabled",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
@@ -259,7 +259,7 @@ export const api = {
   select: [
     {
       name: "placeholder",
-      type: "text",
+      type: "string",
       defaultValue: "Placeholder text...",
       isRequired: true
     },
@@ -273,18 +273,18 @@ export const api = {
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "defaultValue",
-      type: "text",
+      type: "string",
 			isDisabled: true,
       defaultValue: ""
     },
     {
       name: "isDisabled",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
@@ -301,37 +301,37 @@ export const api = {
   divider: [
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
   ],
   title: [
     {
       name: "children",
-      type: "text",
+      type: "string",
       defaultValue: "Title",
       isRequired: true
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "size",
-      type: "select",
+      type: "enum",
       options: sizes,
       defaultValue: ""
     },
     {
       name: "level",
-      type: "select",
+      type: "enum",
       options: ["h1", "h2", "h3", "h4", "h5", "h6"],
       defaultValue: ""
     },
     {
       name: "weight",
-      type: "select",
+      type: "enum",
       options: weights,
       defaultValue: ""
     },
@@ -339,24 +339,24 @@ export const api = {
   label: [
     {
       name: "children",
-      type: "text",
+      type: "string",
       defaultValue: "Label",
       isRequired: true
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "size",
-      type: "select",
+      type: "enum",
       options: sizes,
       defaultValue: ""
     },
     {
       name: "weight",
-      type: "select",
+      type: "enum",
       options: weights,
       defaultValue: ""
     },
@@ -364,24 +364,24 @@ export const api = {
   text: [
     {
       name: "children",
-      type: "text",
+      type: "string",
       defaultValue: "Text",
       isRequired: true
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "size",
-      type: "select",
+      type: "enum",
       options: sizes,
       defaultValue: ""
     },
     {
       name: "weight",
-      type: "select",
+      type: "enum",
       options: weights,
       defaultValue: ""
     },
@@ -389,24 +389,24 @@ export const api = {
   tip: [
     {
       name: "children",
-      type: "text",
+      type: "string",
       defaultValue: "Text tip",
       isRequired: true
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "iconName",
-      type: "select",
+      type: "enum",
       options: icons,
       defaultValue: ""
     },
     {
       name: "iconColor",
-      type: "select",
+      type: "enum",
       options: iconColors,
       defaultValue: ""
     },
@@ -414,40 +414,40 @@ export const api = {
   icon: [
     {
       name: "name",
-      type: "select",
+      type: "enum",
       options: icons,
       defaultValue: "alert",
       isRequired: true
     },
     {
       name: "className",
-      type: "text",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "color",
-      type: "select",
+      type: "enum",
       options: iconColors,
       defaultValue: ""
     },
     {
       name: "isSelected",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
       name: "isDisabled",
-      type: "switch",
+      type: "boolean",
       defaultValue: false
     },
     {
-      name: "text",
-      type: "text",
+      name: "string",
+      type: "string",
       defaultValue: ""
     },
     {
       name: "onClick",
-      type: "select",
+      type: "enum",
       options: [
         {
           label: "without onClick",
