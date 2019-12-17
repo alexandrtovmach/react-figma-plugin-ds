@@ -2,7 +2,7 @@
   "name": "react-figma-plugin-ds",
   "description": "React ui framework based on Figma design system",
   "main": "dist/index.js",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "author": {
     "name": "Alexandr Tovmach",
     "url": "https://alexandrtovmach.com/",
@@ -13,7 +13,7 @@
     "watch": "npm run build-styles && tsc --watch",
     "develop": "webpack-dev-server --mode development",
     "prepublishOnly": "rm -rf ./dist && tsc",
-		"build-styles": "mkdir -p dist/styles/ && cp -r node_modules/figma-plugin-ds/*.css dist/styles/",
+    "build-styles": "mkdir -p dist/styles/ && cp -r node_modules/figma-plugin-ds/*.css dist/styles/",
     "build": "rm -rf ./dist && tsc && npm run build-styles && webpack",
     "deploy": "lint-staged && npm run build && gh-pages -d examples/dist",
     "prettify": "prettier --write './src/**/*.{js,jsx,ts,tsx,json,css,md}'"
