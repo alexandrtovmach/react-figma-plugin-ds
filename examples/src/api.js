@@ -401,6 +401,11 @@ export const api = {
       defaultValue: ""
     },
     {
+      name: "iconText",
+      type: "string",
+      defaultValue: ""
+    },
+    {
       name: "iconName",
       type: "Icons",
       options: icons,

@@ -7,6 +7,7 @@ const Text: React.SFC<TipProps> = ({
   className,
   children,
   iconName,
+  iconText,
   iconColor
 }) => {
   className = className || "";
@@ -14,7 +15,7 @@ const Text: React.SFC<TipProps> = ({
     <div className={`onboarding-tip ${className}`}>
       {iconName && (
         <div className="onboarding-tip__icon">
-          <Icon name={iconName} color={iconColor} />
+          <Icon name={iconName} color={iconColor} text={iconText} />
         </div>
       )}
       <div className="onboarding-tip__msg">{children}</div>

@@ -206,6 +206,7 @@ export declare const Label: React.SFC<LabelProps>;
 
 export interface TipProps extends BasicProps {
   children: React.Component;
+  iconText?: string;
   iconName?: Icons;
   iconColor: IconColors;
 }
