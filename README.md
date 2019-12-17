@@ -12,7 +12,7 @@ React components of Figma design system based on [thomas-lowry/figma-plugin-ds](
 
 Follow these steps to start using React Figma components:
 
-1. Installation
+1. Installation:
 
    ```sh
    # with npm
@@ -22,10 +22,20 @@ Follow these steps to start using React Figma components:
    yarn add react-figma-plugin-ds
    ```
 
+2. Usage:
+
+   ````jsx
+   import React from "react";
+   import { Button } from "react-figma-plugin-ds";
+
+   export default props => {
+     return <Button>Submit</Button>;
+   };
+   ````
+<!-- 
 > Full tutorial and API docs coming soon... For now check [demo page](https://alexandrtovmach.github.io/react-figma-plugin-ds/) with examples. Any ideas/contributions/feedback will be helpful. If you have something to say please open an [issue](https://github.com/alexandrtovmach/react-figma-plugin-ds/issues/new). Thank you 😉
 >
-> Follow [@alexandrtovmach](https://twitter.com/alexandrtovmach) on Twitter to not miss a release.
-
+> Follow [@alexandrtovmach](https://twitter.com/alexandrtovmach) on Twitter to not miss a release. -->
 
 ## 📝 License
 
