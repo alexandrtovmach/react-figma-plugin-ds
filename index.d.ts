@@ -79,6 +79,7 @@ type Icons =
 type IconColors = "blue" | "white" | "black-3";
 type Sizes = "small" | "medium" | "large" | "xlarge";
 type Weights = "normal" | "medium" | "bold";
+type Levels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 interface BasicProps {
   className?: string;
@@ -156,7 +157,7 @@ interface DividerProps extends BasicProps {}
 interface TitleProps extends BasicProps {
   children: React.Component;
   size?: Sizes;
-  level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  level?: Levels;
   weight?: Weights;
 }
 

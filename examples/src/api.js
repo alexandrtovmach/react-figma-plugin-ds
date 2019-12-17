@@ -78,6 +78,7 @@ const icons = [
 const iconColors = ["blue", "white", "black-3"];
 const sizes = ["small", "medium", "large", "xlarge"];
 const weights = ["normal", "medium", "bold"];
+const levels = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
 export const api = {
   button: [
@@ -206,13 +207,13 @@ export const api = {
     },
     {
       name: "icon",
-      type: "enum",
+      type: "Icons",
       options: icons,
       defaultValue: ""
     },
     {
       name: "iconColor",
-      type: "enum",
+      type: "IconColors",
       options: iconColors,
       defaultValue: ""
     },
@@ -265,6 +266,7 @@ export const api = {
     },
     {
       name: "options",
+			type: "SelectOption[]",
       defaultValue: [
         { value: 1, label: "Item 1" },
         { value: 2, label: "Item 2" }
@@ -319,19 +321,19 @@ export const api = {
     },
     {
       name: "size",
-      type: "enum",
+      type: "Sizes",
       options: sizes,
       defaultValue: ""
     },
     {
       name: "level",
-      type: "enum",
-      options: ["h1", "h2", "h3", "h4", "h5", "h6"],
+      type: "Levels",
+      options: levels,
       defaultValue: ""
     },
     {
       name: "weight",
-      type: "enum",
+      type: "Weights",
       options: weights,
       defaultValue: ""
     },
@@ -350,13 +352,13 @@ export const api = {
     },
     {
       name: "size",
-      type: "enum",
+      type: "Sizes",
       options: sizes,
       defaultValue: ""
     },
     {
       name: "weight",
-      type: "enum",
+      type: "Weights",
       options: weights,
       defaultValue: ""
     },
@@ -375,13 +377,13 @@ export const api = {
     },
     {
       name: "size",
-      type: "enum",
+      type: "Sizes",
       options: sizes,
       defaultValue: ""
     },
     {
       name: "weight",
-      type: "enum",
+      type: "Weights",
       options: weights,
       defaultValue: ""
     },
@@ -400,13 +402,13 @@ export const api = {
     },
     {
       name: "iconName",
-      type: "enum",
+      type: "Icons",
       options: icons,
       defaultValue: ""
     },
     {
       name: "iconColor",
-      type: "enum",
+      type: "IconColors",
       options: iconColors,
       defaultValue: ""
     },
@@ -414,7 +416,7 @@ export const api = {
   icon: [
     {
       name: "name",
-      type: "enum",
+      type: "Icons",
       options: icons,
       defaultValue: "alert",
       isRequired: true
@@ -426,7 +428,7 @@ export const api = {
     },
     {
       name: "color",
-      type: "enum",
+      type: "IconColors",
       options: iconColors,
       defaultValue: ""
     },
@@ -447,7 +449,7 @@ export const api = {
     },
     {
       name: "onClick",
-      type: "enum",
+      type: "function",
       options: [
         {
           label: "without onClick",

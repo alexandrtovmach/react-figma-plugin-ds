@@ -33,6 +33,20 @@ export default class Playground extends React.Component {
   }
 
   renderPropInput({ name, type, defaultValue, options, isDisabled }) {
+    if (options) {
+      return (
+        <Select
+          defaultValue={defaultValue}
+          placeholder={`Select ${name}`}
+          options={options.map(opt => ({
+            value: opt.value === undefined ? opt : opt.value,
+            label: opt.label === undefined ? opt : opt.label
+          }))}
+          isDisabled={isDisabled}
+          onChange={({ value }) => this.handleChangePropValue(name, value)}
+        />
+      );
+    }
     switch (type) {
       case "string":
         return (
@@ -60,19 +74,6 @@ export default class Playground extends React.Component {
             label={"false/true"}
             isDisabled={isDisabled}
             onChange={value => this.handleChangePropValue(name, value)}
-          />
-        );
-      case "enum":
-        return (
-          <Select
-            defaultValue={defaultValue}
-            placeholder={`Select ${name}`}
-            options={options.map(opt => ({
-              value: opt.value === undefined ? opt : opt.value,
-              label: opt.label === undefined ? opt : opt.label
-            }))}
-            isDisabled={isDisabled}
-            onChange={({ value }) => this.handleChangePropValue(name, value)}
           />
         );
       case "function":
@@ -107,10 +108,11 @@ export default class Playground extends React.Component {
   }
 
   render() {
-    const { options, component } = this.props;
+    const { options, component, name } = this.props;
 
     return (
       <div className="playground">
+        <div className="playground-title">{name}</div>
         <section className="playground-controls">
           {options &&
             options.map((opt, i) => (
@@ -121,7 +123,9 @@ export default class Playground extends React.Component {
                     {opt.isRequired && "*"}
                   </Text>
                   &nbsp;
-                  <Text>[{opt.type}]</Text>
+                  <Text>
+                    <i>{opt.type}</i>
+                  </Text>
                 </header>
                 {this.renderPropInput(opt)}
               </div>

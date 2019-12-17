@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Header.scss";
+import { Text } from "../../../../dist";
 
 export default class Header extends React.Component {
   constructor(props, context) {
@@ -26,7 +27,7 @@ export default class Header extends React.Component {
       <>
         <header className="header">
           <div></div>
-          <div>React Figma Plugin / Examples</div>
+          <Text size="xalrge">React Figma Plugin UI</Text>
           <div className="links">
             <a
               className="avatar"

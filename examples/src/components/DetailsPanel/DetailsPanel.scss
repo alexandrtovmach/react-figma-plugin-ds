@@ -14,9 +14,13 @@
 	}
 
   header {
+		height: 40px;
+		padding: 0 15px;
     display: flex;
-    margin: 15px 15px 7px 15px;
+		justify-content: space-between;
+		align-items: center;
     user-select: none;
+		border-bottom: 1px solid #e5e5e5;
   }
 
   .codeblock {

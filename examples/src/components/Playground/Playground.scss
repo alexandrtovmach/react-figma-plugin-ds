@@ -1,8 +1,10 @@
 @import "../../variables.scss";
 
 .playground {
+	position: relative;
   flex: 10 0 auto;
   padding: 5px;
+	margin: 20px 5px;
   background-color: $figma-white;
   border-radius: 2px;
   display: flex;
@@ -13,7 +15,17 @@
   outline-color: transparent;
   &:hover {
     outline-color: $figma-blue;
+		.playground-title {
+			color: $figma-blue;
+		}
   }
+
+	.playground-title {
+		position: absolute;
+		top: calc(-1em - 5px);
+		left: 0;
+		color: $figma-black-3;
+	}
 
   > section {
     flex: 1 1 300px;
