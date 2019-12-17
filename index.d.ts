@@ -1,6 +1,6 @@
 import * as React from "react";
 
-type Icons =
+export type Icons =
   | "adjust"
   | "alert"
   | "align-bottom"
@@ -76,15 +76,20 @@ type Icons =
   | "vector-handles"
   | "visible"
   | "warning";
-type IconColors = "blue" | "white" | "black-3";
-type Sizes = "small" | "medium" | "large" | "xlarge";
-type Weights = "normal" | "medium" | "bold";
-type Levels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-interface BasicProps {
+export type IconColors = "blue" | "white" | "black-3";
+
+export type Sizes = "small" | "medium" | "large" | "xlarge";
+
+export type Weights = "normal" | "medium" | "bold";
+
+export type Levels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+export interface BasicProps {
   className?: string;
 }
-interface ButtonProps extends BasicProps {
+
+export interface ButtonProps extends BasicProps {
   children: React.Component;
   isSecondary?: boolean;
   isDisabled?: boolean;
@@ -92,7 +97,9 @@ interface ButtonProps extends BasicProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-interface CheckboxProps extends BasicProps {
+export declare const Button: React.SFC<ButtonProps>;
+
+export interface CheckboxProps extends BasicProps {
   label: string;
   isCheckbox?: boolean;
   isDisabled?: boolean;
@@ -103,7 +110,9 @@ interface CheckboxProps extends BasicProps {
   ) => void;
 }
 
-interface DisclosureProps extends BasicProps {
+export declare const Checkbox: React.SFC<CheckboxProps>;
+
+export interface DisclosureProps extends BasicProps {
   children: React.Component;
   label: string;
   isSection?: boolean;
@@ -111,7 +120,16 @@ interface DisclosureProps extends BasicProps {
   onExpand?: (state: boolean) => void;
 }
 
-interface InputProps extends BasicProps {
+export interface DisclosureState {
+  isExpanded: boolean;
+}
+
+export declare class Disclosure extends React.Component<
+  DisclosureProps,
+  DisclosureState
+> {}
+
+export interface InputProps extends BasicProps {
   placeholder: string;
   type?: "text" | "number" | "password";
   defaultValue?: any;
@@ -122,12 +140,14 @@ interface InputProps extends BasicProps {
   ) => void;
 }
 
-interface InputWithIconProps extends InputProps, BasicProps {
+export interface InputWithIconProps extends InputProps, BasicProps {
   icon?: Icons;
   iconColor?: IconColors;
 }
 
-interface TextareaProps extends BasicProps {
+export declare const Input: React.SFC<InputWithIconProps>;
+
+export interface TextareaProps extends BasicProps {
   placeholder: string;
   rows: number;
   defaultValue?: any;
@@ -138,12 +158,15 @@ interface TextareaProps extends BasicProps {
   ) => void;
 }
 
-interface SelectOption {
+export declare const Textarea: React.SFC<TextareaProps>;
+
+export interface SelectOption {
   divider: string | boolean;
   value: string | number | boolean;
   label: string;
 }
-interface SelectProps extends BasicProps {
+
+export interface SelectProps extends BasicProps {
   options: SelectOption[];
   placeholder: string;
   isDisabled?: boolean;
@@ -152,34 +175,44 @@ interface SelectProps extends BasicProps {
   onChange?: (option: SelectOption) => void;
 }
 
-interface DividerProps extends BasicProps {}
+export interface SelectState {
+  isExpanded: boolean;
+  selectedOption?: SelectOption;
+}
 
-interface TitleProps extends BasicProps {
+export declare class Select extends React.Component<SelectProps, SelectState> {}
+
+export interface DividerProps extends BasicProps {}
+
+export declare const Divider: React.SFC<DividerProps>;
+
+export interface TextProps extends BasicProps {
   children: React.Component;
   size?: Sizes;
+  weight?: Weights;
+}
+
+export declare const Text: React.SFC<TextProps>;
+
+export interface TitleProps extends BasicProps, TextProps {
   level?: Levels;
-  weight?: Weights;
 }
 
-interface LabelProps extends BasicProps {
-  children: React.Component;
-  size?: Sizes;
-  weight?: Weights;
-}
+export declare const Title: React.SFC<TitleProps>;
 
-interface TextProps extends BasicProps {
-  children: React.Component;
-  size?: Sizes;
-  weight?: Weights;
-}
+export interface LabelProps extends BasicProps, TextProps {}
 
-interface TipProps extends BasicProps {
+export declare const Label: React.SFC<LabelProps>;
+
+export interface TipProps extends BasicProps {
   children: React.Component;
   iconName?: Icons;
   iconColor: IconColors;
 }
 
-interface IconProps extends BasicProps {
+export declare const Tip: React.SFC<TipProps>;
+
+export interface IconProps extends BasicProps {
   name: Icons;
   color?: IconColors;
   isSelected?: boolean;
@@ -188,19 +221,4 @@ interface IconProps extends BasicProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export {
-  ButtonProps,
-  CheckboxProps,
-  DisclosureProps,
-  InputProps,
-  InputWithIconProps,
-  IconProps,
-  DividerProps,
-  TitleProps,
-  LabelProps,
-  TextProps,
-  TipProps,
-  TextareaProps,
-  SelectProps,
-  SelectOption
-};
+export declare const Icon: React.SFC<IconProps>;

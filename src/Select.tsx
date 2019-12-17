@@ -1,12 +1,7 @@
 import React from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 
-import { SelectProps, SelectOption } from "../index";
-
-interface SelectState {
-  isExpanded: boolean;
-  selectedOption?: SelectOption;
-}
+import { SelectProps, SelectState } from "../index";
 
 class Select extends React.Component<SelectProps, SelectState> {
   constructor(props: SelectProps) {

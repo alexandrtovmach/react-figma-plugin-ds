@@ -1,10 +1,6 @@
 import React from "react";
 
-import { DisclosureProps } from "../index";
-
-interface DisclosureState {
-  isExpanded: boolean;
-}
+import { DisclosureProps, DisclosureState } from "../index";
 
 class Disclosure extends React.Component<DisclosureProps, DisclosureState> {
   state = {
