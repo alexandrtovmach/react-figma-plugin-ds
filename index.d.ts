@@ -90,7 +90,7 @@ export interface BasicProps {
 }
 
 export interface ButtonProps extends BasicProps {
-  children: React.Component;
+  children: any;
   isSecondary?: boolean;
   isDisabled?: boolean;
   isDestructive?: boolean;
@@ -113,7 +113,7 @@ export interface CheckboxProps extends BasicProps {
 export declare const Checkbox: React.SFC<CheckboxProps>;
 
 export interface DisclosureProps extends BasicProps {
-  children: React.Component;
+  children: any;
   label: string;
   isSection?: boolean;
   isDefaultExpanded?: boolean;
@@ -187,7 +187,7 @@ export interface DividerProps extends BasicProps {}
 export declare const Divider: React.SFC<DividerProps>;
 
 export interface TextProps extends BasicProps {
-  children: React.Component;
+  children: any;
   size?: Sizes;
   weight?: Weights;
 }
@@ -205,7 +205,7 @@ export interface LabelProps extends BasicProps, TextProps {}
 export declare const Label: React.SFC<LabelProps>;
 
 export interface TipProps extends BasicProps {
-  children: React.Component;
+  children: any;
   iconText?: string;
   iconName?: Icons;
   iconColor: IconColors;
