@@ -93,6 +93,7 @@ export interface ButtonProps extends BasicProps {
   children: any;
   isSecondary?: boolean;
   isDisabled?: boolean;
+  isLoading?: boolean;
   isDestructive?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }

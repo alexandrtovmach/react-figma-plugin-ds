@@ -104,6 +104,11 @@ export const api = {
       defaultValue: false
     },
     {
+      name: "isLoading",
+      type: "boolean",
+      defaultValue: false
+    },
+    {
       name: "isDestructive",
       type: "boolean",
       defaultValue: false
