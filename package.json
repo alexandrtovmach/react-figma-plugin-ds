@@ -2,7 +2,7 @@
   "name": "react-figma-plugin-ds",
   "description": "React ui framework based on Figma design system",
   "main": "dist/index.js",
-  "version": "1.0.3",
+  "version": "2.0.0-alpha.0",
   "author": {
     "name": "Alexandr Tovmach",
     "url": "https://alexandrtovmach.com/",
