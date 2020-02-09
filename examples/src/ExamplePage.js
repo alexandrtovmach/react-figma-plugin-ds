@@ -14,7 +14,7 @@ import {
   Textarea,
   Select
 } from "../..";
-import "../../dist/styles/figma-plugin-ds.min.css"
+import "../../styles/figma-plugin-ds.min.css"
 import Layout from "./components/Layout";
 import Playground from "./components/Playground";
 import ExamplesBoard from "./components/ExamplesBoard";
