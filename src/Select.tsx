@@ -18,6 +18,14 @@ class Select extends React.Component<SelectProps, SelectState> {
       const { onExpand } = this.props;
       onExpand && onExpand(this.state.isExpanded);
     }
+
+    if (prevProps.defaultValue !== this.props.defaultValue) {
+      const newSelectedOption = this.props.options.find(
+        ({ value }) => this.props.defaultValue === value
+      );
+      this.setState({ selectedOption: newSelectedOption });
+    }
+
     if (
       this.state.selectedOption &&
       (prevState.selectedOption && prevState.selectedOption.value) !==
