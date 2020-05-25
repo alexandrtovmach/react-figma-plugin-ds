@@ -57,31 +57,38 @@ class Select extends React.Component<SelectProps, SelectState> {
     });
   };
 
+  // <select id="uniqueId" class="select-menu" disabled>
+  //   <option value="1" >Item 1</option>
+  //   <option value="2" >Item 2</option>
+  //   <option value="3" >Item 3</option>
+  // </select>
+
   render() {
     const { className = "", options, placeholder, isDisabled } = this.props;
     const { isExpanded, selectedOption } = this.state;
     const expandButtonClass = isExpanded ? "select-menu__button--active" : "";
-    const expanListClass = isExpanded ? "select-menu__list--active" : "";
+    const expanListClass = isExpanded ? "select-menu__menu--active" : "";
     const disabledColorClass = isDisabled ? "icon--black-3" : "";
 
     return (
-      <div className={`select-menu ${className}`}>
-        <OutsideClickHandler
-          onOutsideClick={this.handleOutsideClick}
-          disabled={!isExpanded}
-        >
+      <OutsideClickHandler
+        onOutsideClick={this.handleOutsideClick}
+        disabled={!isExpanded}
+      >
+        <div className={`select-menu ${className}`}>
           <button
             className={`select-menu__button ${expandButtonClass} ${disabledColorClass}`}
             onClick={this.handleExpandClick}
             disabled={isDisabled}
           >
-            <span className="select-menu__button-label">
+            <span className="select-menu__label">
               {(selectedOption && selectedOption.label) || placeholder}
             </span>
-            <span className={`select-menu__icon ${disabledColorClass}`} />
+            <span className="select-menu__caret" />
+            {/* <span className={`select-menu__icon ${disabledColorClass}`} /> */}
           </button>
           <ul
-            className={`select-menu__list ${expanListClass} ${disabledColorClass}`}
+            className={`select-menu__menu ${expanListClass} ${disabledColorClass}`}
             style={{ top: "-24px" }}
           >
             {options &&
@@ -101,22 +108,22 @@ class Select extends React.Component<SelectProps, SelectState> {
                   </div>
                 ) : (
                   <li
-                    className={`select-menu__list-item ${
+                    className={`select-menu__item ${
                       selectedOption && selectedOption.value === value
-                        ? "select-menu__list-item--active"
+                        ? "select-menu__item--selected"
                         : ""
                     }`}
                     onClick={() => this.handleSelectClick(value)}
                     key={`select-option--${i}`}
                   >
-                    <span className="select-menu__list-item-icon"></span>
-                    <span className="select-menu__list-item-text">{label}</span>
+                    <span className="select-menu__item-icon"></span>
+                    <span className="select-menu__item-label">{label}</span>
                   </li>
                 )
               )}
           </ul>
-        </OutsideClickHandler>
-      </div>
+        </div>
+      </OutsideClickHandler>
     );
   }
 }

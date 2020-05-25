@@ -14,11 +14,12 @@ import {
   Textarea,
   Select
 } from "../..";
-import "../../styles/figma-plugin-ds.min.css"
 import Layout from "./components/Layout";
 import Playground from "./components/Playground";
 import ExamplesBoard from "./components/ExamplesBoard";
 import { api } from "./api";
+
+import 'figma-plugin-ds/dist/figma-plugin-ds.css'
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
