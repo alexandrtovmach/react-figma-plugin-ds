@@ -33,14 +33,12 @@ const Input: React.SFC<InputWithIconProps> = ({
 }) => {
   className = className || "";
   type = type || "text";
-  const inputClass = icon ? "input-icon__input" : "input";
+  const inputClass = "input__field";
 
   if (icon) {
     return (
-      <div className="input-icon">
-        <div className="input-icon__icon">
-          <Icon name={icon} color={iconColor} isDisabled={isDisabled} />
-        </div>
+      <div className="input input--with-icon">
+        <Icon name={icon} color={iconColor} isDisabled={isDisabled} />
         <InputComponent
           className={`${inputClass} ${className}`}
           type={type}
@@ -53,14 +51,16 @@ const Input: React.SFC<InputWithIconProps> = ({
     );
   } else {
     return (
-      <InputComponent
-        className={`${inputClass} ${className}`}
-        type={type}
-        defaultValue={defaultValue}
-        placeholder={placeholder}
-        isDisabled={isDisabled}
-        onChange={onChange}
-      />
+      <div className="input">
+        <InputComponent
+          className={`${inputClass} ${className}`}
+          type={type}
+          defaultValue={defaultValue}
+          placeholder={placeholder}
+          isDisabled={isDisabled}
+          onChange={onChange}
+        />
+      </div>
     );
   }
 };
