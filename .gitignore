@@ -10,7 +10,6 @@
 /build
 /dist
 /examples/dist
-/styles
 
 # misc
 .idea
