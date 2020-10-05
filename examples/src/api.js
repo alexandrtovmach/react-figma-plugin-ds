@@ -99,6 +99,11 @@ export const api = {
       defaultValue: false
     },
     {
+      name: "isTertiary",
+      type: "boolean",
+      defaultValue: false
+    },
+    {
       name: "isDisabled",
       type: "boolean",
       defaultValue: false

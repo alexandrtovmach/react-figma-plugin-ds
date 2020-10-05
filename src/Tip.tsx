@@ -3,12 +3,12 @@ import React from "react";
 import { TipProps } from "../index";
 import { Icon } from "./";
 
-const Text: React.SFC<TipProps> = ({
+const Text: React.FunctionComponent<TipProps> = ({
   className,
   children,
   iconName,
   iconText,
-  iconColor
+  iconColor,
 }) => {
   className = className || "";
   return (

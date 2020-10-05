@@ -2,13 +2,13 @@ import React from "react";
 
 import { CheckboxProps } from "../index";
 
-const Checkbox: React.SFC<CheckboxProps> = ({
+const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   className,
   isCheckbox,
   isDisabled,
   label,
   defaultValue,
-  onChange
+  onChange,
 }) => {
   className = className || "";
   const type = isCheckbox ? "checkbox" : "switch";
@@ -20,7 +20,7 @@ const Checkbox: React.SFC<CheckboxProps> = ({
     <div className={`${type} ${className}`}>
       <input
         defaultChecked={defaultValue}
-        onChange={event => onChange && onChange(event.target.checked, event)}
+        onChange={(event) => onChange && onChange(event.target.checked, event)}
         className={inputClass}
         type="checkbox"
         id={uniqueId}

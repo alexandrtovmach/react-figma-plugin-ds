@@ -2,14 +2,14 @@ import React from "react";
 
 import { IconProps } from "../index";
 
-const Icon: React.SFC<IconProps> = ({
+const Icon: React.FunctionComponent<IconProps> = ({
   className,
   name,
   color,
   text,
   isSelected,
   isDisabled,
-  onClick
+  onClick,
 }) => {
   className = className || "";
   const iconClass = !text ? `icon--${name}` : "icon--text";
@@ -20,7 +20,7 @@ const Icon: React.SFC<IconProps> = ({
     return (
       <button
         style={{
-          backgroundColor: !isSelected ? "transparent" : ""
+          backgroundColor: !isSelected ? "transparent" : "",
         }}
         disabled={isDisabled}
         onClick={onClick}

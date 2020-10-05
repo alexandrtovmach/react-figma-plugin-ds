@@ -2,12 +2,12 @@ import React from "react";
 
 import { TitleProps } from "../index";
 
-const Title: React.SFC<TitleProps> = ({
+const Title: React.FunctionComponent<TitleProps> = ({
   className,
   children,
   level,
   size,
-  weight
+  weight,
 }) => {
   className = className || "";
   level = level || "h1";

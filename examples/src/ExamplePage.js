@@ -51,6 +51,10 @@ export default class ExaplePage extends React.Component {
               <Button isSecondary isDestructive>
                 Button
               </Button>
+              <Button isTertiary>Button</Button>
+              <Button isTertiary isDestructive>
+                Button
+              </Button>
               <Button isDisabled>Button</Button>
               <Button isSecondary isDisabled>
                 Button

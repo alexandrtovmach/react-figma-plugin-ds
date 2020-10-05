@@ -2,17 +2,21 @@ import React from "react";
 
 import { ButtonProps } from "../index";
 
-const Button: React.SFC<ButtonProps> = ({
+const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   className,
   isSecondary,
+  isTertiary,
   isDisabled,
   onClick,
-  isDestructive
+  isDestructive,
 }) => {
   className = className || "";
-  const level = isSecondary ? "secondary" : "primary";
+  const level = isTertiary ? "tertiary" : isSecondary ? "secondary" : "primary";
   const modificator = isDestructive ? "-destructive" : "";
+  if (isSecondary && isTertiary) {
+    console.warn(`Use only one level flag "isSecondary" or "isTertiary"`);
+  }
 
   return (
     <button

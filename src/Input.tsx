@@ -3,13 +3,13 @@ import React from "react";
 import { InputProps, InputWithIconProps } from "../index";
 import { Icon } from "./";
 
-const InputComponent: React.SFC<InputProps> = ({
+const InputComponent: React.FunctionComponent<InputProps> = ({
   className = "",
   type,
   defaultValue,
   placeholder,
   isDisabled,
-  onChange
+  onChange,
 }) => (
   <input
     type={type}
@@ -17,11 +17,11 @@ const InputComponent: React.SFC<InputProps> = ({
     placeholder={placeholder}
     defaultValue={defaultValue}
     disabled={isDisabled}
-    onChange={event => onChange && onChange(event.target.value, event)}
+    onChange={(event) => onChange && onChange(event.target.value, event)}
   />
 );
 
-const Input: React.SFC<InputWithIconProps> = ({
+const Input: React.FunctionComponent<InputWithIconProps> = ({
   className,
   type,
   icon,
@@ -29,7 +29,7 @@ const Input: React.SFC<InputWithIconProps> = ({
   defaultValue,
   placeholder,
   isDisabled,
-  onChange
+  onChange,
 }) => {
   className = className || "";
   type = type || "text";

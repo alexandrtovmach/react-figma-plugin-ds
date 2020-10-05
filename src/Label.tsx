@@ -2,11 +2,11 @@ import React from "react";
 
 import { LabelProps } from "../index";
 
-const Label: React.SFC<LabelProps> = ({
+const Label: React.FunctionComponent<LabelProps> = ({
   className,
   children,
   size,
-  weight
+  weight,
 }) => {
   className = className || "";
   size = size || "small";
