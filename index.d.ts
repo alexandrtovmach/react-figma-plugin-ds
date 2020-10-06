@@ -98,9 +98,10 @@ export interface ButtonProps extends BasicProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export declare const Button: React.SFC<ButtonProps>;
+export declare const Button: React.FunctionComponent<ButtonProps>;
 
 export interface CheckboxProps extends BasicProps {
+  id?: string;
   label: string;
   isCheckbox?: boolean;
   isDisabled?: boolean;
@@ -111,7 +112,7 @@ export interface CheckboxProps extends BasicProps {
   ) => void;
 }
 
-export declare const Checkbox: React.SFC<CheckboxProps>;
+export declare const Checkbox: React.FunctionComponent<CheckboxProps>;
 
 export interface DisclosureProps extends BasicProps {
   children: any;
@@ -146,7 +147,7 @@ export interface InputWithIconProps extends InputProps, BasicProps {
   iconColor?: IconColors;
 }
 
-export declare const Input: React.SFC<InputWithIconProps>;
+export declare const Input: React.FunctionComponent<InputWithIconProps>;
 
 export interface TextareaProps extends BasicProps {
   placeholder: string;
@@ -159,7 +160,7 @@ export interface TextareaProps extends BasicProps {
   ) => void;
 }
 
-export declare const Textarea: React.SFC<TextareaProps>;
+export declare const Textarea: React.FunctionComponent<TextareaProps>;
 
 export interface SelectOption {
   divider: string | boolean;
@@ -185,7 +186,7 @@ export declare class Select extends React.Component<SelectProps, SelectState> {}
 
 export interface DividerProps extends BasicProps {}
 
-export declare const Divider: React.SFC<DividerProps>;
+export declare const Divider: React.FunctionComponent<DividerProps>;
 
 export interface TextProps extends BasicProps {
   children: any;
@@ -193,17 +194,17 @@ export interface TextProps extends BasicProps {
   weight?: Weights;
 }
 
-export declare const Text: React.SFC<TextProps>;
+export declare const Text: React.FunctionComponent<TextProps>;
 
 export interface TitleProps extends BasicProps, TextProps {
   level?: Levels;
 }
 
-export declare const Title: React.SFC<TitleProps>;
+export declare const Title: React.FunctionComponent<TitleProps>;
 
 export interface LabelProps extends BasicProps, TextProps {}
 
-export declare const Label: React.SFC<LabelProps>;
+export declare const Label: React.FunctionComponent<LabelProps>;
 
 export interface TipProps extends BasicProps {
   children: any;
@@ -212,7 +213,7 @@ export interface TipProps extends BasicProps {
   iconColor: IconColors;
 }
 
-export declare const Tip: React.SFC<TipProps>;
+export declare const Tip: React.FunctionComponent<TipProps>;
 
 export interface IconProps extends BasicProps {
   name: Icons;
@@ -223,4 +224,4 @@ export interface IconProps extends BasicProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export declare const Icon: React.SFC<IconProps>;
+export declare const Icon: React.FunctionComponent<IconProps>;

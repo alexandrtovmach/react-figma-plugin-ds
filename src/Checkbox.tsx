@@ -3,6 +3,7 @@ import React from "react";
 import { CheckboxProps } from "../index";
 
 const Checkbox: React.FunctionComponent<CheckboxProps> = ({
+  id,
   className,
   isCheckbox,
   isDisabled,
@@ -14,7 +15,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   const type = isCheckbox ? "checkbox" : "switch";
   const inputClass = isCheckbox ? "checkbox__box" : "switch__toggle";
   const labelClass = isCheckbox ? "checkbox__label" : "switch__label";
-  const uniqueId = `${type}--${(Math.random() * 100000000).toFixed(0)}`;
+  const uniqueId = id || `${type}--${(Math.random() * 100000000).toFixed(0)}`;
 
   return (
     <div className={`${type} ${className}`}>
