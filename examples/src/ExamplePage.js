@@ -45,23 +45,11 @@ export default class ExaplePage extends React.Component {
         <section id="button" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Button>Button</Button>
-              <Button isDestructive>Button</Button>
-              <Button isSecondary>Button</Button>
-              <Button isSecondary isDestructive>
-                Button
-              </Button>
-              <Button isTertiary>Button</Button>
-              <Button isTertiary isDestructive>
-                Button
-              </Button>
-              <Button isDisabled>Button</Button>
-              <Button isSecondary isDisabled>
-                Button
-              </Button>
-              <Button isSecondary isDestructive isDisabled>
-                Button
-              </Button>
+              <Button>Primary</Button>
+              <Button isSecondary>Secondary</Button>
+              <Button isTertiary>Tertiary</Button>
+              <Button isDestructive>Destructive</Button>
+              <Button isDisabled>Disabled</Button>
             </ExamplesBoard>
             <Playground
               name="Button"

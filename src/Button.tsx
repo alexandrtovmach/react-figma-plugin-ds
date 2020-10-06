@@ -15,7 +15,9 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   const level = isTertiary ? "tertiary" : isSecondary ? "secondary" : "primary";
   const modificator = isDestructive ? "-destructive" : "";
   if (isSecondary && isTertiary) {
-    console.warn(`Use only one level flag "isSecondary" or "isTertiary"`);
+    console.warn(
+      `Use only one level modificator "isSecondary" or "isTertiary"`
+    );
   }
 
   return (
