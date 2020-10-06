@@ -79,15 +79,9 @@ export default class ExaplePage extends React.Component {
         <section id="disclosure" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Disclosure label="Expand me">Disclosure content</Disclosure>
-              <Disclosure label="Expand me" isSection>
-                Disclosure content
-              </Disclosure>
-              <Disclosure label="Expand me" isDefaultExpanded>
-                Disclosure content
-              </Disclosure>
-              <Disclosure label="Expand me" isSection isDefaultExpanded>
-                Disclosure content
+              <Disclosure label="Disclosure">Disclosure content</Disclosure>
+              <Disclosure label="Section Disclosure" isSection>
+                Section Disclosure content
               </Disclosure>
             </ExamplesBoard>
             <Playground

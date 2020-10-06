@@ -122,14 +122,7 @@ export interface DisclosureProps extends BasicProps {
   onExpand?: (state: boolean) => void;
 }
 
-export interface DisclosureState {
-  isExpanded: boolean;
-}
-
-export declare class Disclosure extends React.Component<
-  DisclosureProps,
-  DisclosureState
-> {}
+export declare const Disclosure: React.FunctionComponent<DisclosureProps>;
 
 export interface InputProps extends BasicProps {
   placeholder: string;
