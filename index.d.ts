@@ -170,7 +170,7 @@ export interface SelectProps extends BasicProps {
   onChange?: (option: SelectOption) => void;
 }
 
-export declare class Select extends React.Component<SelectProps, SelectState> {}
+export declare const Select: React.FunctionComponent<SelectProps>;
 
 export interface DividerProps extends BasicProps {}
 
