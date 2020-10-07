@@ -77,7 +77,7 @@ export type Icons =
   | "visible"
   | "warning";
 
-export type IconColors = "blue" | "white" | "black-3";
+export type IconColors = "blue" | "purple" | "purple4" | "hot-pink" | "green" | "red" | "yellow" | "black" | "black8" | "black3" | "white" | "white8" | "white4"
 
 export type Sizes = "small" | "medium" | "large" | "xlarge";
 

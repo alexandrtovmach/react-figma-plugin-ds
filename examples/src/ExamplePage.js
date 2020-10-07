@@ -12,21 +12,21 @@ import {
   Text,
   Tip,
   Textarea,
-  Select
+  Select,
 } from "../..";
 import Layout from "./components/Layout";
 import Playground from "./components/Playground";
 import ExamplesBoard from "./components/ExamplesBoard";
 import { api } from "./api";
 
-import 'figma-plugin-ds/dist/figma-plugin-ds.css'
+import "figma-plugin-ds/dist/figma-plugin-ds.css";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     this.state = {
-      selectedComponentCode: ""
+      selectedComponentCode: "",
     };
 
     this.handleSelectComponent = this.handleSelectComponent.bind(this);
@@ -34,7 +34,7 @@ export default class ExaplePage extends React.Component {
 
   handleSelectComponent(componentCode) {
     this.setState({
-      selectedComponentCode: componentCode
+      selectedComponentCode: componentCode,
     });
   }
 
@@ -96,15 +96,9 @@ export default class ExaplePage extends React.Component {
         <section id="input" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Input placeholder="Placeholder" />
+              <Input placeholder="Enter text..." />
               <Input placeholder="Disabled" isDisabled />
-              <Input placeholder="Placeholder" icon="alert" iconColor="blue" />
-              <Input
-                placeholder="Disabled"
-                icon="alert"
-                iconColor="blue"
-                isDisabled
-              />
+              <Input placeholder="With icon" icon="alert" iconColor="blue" />
             </ExamplesBoard>
             <Playground
               name="Input"
@@ -154,7 +148,7 @@ export default class ExaplePage extends React.Component {
                 options={[
                   { value: 1, label: "Item 1" },
                   { value: 2, label: "Item 2" },
-                  { value: 3, label: "Item 3" }
+                  { value: 3, label: "Item 3" },
                 ]}
               />
               <Select
@@ -164,7 +158,7 @@ export default class ExaplePage extends React.Component {
                 options={[
                   { value: 1, label: "Item 1" },
                   { value: 2, label: "Item 2" },
-                  { value: 3, label: "Item 3" }
+                  { value: 3, label: "Item 3" },
                 ]}
               />
               <Select
@@ -175,7 +169,7 @@ export default class ExaplePage extends React.Component {
                 options={[
                   { value: 1, label: "Item 1" },
                   { value: 2, label: "Item 2" },
-                  { value: 3, label: "Item 3" }
+                  { value: 3, label: "Item 3" },
                 ]}
               />
               <Select
@@ -197,7 +191,7 @@ export default class ExaplePage extends React.Component {
                   { divider: "Group B" },
                   { value: 10, label: "Item GroupB 1" },
                   { value: 11, label: "Item GroupB 2" },
-                  { value: 12, label: "Item GroupB 3" }
+                  { value: 12, label: "Item GroupB 3" },
                 ]}
               />
             </ExamplesBoard>

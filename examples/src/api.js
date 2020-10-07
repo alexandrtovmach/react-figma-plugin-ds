@@ -75,7 +75,7 @@ const icons = [
   "visible",
   "warning"
 ];
-const iconColors = ["blue", "white", "black-3"];
+const iconColors = ["blue", "purple", "purple4", "hot-pink", "green", "red", "yellow", "black", "black8", "black3", "white", "white8", "white4"];
 const sizes = ["small", "medium", "large", "xlarge"];
 const weights = ["normal", "medium", "bold"];
 const levels = ["h1", "h2", "h3", "h4", "h5", "h6"];

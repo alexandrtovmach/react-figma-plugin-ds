@@ -25,7 +25,7 @@ const Input: React.FunctionComponent<InputWithIconProps> = ({
   className,
   type,
   icon,
-  iconColor = "black-3",
+  iconColor = "black3",
   defaultValue,
   placeholder,
   isDisabled,
