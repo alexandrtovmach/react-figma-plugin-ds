@@ -10,10 +10,12 @@ const Disclosure: React.FunctionComponent<DisclosureProps> = ({
   isSection,
   onExpand,
 }) => {
-  const [isExpanded, onExpandedChange] = useState(Boolean(isDefaultExpanded));
+  const [isExpanded, onExpandedStateChange] = useState(
+    Boolean(isDefaultExpanded)
+  );
   const toggleExapndState = () => {
     onExpand && onExpand(!isExpanded);
-    onExpandedChange(!isExpanded);
+    onExpandedStateChange(!isExpanded);
   };
 
   const labelClass = isSection ? "disclosure--section" : "";

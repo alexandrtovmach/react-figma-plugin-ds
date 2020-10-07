@@ -137,7 +137,7 @@ export default class ExaplePage extends React.Component {
           <div className="frame">
             <ExamplesBoard>
               <Select
-                placeholder="Select something..."
+                placeholder="Select item"
                 onSelectComponent={this.handleSelectComponent}
                 options={[
                   { value: 1, label: "Item 1" },
@@ -146,29 +146,7 @@ export default class ExaplePage extends React.Component {
                 ]}
               />
               <Select
-                placeholder="Select something..."
-                defaultValue={2}
-                onSelectComponent={this.handleSelectComponent}
-                options={[
-                  { value: 1, label: "Item 1" },
-                  { value: 2, label: "Item 2" },
-                  { value: 3, label: "Item 3" },
-                ]}
-              />
-              <Select
-                placeholder="Select something..."
-                defaultValue={2}
-                isDisabled
-                onSelectComponent={this.handleSelectComponent}
-                options={[
-                  { value: 1, label: "Item 1" },
-                  { value: 2, label: "Item 2" },
-                  { value: 3, label: "Item 3" },
-                ]}
-              />
-              <Select
-                placeholder="With dividers..."
-                defaultValue={2}
+                placeholder="Select item with groups"
                 onSelectComponent={this.handleSelectComponent}
                 options={[
                   { value: 1, label: "Item 1" },
@@ -178,10 +156,10 @@ export default class ExaplePage extends React.Component {
                   { value: 4, label: "Item 4" },
                   { value: 5, label: "Item 5" },
                   { value: 6, label: "Item 6" },
-                  { divider: "Group" },
-                  { value: 7, label: "Item Group 1" },
-                  { value: 8, label: "Item Group 2" },
-                  { value: 9, label: "Item Group 3" },
+                  { divider: "Group A" },
+                  { value: 7, label: "Item GroupA 1" },
+                  { value: 8, label: "Item GroupA 2" },
+                  { value: 9, label: "Item GroupA 3" },
                   { divider: "Group B" },
                   { value: 10, label: "Item GroupB 1" },
                   { value: 11, label: "Item GroupB 2" },
