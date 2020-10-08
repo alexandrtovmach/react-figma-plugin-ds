@@ -241,30 +241,12 @@ export default class ExaplePage extends React.Component {
         <section id="text" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Text>Text</Text>
-              <Text weight="medium">Text</Text>
-              <Text weight="bold">Text</Text>
-              <Text size="medium">Text</Text>
-              <Text size="medium" weight="medium">
-                Text
-              </Text>
-              <Text size="medium" weight="bold">
-                Text
-              </Text>
-              <Text size="large">Text</Text>
-              <Text size="large" weight="medium">
-                Text
-              </Text>
-              <Text size="large" weight="bold">
-                Text
-              </Text>
-              <Text size="xlarge">Text</Text>
-              <Text size="xlarge" weight="medium">
-                Text
-              </Text>
-              <Text size="xlarge" weight="bold">
-                Text
-              </Text>
+              <Text size="small" weight="medium">Text small-medium</Text>
+              <Text size="large" weight="medium">Text large-medium</Text>
+              <Text size="xlarge" weight="medium">Text xlarge-medium</Text>
+              <Text size="small" weight="bold">Text small-bold</Text>
+              <Text size="large" weight="bold">Text large-bold</Text>
+              <Text size="xlarge" weight="bold">Text xlarge-bold</Text>
             </ExamplesBoard>
             <Playground
               name="Text"

@@ -9,10 +9,10 @@ const Text: React.FunctionComponent<TextProps> = ({
   weight,
 }) => {
   className = className || "";
-  size = size || "small";
-  weight = weight || "normal";
+  const sizeClass = size && `type--${size}`;
+  const weightClass = weight && `type--${weight}`;
   return (
-    <p className={`type type--pos-${size}-${weight} ${className}`}>
+    <p className={`type ${sizeClass} ${weightClass} ${className}`}>
       {children}
     </p>
   );
