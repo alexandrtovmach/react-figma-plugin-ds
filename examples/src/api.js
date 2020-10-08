@@ -332,13 +332,6 @@ export const api = {
       defaultValue: console.log,
     },
   ],
-  divider: [
-    {
-      name: "className",
-      type: "string",
-      defaultValue: "",
-    },
-  ],
   title: [
     {
       name: "children",

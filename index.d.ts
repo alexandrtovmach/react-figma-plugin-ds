@@ -199,10 +199,6 @@ export interface SelectProps extends BasicProps {
 
 export declare const Select: React.FunctionComponent<SelectProps>;
 
-export interface DividerProps extends BasicProps {}
-
-export declare const Divider: React.FunctionComponent<DividerProps>;
-
 export interface TextProps extends BasicProps {
   children: any;
   size?: Sizes;

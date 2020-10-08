@@ -6,7 +6,6 @@ import {
   Disclosure,
   Input,
   Icon,
-  Divider,
   Title,
   Label,
   Text,
@@ -174,28 +173,6 @@ export default class ExaplePage extends React.Component {
               component={<Select />}
               onSelectComponent={this.handleSelectComponent}
               options={api.select}
-            />
-          </div>
-        </section>
-
-        <section id="divider" className="viewport">
-          <div className="frame">
-            <ExamplesBoard>
-              <div>
-                <Text>
-                  Something interesting and important can be written here, and
-                  then to accent user attention on something we can divide text
-                  with Divider.
-                </Text>
-                <Divider />
-                <Text>Just take a look how it's beautiful.</Text>
-              </div>
-            </ExamplesBoard>
-            <Playground
-              name="Divider"
-              component={<Divider />}
-              onSelectComponent={this.handleSelectComponent}
-              options={api.divider}
             />
           </div>
         </section>
