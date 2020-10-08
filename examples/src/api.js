@@ -79,6 +79,7 @@ const iconColors = ["blue", "purple", "purple4", "hot-pink", "green", "red", "ye
 const sizes = ["small", "medium", "large", "xlarge"];
 const weights = ["normal", "medium", "bold"];
 const levels = ["h1", "h2", "h3", "h4", "h5", "h6"];
+const checkboxTypes = ["checkbox", "switch", "radio"];
 
 export const api = {
   button: [
@@ -132,9 +133,10 @@ export const api = {
       defaultValue: ""
     },
     {
-      name: "isCheckbox",
-      type: "boolean",
-      defaultValue: false
+      name: "type",
+      type: "CheckboxTypes",
+      options: checkboxTypes,
+      defaultValue: "checkbox"
     },
     {
       name: "isDisabled",

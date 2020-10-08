@@ -85,6 +85,8 @@ export type Weights = "normal" | "medium" | "bold";
 
 export type Levels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
+export type CheckboxTypes = "checkbox" | "switch" | "radio";
+
 export interface BasicProps {
   className?: string;
 }
@@ -103,9 +105,10 @@ export declare const Button: React.FunctionComponent<ButtonProps>;
 export interface CheckboxProps extends BasicProps {
   id?: string;
   label: string;
-  isCheckbox?: boolean;
+  type?: CheckboxTypes;
   isDisabled?: boolean;
   defaultValue?: boolean;
+  name?: string;
   onChange?: (
     value: boolean,
     event: React.ChangeEvent<HTMLInputElement>

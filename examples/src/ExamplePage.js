@@ -63,8 +63,10 @@ export default class ExaplePage extends React.Component {
         <section id="checkbox" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Checkbox label="Switch" />
-              <Checkbox label="Checkbox" isCheckbox />
+              <Checkbox label="Checkbox" />
+              <Checkbox label="Switch" type="switch" />
+              <Checkbox label="Radio 1" type="radio" name="radio-group" />
+              <Checkbox label="Radio 2" type="radio" name="radio-group" />
               <Checkbox label="Disabled" isDisabled />
             </ExamplesBoard>
             <Playground
