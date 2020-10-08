@@ -203,12 +203,24 @@ export default class ExaplePage extends React.Component {
         <section id="title" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Title size="small" weight="medium">Title small-medium</Title>
-              <Title size="large" weight="medium">Title large-medium</Title>
-              <Title size="xlarge" weight="medium">Title xlarge-medium</Title>
-              <Title size="small" weight="bold">Title small-bold</Title>
-              <Title size="large" weight="bold">Title large-bold</Title>
-              <Title size="xlarge" weight="bold">Title xlarge-bold</Title>
+              <Title size="small" weight="medium">
+                Title small-medium
+              </Title>
+              <Title size="large" weight="medium">
+                Title large-medium
+              </Title>
+              <Title size="xlarge" weight="medium">
+                Title xlarge-medium
+              </Title>
+              <Title size="small" weight="bold">
+                Title small-bold
+              </Title>
+              <Title size="large" weight="bold">
+                Title large-bold
+              </Title>
+              <Title size="xlarge" weight="bold">
+                Title xlarge-bold
+              </Title>
             </ExamplesBoard>
             <Playground
               name="Title"
@@ -222,12 +234,24 @@ export default class ExaplePage extends React.Component {
         <section id="label" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Label size="small" weight="medium">Label small-medium</Label>
-              <Label size="large" weight="medium">Label large-medium</Label>
-              <Label size="xlarge" weight="medium">Label xlarge-medium</Label>
-              <Label size="small" weight="bold">Label small-bold</Label>
-              <Label size="large" weight="bold">Label large-bold</Label>
-              <Label size="xlarge" weight="bold">Label xlarge-bold</Label>
+              <Label size="small" weight="medium">
+                Label small-medium
+              </Label>
+              <Label size="large" weight="medium">
+                Label large-medium
+              </Label>
+              <Label size="xlarge" weight="medium">
+                Label xlarge-medium
+              </Label>
+              <Label size="small" weight="bold">
+                Label small-bold
+              </Label>
+              <Label size="large" weight="bold">
+                Label large-bold
+              </Label>
+              <Label size="xlarge" weight="bold">
+                Label xlarge-bold
+              </Label>
             </ExamplesBoard>
             <Playground
               name="Label"
@@ -241,12 +265,24 @@ export default class ExaplePage extends React.Component {
         <section id="text" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Text size="small" weight="medium">Text small-medium</Text>
-              <Text size="large" weight="medium">Text large-medium</Text>
-              <Text size="xlarge" weight="medium">Text xlarge-medium</Text>
-              <Text size="small" weight="bold">Text small-bold</Text>
-              <Text size="large" weight="bold">Text large-bold</Text>
-              <Text size="xlarge" weight="bold">Text xlarge-bold</Text>
+              <Text size="small" weight="medium">
+                Text small-medium
+              </Text>
+              <Text size="large" weight="medium">
+                Text large-medium
+              </Text>
+              <Text size="xlarge" weight="medium">
+                Text xlarge-medium
+              </Text>
+              <Text size="small" weight="bold">
+                Text small-bold
+              </Text>
+              <Text size="large" weight="bold">
+                Text large-bold
+              </Text>
+              <Text size="xlarge" weight="bold">
+                Text xlarge-bold
+              </Text>
             </ExamplesBoard>
             <Playground
               name="Text"
@@ -263,7 +299,7 @@ export default class ExaplePage extends React.Component {
               <Tip>Tip text</Tip>
               <Tip iconName="alert">Tip text with icon</Tip>
               <Tip iconName="alert" iconColor="blue">
-                Tip text with icon
+                Tip text with colored icon
               </Tip>
             </ExamplesBoard>
             <Playground
@@ -278,17 +314,12 @@ export default class ExaplePage extends React.Component {
         <section id="icon" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Icon name="alert" />
               <Icon name="alert" color="blue" />
-              <Icon text="K" />
-              <Icon text="K" />
-              <Icon text="K" color="blue" isSelected onClick={console.log} />
-              <Icon text="K" color="blue" isDisabled />
+              <Icon text="ON" />
               <Icon
-                text="K"
-                color="blue"
+                name="alert"
                 isSelected
-                isDisabled
+                color="purple"
                 onClick={console.log}
               />
             </ExamplesBoard>
