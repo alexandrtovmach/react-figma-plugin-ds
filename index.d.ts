@@ -183,7 +183,7 @@ export interface TextareaProps extends BasicProps {
 export declare const Textarea: React.FunctionComponent<TextareaProps>;
 
 export interface SelectOption {
-  divider: string | boolean;
+  divider?: string | boolean;
   value: string | number | boolean;
   label: string;
 }
