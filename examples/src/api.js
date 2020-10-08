@@ -76,8 +76,8 @@ const icons = [
   "warning"
 ];
 const iconColors = ["blue", "purple", "purple4", "hot-pink", "green", "red", "yellow", "black", "black8", "black3", "white", "white8", "white4"];
-const sizes = ["small", "medium", "large", "xlarge"];
-const weights = ["normal", "medium", "bold"];
+const sizes = ["small", "large", "xlarge"];
+const weights = ["medium", "bold"];
 const levels = ["h1", "h2", "h3", "h4", "h5", "h6"];
 const checkboxTypes = ["checkbox", "switch", "radio"];
 
@@ -330,7 +330,7 @@ export const api = {
       name: "size",
       type: "Sizes",
       options: sizes,
-      defaultValue: ""
+      defaultValue: "xlarge"
     },
     {
       name: "level",
@@ -342,7 +342,7 @@ export const api = {
       name: "weight",
       type: "Weights",
       options: weights,
-      defaultValue: ""
+      defaultValue: "bold"
     },
   ],
   label: [

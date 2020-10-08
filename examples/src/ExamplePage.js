@@ -203,30 +203,12 @@ export default class ExaplePage extends React.Component {
         <section id="title" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Title>Title</Title>
-              <Title weight="medium">Title</Title>
-              <Title weight="bold">Title</Title>
-              <Title size="medium">Title</Title>
-              <Title size="medium" weight="medium">
-                Title
-              </Title>
-              <Title size="medium" weight="bold">
-                Title
-              </Title>
-              <Title size="large">Title</Title>
-              <Title size="large" weight="medium">
-                Title
-              </Title>
-              <Title size="large" weight="bold">
-                Title
-              </Title>
-              <Title size="xlarge">Title</Title>
-              <Title size="xlarge" weight="medium">
-                Title
-              </Title>
-              <Title size="xlarge" weight="bold">
-                Title
-              </Title>
+              <Title size="small" weight="medium">Title</Title>
+              <Title size="large" weight="medium">Title</Title>
+              <Title size="xlarge" weight="medium">Title</Title>
+              <Title size="small" weight="bold">Title</Title>
+              <Title size="large" weight="bold">Title</Title>
+              <Title size="xlarge" weight="bold">Title</Title>
             </ExamplesBoard>
             <Playground
               name="Title"

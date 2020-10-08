@@ -79,9 +79,9 @@ export type Icons =
 
 export type IconColors = "blue" | "purple" | "purple4" | "hot-pink" | "green" | "red" | "yellow" | "black" | "black8" | "black3" | "white" | "white8" | "white4"
 
-export type Sizes = "small" | "medium" | "large" | "xlarge";
+export type Sizes = "small" | "large" | "xlarge";
 
-export type Weights = "normal" | "medium" | "bold";
+export type Weights = "medium" | "bold";
 
 export type Levels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 

@@ -11,66 +11,26 @@ const Title: React.FunctionComponent<TitleProps> = ({
 }) => {
   className = className || "";
   level = level || "h1";
-  size = size || "small";
-  weight = weight || "normal";
+  const sizeClass = size && `type--${size}`;
+  const weightClass = weight && `type--${weight}`;
+  const headerClassName = `section-title ${sizeClass} ${weightClass} ${className}`;
+
   switch (level) {
     case "h1":
-      return (
-        <h1
-          className={`section-title type--pos-${size}-${weight} ${className}`}
-        >
-          {children}
-        </h1>
-      );
+      return <h1 className={headerClassName}>{children}</h1>;
     case "h2":
-      return (
-        <h2
-          className={`section-title type--pos-${size}-${weight} ${className}`}
-        >
-          {children}
-        </h2>
-      );
+      return <h2 className={headerClassName}>{children}</h2>;
     case "h3":
-      return (
-        <h3
-          className={`section-title type--pos-${size}-${weight} ${className}`}
-        >
-          {children}
-        </h3>
-      );
+      return <h3 className={headerClassName}>{children}</h3>;
     case "h4":
-      return (
-        <h4
-          className={`section-title type--pos-${size}-${weight} ${className}`}
-        >
-          {children}
-        </h4>
-      );
+      return <h4 className={headerClassName}>{children}</h4>;
     case "h5":
-      return (
-        <h5
-          className={`section-title type--pos-${size}-${weight} ${className}`}
-        >
-          {children}
-        </h5>
-      );
+      return <h5 className={headerClassName}>{children}</h5>;
     case "h6":
-      return (
-        <h6
-          className={`section-title type--pos-${size}-${weight} ${className}`}
-        >
-          {children}
-        </h6>
-      );
+      return <h6 className={headerClassName}>{children}</h6>;
 
     default:
-      return (
-        <h1
-          className={`section-title type--pos-${size}-${weight} ${className}`}
-        >
-          {children}
-        </h1>
-      );
+      return <h1 className={headerClassName}>{children}</h1>;
   }
 };
 
