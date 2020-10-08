@@ -9,10 +9,11 @@ const Label: React.FunctionComponent<LabelProps> = ({
   weight,
 }) => {
   className = className || "";
-  size = size || "small";
-  weight = weight || "normal";
+  const sizeClass = size && `type--${size}`;
+  const weightClass = weight && `type--${weight}`;
+
   return (
-    <div className={`label type--pos-${size}-${weight} ${className}`}>
+    <div className={`label ${sizeClass} ${weightClass} ${className}`}>
       {children}
     </div>
   );

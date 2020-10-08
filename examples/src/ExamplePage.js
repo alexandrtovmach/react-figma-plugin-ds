@@ -203,12 +203,12 @@ export default class ExaplePage extends React.Component {
         <section id="title" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Title size="small" weight="medium">Title</Title>
-              <Title size="large" weight="medium">Title</Title>
-              <Title size="xlarge" weight="medium">Title</Title>
-              <Title size="small" weight="bold">Title</Title>
-              <Title size="large" weight="bold">Title</Title>
-              <Title size="xlarge" weight="bold">Title</Title>
+              <Title size="small" weight="medium">Title small-medium</Title>
+              <Title size="large" weight="medium">Title large-medium</Title>
+              <Title size="xlarge" weight="medium">Title xlarge-medium</Title>
+              <Title size="small" weight="bold">Title small-bold</Title>
+              <Title size="large" weight="bold">Title large-bold</Title>
+              <Title size="xlarge" weight="bold">Title xlarge-bold</Title>
             </ExamplesBoard>
             <Playground
               name="Title"
@@ -222,30 +222,12 @@ export default class ExaplePage extends React.Component {
         <section id="label" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Label>Label</Label>
-              <Label weight="medium">Label</Label>
-              <Label weight="bold">Label</Label>
-              <Label size="medium">Label</Label>
-              <Label size="medium" weight="medium">
-                Label
-              </Label>
-              <Label size="medium" weight="bold">
-                Label
-              </Label>
-              <Label size="large">Label</Label>
-              <Label size="large" weight="medium">
-                Label
-              </Label>
-              <Label size="large" weight="bold">
-                Label
-              </Label>
-              <Label size="xlarge">Label</Label>
-              <Label size="xlarge" weight="medium">
-                Label
-              </Label>
-              <Label size="xlarge" weight="bold">
-                Label
-              </Label>
+              <Label size="small" weight="medium">Label small-medium</Label>
+              <Label size="large" weight="medium">Label large-medium</Label>
+              <Label size="xlarge" weight="medium">Label xlarge-medium</Label>
+              <Label size="small" weight="bold">Label small-bold</Label>
+              <Label size="large" weight="bold">Label large-bold</Label>
+              <Label size="xlarge" weight="bold">Label xlarge-bold</Label>
             </ExamplesBoard>
             <Playground
               name="Label"
