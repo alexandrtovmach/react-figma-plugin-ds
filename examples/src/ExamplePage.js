@@ -6,26 +6,26 @@ import {
   Disclosure,
   Input,
   Icon,
-  Divider,
   Title,
   Label,
   Text,
   Tip,
   Textarea,
-  Select
+  Select,
 } from "../..";
-import "../../styles/figma-plugin-ds.min.css"
 import Layout from "./components/Layout";
 import Playground from "./components/Playground";
 import ExamplesBoard from "./components/ExamplesBoard";
 import { api } from "./api";
+
+import "figma-plugin-ds/dist/figma-plugin-ds.css";
 
 export default class ExaplePage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
     this.state = {
-      selectedComponentCode: ""
+      selectedComponentCode: "",
     };
 
     this.handleSelectComponent = this.handleSelectComponent.bind(this);
@@ -33,7 +33,7 @@ export default class ExaplePage extends React.Component {
 
   handleSelectComponent(componentCode) {
     this.setState({
-      selectedComponentCode: componentCode
+      selectedComponentCode: componentCode,
     });
   }
 
@@ -44,19 +44,11 @@ export default class ExaplePage extends React.Component {
         <section id="button" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Button>Button</Button>
-              <Button isDestructive>Button</Button>
-              <Button isSecondary>Button</Button>
-              <Button isSecondary isDestructive>
-                Button
-              </Button>
-              <Button isDisabled>Button</Button>
-              <Button isSecondary isDisabled>
-                Button
-              </Button>
-              <Button isSecondary isDestructive isDisabled>
-                Button
-              </Button>
+              <Button>Primary</Button>
+              <Button isSecondary>Secondary</Button>
+              <Button isTertiary>Tertiary</Button>
+              <Button isDestructive>Destructive</Button>
+              <Button isDisabled>Disabled</Button>
             </ExamplesBoard>
             <Playground
               name="Button"
@@ -70,12 +62,11 @@ export default class ExaplePage extends React.Component {
         <section id="checkbox" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Checkbox label="Toggle me" />
-              <Checkbox label="Toggle me" isCheckbox />
-              <Checkbox label="Toggle me" defaultValue={true} />
-              <Checkbox label="Toggle me" isCheckbox defaultValue={true} />
-              <Checkbox label="Toggle me" isDisabled />
-              <Checkbox label="Toggle me" isCheckbox isDisabled />
+              <Checkbox label="Checkbox" />
+              <Checkbox label="Switch" type="switch" />
+              <Checkbox label="Radio 1" type="radio" name="radio-group" />
+              <Checkbox label="Radio 2" type="radio" name="radio-group" />
+              <Checkbox label="Disabled" isDisabled />
             </ExamplesBoard>
             <Playground
               name="Checkbox"
@@ -89,15 +80,9 @@ export default class ExaplePage extends React.Component {
         <section id="disclosure" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Disclosure label="Expand me">Disclosure content</Disclosure>
-              <Disclosure label="Expand me" isSection>
-                Disclosure content
-              </Disclosure>
-              <Disclosure label="Expand me" isDefaultExpanded>
-                Disclosure content
-              </Disclosure>
-              <Disclosure label="Expand me" isSection isDefaultExpanded>
-                Disclosure content
+              <Disclosure label="Disclosure">Disclosure content</Disclosure>
+              <Disclosure label="Section Disclosure" isSection>
+                Section Disclosure content
               </Disclosure>
             </ExamplesBoard>
             <Playground
@@ -112,15 +97,9 @@ export default class ExaplePage extends React.Component {
         <section id="input" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Input placeholder="Placeholder" />
+              <Input placeholder="Enter text..." />
               <Input placeholder="Disabled" isDisabled />
-              <Input placeholder="Placeholder" icon="alert" iconColor="blue" />
-              <Input
-                placeholder="Disabled"
-                icon="alert"
-                iconColor="blue"
-                isDisabled
-              />
+              <Input placeholder="With icon" icon="alert" iconColor="blue" />
             </ExamplesBoard>
             <Playground
               name="Input"
@@ -134,21 +113,15 @@ export default class ExaplePage extends React.Component {
         <section id="textarea" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Textarea placeholder="Here you can enter text..." rows={2} />
+              <Textarea
+                placeholder="Here you can enter text..."
+                rows={2}
+                defaultValue="Lorem ipsum dolor"
+              />
               <Textarea
                 placeholder="Here you can't enter text..."
                 rows={2}
-                isDisabled
-              />
-              <Textarea
-                placeholder="Here you can enter text..."
-                rows={2}
-                defaultValue="Default text"
-              />
-              <Textarea
-                placeholder="Here you can enter text..."
-                rows={2}
-                defaultValue="Default disabled text"
+                defaultValue="Disabled textarea"
                 isDisabled
               />
             </ExamplesBoard>
@@ -165,38 +138,16 @@ export default class ExaplePage extends React.Component {
           <div className="frame">
             <ExamplesBoard>
               <Select
-                placeholder="Select something..."
+                placeholder="Select item"
                 onSelectComponent={this.handleSelectComponent}
                 options={[
                   { value: 1, label: "Item 1" },
                   { value: 2, label: "Item 2" },
-                  { value: 3, label: "Item 3" }
+                  { value: 3, label: "Item 3" },
                 ]}
               />
               <Select
-                placeholder="Select something..."
-                defaultValue={2}
-                onSelectComponent={this.handleSelectComponent}
-                options={[
-                  { value: 1, label: "Item 1" },
-                  { value: 2, label: "Item 2" },
-                  { value: 3, label: "Item 3" }
-                ]}
-              />
-              <Select
-                placeholder="Select something..."
-                defaultValue={2}
-                isDisabled
-                onSelectComponent={this.handleSelectComponent}
-                options={[
-                  { value: 1, label: "Item 1" },
-                  { value: 2, label: "Item 2" },
-                  { value: 3, label: "Item 3" }
-                ]}
-              />
-              <Select
-                placeholder="With dividers..."
-                defaultValue={2}
+                placeholder="Select item with groups"
                 onSelectComponent={this.handleSelectComponent}
                 options={[
                   { value: 1, label: "Item 1" },
@@ -206,14 +157,14 @@ export default class ExaplePage extends React.Component {
                   { value: 4, label: "Item 4" },
                   { value: 5, label: "Item 5" },
                   { value: 6, label: "Item 6" },
-                  { divider: "Group" },
-                  { value: 7, label: "Item Group 1" },
-                  { value: 8, label: "Item Group 2" },
-                  { value: 9, label: "Item Group 3" },
+                  { divider: "Group A" },
+                  { value: 7, label: "Item GroupA 1" },
+                  { value: 8, label: "Item GroupA 2" },
+                  { value: 9, label: "Item GroupA 3" },
                   { divider: "Group B" },
                   { value: 10, label: "Item GroupB 1" },
                   { value: 11, label: "Item GroupB 2" },
-                  { value: 12, label: "Item GroupB 3" }
+                  { value: 12, label: "Item GroupB 3" },
                 ]}
               />
             </ExamplesBoard>
@@ -226,54 +177,26 @@ export default class ExaplePage extends React.Component {
           </div>
         </section>
 
-        <section id="divider" className="viewport">
-          <div className="frame">
-            <ExamplesBoard>
-              <div>
-                <Text>
-                  Something interesting and important can be written here, and
-                  then to accent user attention on something we can divide text
-                  with Divider.
-                </Text>
-                <Divider />
-                <Text>Just take a look how it's beautiful.</Text>
-              </div>
-            </ExamplesBoard>
-            <Playground
-              name="Divider"
-              component={<Divider />}
-              onSelectComponent={this.handleSelectComponent}
-              options={api.divider}
-            />
-          </div>
-        </section>
-
         <section id="title" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Title>Title</Title>
-              <Title weight="medium">Title</Title>
-              <Title weight="bold">Title</Title>
-              <Title size="medium">Title</Title>
-              <Title size="medium" weight="medium">
-                Title
+              <Title size="small" weight="medium">
+                Title small-medium
               </Title>
-              <Title size="medium" weight="bold">
-                Title
-              </Title>
-              <Title size="large">Title</Title>
               <Title size="large" weight="medium">
-                Title
+                Title large-medium
+              </Title>
+              <Title size="xlarge" weight="medium">
+                Title xlarge-medium
+              </Title>
+              <Title size="small" weight="bold">
+                Title small-bold
               </Title>
               <Title size="large" weight="bold">
-                Title
-              </Title>
-              <Title size="xlarge">Title</Title>
-              <Title size="xlarge" weight="medium">
-                Title
+                Title large-bold
               </Title>
               <Title size="xlarge" weight="bold">
-                Title
+                Title xlarge-bold
               </Title>
             </ExamplesBoard>
             <Playground
@@ -288,29 +211,23 @@ export default class ExaplePage extends React.Component {
         <section id="label" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Label>Label</Label>
-              <Label weight="medium">Label</Label>
-              <Label weight="bold">Label</Label>
-              <Label size="medium">Label</Label>
-              <Label size="medium" weight="medium">
-                Label
+              <Label size="small" weight="medium">
+                Label small-medium
               </Label>
-              <Label size="medium" weight="bold">
-                Label
-              </Label>
-              <Label size="large">Label</Label>
               <Label size="large" weight="medium">
-                Label
+                Label large-medium
+              </Label>
+              <Label size="xlarge" weight="medium">
+                Label xlarge-medium
+              </Label>
+              <Label size="small" weight="bold">
+                Label small-bold
               </Label>
               <Label size="large" weight="bold">
-                Label
-              </Label>
-              <Label size="xlarge">Label</Label>
-              <Label size="xlarge" weight="medium">
-                Label
+                Label large-bold
               </Label>
               <Label size="xlarge" weight="bold">
-                Label
+                Label xlarge-bold
               </Label>
             </ExamplesBoard>
             <Playground
@@ -325,29 +242,23 @@ export default class ExaplePage extends React.Component {
         <section id="text" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Text>Text</Text>
-              <Text weight="medium">Text</Text>
-              <Text weight="bold">Text</Text>
-              <Text size="medium">Text</Text>
-              <Text size="medium" weight="medium">
-                Text
+              <Text size="small" weight="medium">
+                Text small-medium
               </Text>
-              <Text size="medium" weight="bold">
-                Text
-              </Text>
-              <Text size="large">Text</Text>
               <Text size="large" weight="medium">
-                Text
+                Text large-medium
+              </Text>
+              <Text size="xlarge" weight="medium">
+                Text xlarge-medium
+              </Text>
+              <Text size="small" weight="bold">
+                Text small-bold
               </Text>
               <Text size="large" weight="bold">
-                Text
-              </Text>
-              <Text size="xlarge">Text</Text>
-              <Text size="xlarge" weight="medium">
-                Text
+                Text large-bold
               </Text>
               <Text size="xlarge" weight="bold">
-                Text
+                Text xlarge-bold
               </Text>
             </ExamplesBoard>
             <Playground
@@ -365,7 +276,7 @@ export default class ExaplePage extends React.Component {
               <Tip>Tip text</Tip>
               <Tip iconName="alert">Tip text with icon</Tip>
               <Tip iconName="alert" iconColor="blue">
-                Tip text with icon
+                Tip text with colored icon
               </Tip>
             </ExamplesBoard>
             <Playground
@@ -380,17 +291,12 @@ export default class ExaplePage extends React.Component {
         <section id="icon" className="viewport">
           <div className="frame">
             <ExamplesBoard>
-              <Icon name="alert" />
               <Icon name="alert" color="blue" />
-              <Icon text="K" />
-              <Icon text="K" />
-              <Icon text="K" color="blue" isSelected onClick={console.log} />
-              <Icon text="K" color="blue" isDisabled />
+              <Icon text="ON" />
               <Icon
-                text="K"
-                color="blue"
+                name="alert"
                 isSelected
-                isDisabled
+                color="purple"
                 onClick={console.log}
               />
             </ExamplesBoard>

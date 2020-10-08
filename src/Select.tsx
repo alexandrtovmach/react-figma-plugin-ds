@@ -1,124 +1,101 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 
-import { SelectProps, SelectState } from "../index";
+import { SelectProps } from "../index";
 
-class Select extends React.Component<SelectProps, SelectState> {
-  constructor(props: SelectProps) {
-    super(props);
-    const { options, defaultValue } = props;
-    this.state = {
-      isExpanded: false,
-      selectedOption: options.find(({ value }) => defaultValue === value)
-    };
-  }
+const Select: React.FunctionComponent<SelectProps> = ({
+  className = "",
+  options,
+  placeholder,
+  isDisabled,
+  defaultValue,
+  onExpand,
+  onChange,
+}) => {
+  const [isExpanded, onExpandedStateChange] = useState(false);
+  const [selectedOption, onSelectOption] = useState(
+    options.find(({ value }) => defaultValue === value)
+  );
+  useEffect(() => {
+    onExpand && onExpand(isExpanded);
+  }, [isExpanded]);
+  useEffect(() => {
+    onChange && selectedOption && onChange(selectedOption);
+  }, [selectedOption]);
+  useEffect(() => {
+    const newSelectedOption = options.find(
+      ({ value }) => defaultValue === value
+    );
+    onSelectOption(newSelectedOption);
+  }, [defaultValue]);
 
-  componentDidUpdate(prevProps: SelectProps, prevState: SelectState) {
-    if (prevState.isExpanded !== this.state.isExpanded) {
-      const { onExpand } = this.props;
-      onExpand && onExpand(this.state.isExpanded);
-    }
+  const handleExpandClick = () => onExpandedStateChange(!isExpanded);
 
-    if (prevProps.defaultValue !== this.props.defaultValue) {
-      const newSelectedOption = this.props.options.find(
-        ({ value }) => this.props.defaultValue === value
-      );
-      this.setState({ selectedOption: newSelectedOption });
-    }
+  const handleOutsideClick = () => onExpandedStateChange(false);
 
-    if (
-      this.state.selectedOption &&
-      (prevState.selectedOption && prevState.selectedOption.value) !==
-        this.state.selectedOption.value
-    ) {
-      const { onChange } = this.props;
-      onChange && onChange(this.state.selectedOption);
-    }
-  }
-
-  handleExpandClick = () => {
-    this.setState({
-      isExpanded: !this.state.isExpanded
-    });
-  };
-
-  handleOutsideClick = () => {
-    this.setState({
-      isExpanded: false
-    });
-  };
-
-  handleSelectClick = (value: any) => {
-    const { options } = this.props;
+  const handleSelectClick = (value: any) => {
     const newOption = options.find(({ value: v }) => v === value);
-    this.setState({
-      isExpanded: false,
-      selectedOption: newOption
-    });
+    onExpandedStateChange(false);
+    onSelectOption(newOption);
   };
 
-  render() {
-    const { className = "", options, placeholder, isDisabled } = this.props;
-    const { isExpanded, selectedOption } = this.state;
-    const expandButtonClass = isExpanded ? "select-menu__button--active" : "";
-    const expanListClass = isExpanded ? "select-menu__list--active" : "";
-    const disabledColorClass = isDisabled ? "icon--black-3" : "";
+  const expandButtonClass = isExpanded ? "select-menu__button--active" : "";
+  const expanListClass = isExpanded ? "select-menu__menu--active" : "";
+  const disabledColorClass = isDisabled ? "icon--black-3" : "";
 
-    return (
+  return (
+    <OutsideClickHandler
+      onOutsideClick={handleOutsideClick}
+      disabled={!isExpanded}
+    >
       <div className={`select-menu ${className}`}>
-        <OutsideClickHandler
-          onOutsideClick={this.handleOutsideClick}
-          disabled={!isExpanded}
+        <button
+          className={`select-menu__button ${expandButtonClass} ${disabledColorClass}`}
+          onClick={handleExpandClick}
+          disabled={isDisabled}
         >
-          <button
-            className={`select-menu__button ${expandButtonClass} ${disabledColorClass}`}
-            onClick={this.handleExpandClick}
-            disabled={isDisabled}
-          >
-            <span className="select-menu__button-label">
-              {(selectedOption && selectedOption.label) || placeholder}
-            </span>
-            <span className={`select-menu__icon ${disabledColorClass}`} />
-          </button>
-          <ul
-            className={`select-menu__list ${expanListClass} ${disabledColorClass}`}
-            style={{ top: "-24px" }}
-          >
-            {options &&
-              options.map(({ value, label, divider }, i) =>
-                divider ? (
+          <span className="select-menu__label">
+            {(selectedOption && selectedOption.label) || placeholder}
+          </span>
+          <span className="select-menu__caret" />
+        </button>
+        <ul
+          className={`select-menu__menu ${expanListClass} ${disabledColorClass}`}
+          style={{ top: "-24px" }}
+        >
+          {options &&
+            options.map(({ value, label, divider }, i) =>
+              divider ? (
+                <>
+                  {divider !== true && (
+                    <span className="select-menu__divider-label">
+                      {divider}
+                    </span>
+                  )}
                   <div
                     className="select-menu__divider"
                     key={`select-option--${i}`}
-                  >
-                    {divider === true ? (
-                      <span className="select-menu__divider-line" />
-                    ) : (
-                      <span className="select-menu__divider-label">
-                        {divider}
-                      </span>
-                    )}
-                  </div>
-                ) : (
-                  <li
-                    className={`select-menu__list-item ${
-                      selectedOption && selectedOption.value === value
-                        ? "select-menu__list-item--active"
-                        : ""
-                    }`}
-                    onClick={() => this.handleSelectClick(value)}
-                    key={`select-option--${i}`}
-                  >
-                    <span className="select-menu__list-item-icon"></span>
-                    <span className="select-menu__list-item-text">{label}</span>
-                  </li>
-                )
-              )}
-          </ul>
-        </OutsideClickHandler>
+                  />
+                </>
+              ) : (
+                <li
+                  className={`select-menu__item ${
+                    selectedOption && selectedOption.value === value
+                      ? "select-menu__item--selected"
+                      : ""
+                  }`}
+                  onClick={() => handleSelectClick(value)}
+                  key={`select-option--${i}`}
+                >
+                  <span className="select-menu__item-icon"></span>
+                  <span className="select-menu__item-label">{label}</span>
+                </li>
+              )
+            )}
+        </ul>
       </div>
-    );
-  }
-}
+    </OutsideClickHandler>
+  );
+};
 
 export default Select;

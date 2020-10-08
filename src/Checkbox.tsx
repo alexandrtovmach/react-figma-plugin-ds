@@ -2,31 +2,56 @@ import React from "react";
 
 import { CheckboxProps } from "../index";
 
-const Checkbox: React.SFC<CheckboxProps> = ({
+const Checkbox: React.FunctionComponent<CheckboxProps> = ({
+  id,
   className,
-  isCheckbox,
+  type,
   isDisabled,
   label,
+  name,
   defaultValue,
-  onChange
+  onChange,
 }) => {
   className = className || "";
-  const type = isCheckbox ? "checkbox" : "switch";
-  const inputClass = isCheckbox ? "checkbox__box" : "switch__toggle";
-  const labelClass = isCheckbox ? "checkbox__label" : "switch__label";
-  const uniqueId = `${type}--${(Math.random() * 100000000).toFixed(0)}`;
+  type = type || "checkbox";
+  let inputConfig: any = {
+    id: id || `${type}--${(Math.random() * 100000000).toFixed(0)}`,
+  };
+  switch (type) {
+    case "switch":
+      inputConfig = {
+        ...inputConfig,
+        className: "switch__toggle",
+        type: "checkbox",
+      };
+      break;
+    case "radio":
+      inputConfig = {
+        ...inputConfig,
+        className: "radio__button",
+        type: "radio",
+        name,
+      };
+      break;
+    default:
+      inputConfig = {
+        ...inputConfig,
+        className: "checkbox__box",
+        type: "checkbox",
+      };
+      break;
+  }
+  const labelClass = `${type}__label`;
 
   return (
     <div className={`${type} ${className}`}>
       <input
+        {...inputConfig}
         defaultChecked={defaultValue}
-        onChange={event => onChange && onChange(event.target.checked, event)}
-        className={inputClass}
-        type="checkbox"
-        id={uniqueId}
+        onChange={(event) => onChange && onChange(event.target.checked, event)}
         disabled={isDisabled}
       />
-      <label className={labelClass} htmlFor={uniqueId}>
+      <label className={labelClass} htmlFor={inputConfig.id}>
         {label}
       </label>
     </div>

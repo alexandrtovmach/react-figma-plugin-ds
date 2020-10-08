@@ -1,42 +1,47 @@
-import * as React from "react";
+import React from "react";
 
 export type Icons =
   | "adjust"
   | "alert"
-  | "align-bottom"
-  | "align-middle"
-  | "align-top"
   | "angle"
-  | "animated-fill"
   | "arrow-left-right"
-  | "arrow-up-down"
+  | "up-down"
+  | "auto-layout-horizontal"
+  | "auto-layout-vertical"
+  | "back"
   | "blend-empty"
   | "blend"
   | "break"
+  | "caret-down"
+  | "caret-left"
+  | "caret-right"
+  | "caret-up"
+  | "check"
   | "close"
-  | "comment"
   | "component"
   | "corner-radius"
   | "corners"
-  | "dist-horiz-spacing"
-  | "dist-vert-spacing"
+  | "distribute-horizontal-spacing"
+  | "distribute-vertical-spacing"
   | "draft"
   | "effects"
   | "ellipses"
   | "eyedropper"
+  | "forward"
   | "frame"
   | "group"
   | "hidden"
+  | "horizontal-padding"
   | "hyperlink"
   | "image"
-  | "import"
   | "instance"
+  | "key"
   | "layout-align-bottom"
-  | "layout-align-horiz-cent"
-  | "layout-align-left"
-  | "layout-align-right"
-  | "layout-align-top"
-  | "layout-align-vert-cent"
+  | "align-horizontal-centers"
+  | "align-left"
+  | "align-right"
+  | "align-top"
+  | "align-vertical-centers"
   | "layout-grid-columns"
   | "layout-grid-rows"
   | "layout-grid-uniform"
@@ -44,46 +49,67 @@ export type Icons =
   | "link-broken"
   | "link-connected"
   | "list-detailed"
+  | "list-tile"
   | "list"
-  | "lock-unlocked"
-  | "lock"
-  | "mask"
+  | "lock-off"
+  | "lock-on"
   | "minus"
-  | "node-connect"
   | "play"
   | "plus"
+  | "random"
   | "recent"
-  | "reset-instance"
   | "resize-to-fit"
   | "resolve-filled"
   | "resolve"
-  | "restore"
-  | "return"
+  | "reverse"
   | "search-large"
   | "search"
+  | "settings"
   | "share"
   | "smiley"
+  | "sort-alpha-asc"
+  | "sort-alpha-dsc"
+  | "sort-top-bottom"
+  | "spacing"
+  | "spinner"
   | "star-off"
   | "star-on"
   | "stroke-weight"
   | "styles"
+  | "swap"
+  | "theme"
   | "tidy-up-grid"
-  | "tidy-up-list-horiz"
-  | "tidy-up-list-vert"
+  | "tidy-up-list-horizontal"
+  | "tidy-up-list-vertical"
   | "timer"
   | "trash"
-  | "type"
-  | "vector-handles"
+  | "vertical-padding"
   | "visible"
+  | "warning-large"
   | "warning";
 
-export type IconColors = "blue" | "white" | "black-3";
+export type IconColors =
+  | "blue"
+  | "purple"
+  | "purple4"
+  | "hot-pink"
+  | "green"
+  | "red"
+  | "yellow"
+  | "black"
+  | "black8"
+  | "black3"
+  | "white"
+  | "white8"
+  | "white4";
 
-export type Sizes = "small" | "medium" | "large" | "xlarge";
+export type Sizes = "small" | "large" | "xlarge";
 
-export type Weights = "normal" | "medium" | "bold";
+export type Weights = "medium" | "bold";
 
 export type Levels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+export type CheckboxTypes = "checkbox" | "switch" | "radio";
 
 export interface BasicProps {
   className?: string;
@@ -92,25 +118,28 @@ export interface BasicProps {
 export interface ButtonProps extends BasicProps {
   children: any;
   isSecondary?: boolean;
+  isTertiary?: boolean;
   isDisabled?: boolean;
   isDestructive?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export declare const Button: React.SFC<ButtonProps>;
+export declare const Button: React.FunctionComponent<ButtonProps>;
 
 export interface CheckboxProps extends BasicProps {
+  id?: string;
   label: string;
-  isCheckbox?: boolean;
+  type?: CheckboxTypes;
   isDisabled?: boolean;
   defaultValue?: boolean;
+  name?: string;
   onChange?: (
     value: boolean,
     event: React.ChangeEvent<HTMLInputElement>
   ) => void;
 }
 
-export declare const Checkbox: React.SFC<CheckboxProps>;
+export declare const Checkbox: React.FunctionComponent<CheckboxProps>;
 
 export interface DisclosureProps extends BasicProps {
   children: any;
@@ -120,14 +149,7 @@ export interface DisclosureProps extends BasicProps {
   onExpand?: (state: boolean) => void;
 }
 
-export interface DisclosureState {
-  isExpanded: boolean;
-}
-
-export declare class Disclosure extends React.Component<
-  DisclosureProps,
-  DisclosureState
-> {}
+export declare const Disclosure: React.FunctionComponent<DisclosureProps>;
 
 export interface InputProps extends BasicProps {
   placeholder: string;
@@ -145,7 +167,7 @@ export interface InputWithIconProps extends InputProps, BasicProps {
   iconColor?: IconColors;
 }
 
-export declare const Input: React.SFC<InputWithIconProps>;
+export declare const Input: React.FunctionComponent<InputWithIconProps>;
 
 export interface TextareaProps extends BasicProps {
   placeholder: string;
@@ -158,7 +180,7 @@ export interface TextareaProps extends BasicProps {
   ) => void;
 }
 
-export declare const Textarea: React.SFC<TextareaProps>;
+export declare const Textarea: React.FunctionComponent<TextareaProps>;
 
 export interface SelectOption {
   divider: string | boolean;
@@ -175,16 +197,7 @@ export interface SelectProps extends BasicProps {
   onChange?: (option: SelectOption) => void;
 }
 
-export interface SelectState {
-  isExpanded: boolean;
-  selectedOption?: SelectOption;
-}
-
-export declare class Select extends React.Component<SelectProps, SelectState> {}
-
-export interface DividerProps extends BasicProps {}
-
-export declare const Divider: React.SFC<DividerProps>;
+export declare const Select: React.FunctionComponent<SelectProps>;
 
 export interface TextProps extends BasicProps {
   children: any;
@@ -192,17 +205,17 @@ export interface TextProps extends BasicProps {
   weight?: Weights;
 }
 
-export declare const Text: React.SFC<TextProps>;
+export declare const Text: React.FunctionComponent<TextProps>;
 
 export interface TitleProps extends BasicProps, TextProps {
   level?: Levels;
 }
 
-export declare const Title: React.SFC<TitleProps>;
+export declare const Title: React.FunctionComponent<TitleProps>;
 
 export interface LabelProps extends BasicProps, TextProps {}
 
-export declare const Label: React.SFC<LabelProps>;
+export declare const Label: React.FunctionComponent<LabelProps>;
 
 export interface TipProps extends BasicProps {
   children: any;
@@ -211,7 +224,7 @@ export interface TipProps extends BasicProps {
   iconColor: IconColors;
 }
 
-export declare const Tip: React.SFC<TipProps>;
+export declare const Tip: React.FunctionComponent<TipProps>;
 
 export interface IconProps extends BasicProps {
   name: Icons;
@@ -222,4 +235,4 @@ export interface IconProps extends BasicProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export declare const Icon: React.SFC<IconProps>;
+export declare const Icon: React.FunctionComponent<IconProps>;

@@ -3,7 +3,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import CodePreview from "../CodePreview";
 import "./DetailsPanel.scss";
-import { Text, Divider, Icon } from "../../../../dist";
+import { Text, Icon } from "../../../../dist";
 
 export default class DetailsPanel extends React.Component {
   constructor(props, context) {

@@ -2,17 +2,18 @@ import React from "react";
 
 import { LabelProps } from "../index";
 
-const Label: React.SFC<LabelProps> = ({
+const Label: React.FunctionComponent<LabelProps> = ({
   className,
   children,
   size,
-  weight
+  weight,
 }) => {
   className = className || "";
-  size = size || "small";
-  weight = weight || "normal";
+  const sizeClass = size && `type--${size}`;
+  const weightClass = weight && `type--${weight}`;
+
   return (
-    <div className={`label type--pos-${size}-${weight} ${className}`}>
+    <div className={`label ${sizeClass} ${weightClass} ${className}`}>
       {children}
     </div>
   );

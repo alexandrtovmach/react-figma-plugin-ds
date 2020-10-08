@@ -1,45 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { DisclosureProps, DisclosureState } from "../index";
+import { DisclosureProps } from "../index";
 
-class Disclosure extends React.Component<DisclosureProps, DisclosureState> {
-  state = {
-    isExpanded: Boolean(this.props.isDefaultExpanded)
+const Disclosure: React.FunctionComponent<DisclosureProps> = ({
+  isDefaultExpanded,
+  className,
+  label,
+  children,
+  isSection,
+  onExpand,
+}) => {
+  const [isExpanded, onExpandedStateChange] = useState(
+    Boolean(isDefaultExpanded)
+  );
+  const toggleExapndState = () => {
+    onExpand && onExpand(!isExpanded);
+    onExpandedStateChange(!isExpanded);
   };
 
-  componentDidUpdate(prevProps: DisclosureProps, prevState: DisclosureState) {
-    if (prevState.isExpanded !== this.state.isExpanded) {
-      const { onExpand } = this.props;
-      onExpand && onExpand(this.state.isExpanded);
-    }
-  }
+  const labelClass = isSection ? "disclosure--section" : "";
+  const expandClass = isExpanded ? "disclosure--expanded" : "";
 
-  handleDisclosureClick = () => {
-    this.setState({
-      isExpanded: !this.state.isExpanded
-    });
-  };
-
-  render() {
-    const { className, label, children, isSection } = this.props;
-    const { isExpanded } = this.state;
-    const labelClass = isSection ? "disclosure--section" : "";
-    const expandClass = isExpanded ? "disclosure--expanded" : "";
-
-    return (
-      <div className={`disclosure ${className || ""}`}>
-        <div className={`disclosure__item ${expandClass} ${labelClass}`}>
-          <div
-            className="disclosure__label"
-            onClick={this.handleDisclosureClick}
-          >
-            {label}
-          </div>
-          <div className="disclosure__content">{children}</div>
+  return (
+    <div className={`disclosure ${className || ""}`}>
+      <div className={`disclosure__item ${expandClass}`}>
+        <div
+          className={`disclosure__label ${labelClass}`}
+          onClick={toggleExapndState}
+        >
+          {label}
         </div>
+        <div className="disclosure__content">{children}</div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Disclosure;

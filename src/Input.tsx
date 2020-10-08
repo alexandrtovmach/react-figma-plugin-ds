@@ -3,13 +3,13 @@ import React from "react";
 import { InputProps, InputWithIconProps } from "../index";
 import { Icon } from "./";
 
-const InputComponent: React.SFC<InputProps> = ({
+const InputComponent: React.FunctionComponent<InputProps> = ({
   className = "",
   type,
   defaultValue,
   placeholder,
   isDisabled,
-  onChange
+  onChange,
 }) => (
   <input
     type={type}
@@ -17,30 +17,28 @@ const InputComponent: React.SFC<InputProps> = ({
     placeholder={placeholder}
     defaultValue={defaultValue}
     disabled={isDisabled}
-    onChange={event => onChange && onChange(event.target.value, event)}
+    onChange={(event) => onChange && onChange(event.target.value, event)}
   />
 );
 
-const Input: React.SFC<InputWithIconProps> = ({
+const Input: React.FunctionComponent<InputWithIconProps> = ({
   className,
   type,
   icon,
-  iconColor = "black-3",
+  iconColor = "black3",
   defaultValue,
   placeholder,
   isDisabled,
-  onChange
+  onChange,
 }) => {
   className = className || "";
   type = type || "text";
-  const inputClass = icon ? "input-icon__input" : "input";
+  const inputClass = "input__field";
 
   if (icon) {
     return (
-      <div className="input-icon">
-        <div className="input-icon__icon">
-          <Icon name={icon} color={iconColor} isDisabled={isDisabled} />
-        </div>
+      <div className="input input--with-icon">
+        <Icon name={icon} color={iconColor} isDisabled={isDisabled} />
         <InputComponent
           className={`${inputClass} ${className}`}
           type={type}
@@ -53,14 +51,16 @@ const Input: React.SFC<InputWithIconProps> = ({
     );
   } else {
     return (
-      <InputComponent
-        className={`${inputClass} ${className}`}
-        type={type}
-        defaultValue={defaultValue}
-        placeholder={placeholder}
-        isDisabled={isDisabled}
-        onChange={onChange}
-      />
+      <div className="input">
+        <InputComponent
+          className={`${inputClass} ${className}`}
+          type={type}
+          defaultValue={defaultValue}
+          placeholder={placeholder}
+          isDisabled={isDisabled}
+          onChange={onChange}
+        />
+      </div>
     );
   }
 };

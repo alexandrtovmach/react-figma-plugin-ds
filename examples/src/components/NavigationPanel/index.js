@@ -10,7 +10,6 @@ const ROUTES = [
   "Input",
   "Textarea",
   "Select",
-  "Divider",
   "Title",
   "Label",
   "Text",

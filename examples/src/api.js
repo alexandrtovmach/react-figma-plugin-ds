@@ -1,40 +1,45 @@
 const icons = [
   "adjust",
   "alert",
-  "align-bottom",
-  "align-middle",
-  "align-top",
   "angle",
-  "animated-fill",
   "arrow-left-right",
-  "arrow-up-down",
+  "up-down",
+  "auto-layout-horizontal",
+  "auto-layout-vertical",
+  "back",
   "blend-empty",
   "blend",
   "break",
+  "caret-down",
+  "caret-left",
+  "caret-right",
+  "caret-up",
+  "check",
   "close",
-  "comment",
   "component",
   "corner-radius",
   "corners",
-  "dist-horiz-spacing",
-  "dist-vert-spacing",
+  "distribute-horizontal-spacing",
+  "distribute-vertical-spacing",
   "draft",
   "effects",
   "ellipses",
   "eyedropper",
+  "forward",
   "frame",
   "group",
   "hidden",
+  "horizontal-padding",
   "hyperlink",
   "image",
-  "import",
   "instance",
+  "key",
   "layout-align-bottom",
-  "layout-align-horiz-cent",
-  "layout-align-left",
-  "layout-align-right",
-  "layout-align-top",
-  "layout-align-vert-cent",
+  "align-horizontal-centers",
+  "align-left",
+  "align-right",
+  "align-top",
+  "align-vertical-centers",
   "layout-grid-columns",
   "layout-grid-rows",
   "layout-grid-uniform",
@@ -42,43 +47,64 @@ const icons = [
   "link-broken",
   "link-connected",
   "list-detailed",
+  "list-tile",
   "list",
-  "lock-unlocked",
-  "lock",
-  "mask",
+  "lock-off",
+  "lock-on",
   "minus",
-  "node-connect",
   "play",
   "plus",
+  "random",
   "recent",
-  "reset-instance",
   "resize-to-fit",
   "resolve-filled",
   "resolve",
-  "restore",
-  "return",
+  "reverse",
   "search-large",
   "search",
+  "settings",
   "share",
   "smiley",
+  "sort-alpha-asc",
+  "sort-alpha-dsc",
+  "sort-top-bottom",
+  "spacing",
+  "spinner",
   "star-off",
   "star-on",
   "stroke-weight",
   "styles",
+  "swap",
+  "theme",
   "tidy-up-grid",
-  "tidy-up-list-horiz",
-  "tidy-up-list-vert",
+  "tidy-up-list-horizontal",
+  "tidy-up-list-vertical",
   "timer",
   "trash",
-  "type",
-  "vector-handles",
+  "vertical-padding",
   "visible",
-  "warning"
+  "warning-large",
+  "warning",
 ];
-const iconColors = ["blue", "white", "black-3"];
-const sizes = ["small", "medium", "large", "xlarge"];
-const weights = ["normal", "medium", "bold"];
+const iconColors = [
+  "blue",
+  "purple",
+  "purple4",
+  "hot-pink",
+  "green",
+  "red",
+  "yellow",
+  "black",
+  "black8",
+  "black3",
+  "white",
+  "white8",
+  "white4",
+];
+const sizes = ["small", "large", "xlarge"];
+const weights = ["medium", "bold"];
 const levels = ["h1", "h2", "h3", "h4", "h5", "h6"];
+const checkboxTypes = ["checkbox", "switch", "radio"];
 
 export const api = {
   button: [
@@ -86,225 +112,224 @@ export const api = {
       name: "children",
       type: "string",
       defaultValue: "Button",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "isSecondary",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
+    },
+    {
+      name: "isTertiary",
+      type: "boolean",
+      defaultValue: false,
     },
     {
       name: "isDisabled",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
     },
     {
       name: "isDestructive",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
     },
     {
       name: "onClick",
       type: "function",
-      defaultValue: console.log
-    }
+      defaultValue: console.log,
+    },
   ],
   checkbox: [
     {
       name: "label",
       type: "string",
       defaultValue: "Toggle me",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
-      name: "isCheckbox",
-      type: "boolean",
-      defaultValue: false
+      name: "type",
+      type: "CheckboxTypes",
+      options: checkboxTypes,
+      defaultValue: "checkbox",
     },
     {
       name: "isDisabled",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
     },
     {
       name: "defaultValue",
       type: "boolean",
-			isDisabled: true,
-      defaultValue: false
+      isDisabled: true,
+      defaultValue: false,
     },
     {
       name: "onChange",
       type: "function",
-      defaultValue: console.log
-    }
+      defaultValue: console.log,
+    },
   ],
   disclosure: [
     {
       name: "children",
       type: "string",
       defaultValue: "Disclosure content",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "label",
       type: "string",
       defaultValue: "Disclosure",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "isSection",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
     },
     {
       name: "isDefaultExpanded",
       type: "boolean",
-			isDisabled: true,
-      defaultValue: false
+      isDisabled: true,
+      defaultValue: false,
     },
     {
       name: "onExpand",
       type: "function",
-      defaultValue: console.log
-    }
+      defaultValue: console.log,
+    },
   ],
   input: [
     {
       name: "placeholder",
       type: "string",
       defaultValue: "Placeholder",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "defaultValue",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "isDisabled",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
     },
     {
       name: "icon",
       type: "Icons",
       options: icons,
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "iconColor",
       type: "IconColors",
       options: iconColors,
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "onChange",
       type: "function",
-      defaultValue: console.log
-    }
+      defaultValue: console.log,
+    },
   ],
   textarea: [
     {
       name: "placeholder",
       type: "string",
       defaultValue: "Placeholder text...",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "rows",
       type: "number",
       defaultValue: 2,
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "defaultValue",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "isDisabled",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
     },
     {
       name: "onChange",
       type: "function",
-      defaultValue: console.log
-    }
+      defaultValue: console.log,
+    },
   ],
   select: [
     {
       name: "placeholder",
       type: "string",
       defaultValue: "Placeholder text...",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "options",
-			type: "SelectOption[]",
+      type: "SelectOption[]",
       defaultValue: [
         { value: 1, label: "Item 1" },
-        { value: 2, label: "Item 2" }
+        { value: 2, label: "Item 2" },
       ],
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "defaultValue",
       type: "string",
-			isDisabled: true,
-      defaultValue: ""
+      isDisabled: true,
+      defaultValue: "",
     },
     {
       name: "isDisabled",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
     },
     {
       name: "onExpand",
       type: "function",
-      defaultValue: console.log
+      defaultValue: console.log,
     },
     {
       name: "onChange",
       type: "function",
-      defaultValue: console.log
-    }
-  ],
-  divider: [
-    {
-      name: "className",
-      type: "string",
-      defaultValue: ""
+      defaultValue: console.log,
     },
   ],
   title: [
@@ -312,30 +337,30 @@ export const api = {
       name: "children",
       type: "string",
       defaultValue: "Title",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "size",
       type: "Sizes",
       options: sizes,
-      defaultValue: ""
+      defaultValue: "xlarge",
     },
     {
       name: "level",
       type: "Levels",
       options: levels,
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "weight",
       type: "Weights",
       options: weights,
-      defaultValue: ""
+      defaultValue: "bold",
     },
   ],
   label: [
@@ -343,24 +368,24 @@ export const api = {
       name: "children",
       type: "string",
       defaultValue: "Label",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "size",
       type: "Sizes",
       options: sizes,
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "weight",
       type: "Weights",
       options: weights,
-      defaultValue: ""
+      defaultValue: "",
     },
   ],
   text: [
@@ -368,24 +393,24 @@ export const api = {
       name: "children",
       type: "string",
       defaultValue: "Text",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "size",
       type: "Sizes",
       options: sizes,
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "weight",
       type: "Weights",
       options: weights,
-      defaultValue: ""
+      defaultValue: "",
     },
   ],
   tip: [
@@ -393,29 +418,29 @@ export const api = {
       name: "children",
       type: "string",
       defaultValue: "Text tip",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "iconText",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "iconName",
       type: "Icons",
       options: icons,
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "iconColor",
       type: "IconColors",
       options: iconColors,
-      defaultValue: ""
+      defaultValue: "",
     },
   ],
   icon: [
@@ -424,33 +449,33 @@ export const api = {
       type: "Icons",
       options: icons,
       defaultValue: "alert",
-      isRequired: true
+      isRequired: true,
     },
     {
       name: "className",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "color",
       type: "IconColors",
       options: iconColors,
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "isSelected",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
     },
     {
       name: "isDisabled",
       type: "boolean",
-      defaultValue: false
+      defaultValue: false,
     },
     {
       name: "string",
       type: "string",
-      defaultValue: ""
+      defaultValue: "",
     },
     {
       name: "onClick",
@@ -458,14 +483,14 @@ export const api = {
       options: [
         {
           label: "without onClick",
-          value: null
+          value: null,
         },
         {
           label: "with onClick (Icon become a Button)",
-          value: console.log
+          value: console.log,
         },
       ],
-      defaultValue: null
-    }
+      defaultValue: null,
+    },
   ],
 };
