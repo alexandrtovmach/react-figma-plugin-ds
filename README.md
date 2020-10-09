@@ -27,7 +27,7 @@ Follow these steps to start using React Figma components:
    ```jsx
    import React from "react";
    import { Disclosure, Tip, Title, Checkbox, Button } from "react-figma-plugin-ds";
-   import "react-figma-plugin-ds/styles/figma-plugin-ds.css";
+   import "react-figma-plugin-ds/figma-plugin-ds.css";
 
    export default (props) => {
      return (
