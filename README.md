@@ -42,7 +42,7 @@ Follow these steps to start using React Figma components:
            <Tip iconName="library">Read the docs</Tip>
          </Disclosure>
 
-         <Checkbox label="I promise to start this repo!" />
+         <Checkbox label="I promise to star this repo!" />
 
          <Button>Start</Button>
        </>
