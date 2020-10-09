@@ -8,7 +8,7 @@ const Text: React.FunctionComponent<TipProps> = ({
   children,
   iconName,
   iconText,
-  iconColor,
+  iconColor
 }) => {
   className = className || "";
   return (
@@ -18,7 +18,7 @@ const Text: React.FunctionComponent<TipProps> = ({
           <Icon name={iconName} color={iconColor} text={iconText} />
         </div>
       )}
-      <div className="onboarding-tip__msg">{children}</div>
+      <div className="type onboarding-tip__msg">{children}</div>
     </div>
   );
 };
