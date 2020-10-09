@@ -13,6 +13,7 @@
     "watch": "tsc --watch",
     "develop": "webpack-dev-server --mode development",
     "prepublishOnly": "rm -rf ./dist && tsc && npm run build-styles",
+    "postpublish": "rm -rf ./styles ./figma-plugin-ds.css",
     "build": "rm -rf ./dist && tsc && webpack",
     "build-styles": "mkdir styles && cp -r node_modules/figma-plugin-ds/src/styles/* styles && cp -r node_modules/figma-plugin-ds/dist/*.css ./",
     "deploy": "lint-staged && npm run build && gh-pages -d examples/dist",
