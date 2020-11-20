@@ -12,10 +12,10 @@
   "scripts": {
     "watch": "tsc --watch",
     "develop": "webpack-dev-server --mode development",
-    "prepublishOnly": "rm -rf ./dist && tsc && npm run build-styles",
-    "postpublish": "rm -rf ./styles ./figma-plugin-ds.css",
-    "build": "rm -rf ./dist && tsc && webpack",
-    "build-styles": "mkdir styles && cp -r node_modules/figma-plugin-ds/src/styles/* styles && cp -r node_modules/figma-plugin-ds/dist/*.css ./",
+    "prepublishOnly": "shx rm -rf ./dist && tsc && npm run build-styles",
+    "postpublish": "shx rm -rf ./styles ./figma-plugin-ds.css",
+    "build": "shx rm -rf ./dist && tsc && webpack",
+    "build-styles": "shx rm -rf ./styles && shx mkdir styles && shx cp -r node_modules/figma-plugin-ds/src/styles/ ./ && shx cp -r node_modules/figma-plugin-ds/dist/*.css ./",
     "deploy": "lint-staged && npm run build && gh-pages -d examples/dist",
     "prettify": "prettier --write './src/**/*.{js,jsx,ts,tsx,json,css,md}'"
   },
@@ -46,6 +46,7 @@
     "react-element-to-jsx-string": "^14.1.0",
     "react-scripts": "^3.1.2",
     "sass-loader": "^10.0.2",
+    "shx": "^0.3.3",
     "style-loader": "^1.0.0",
     "typescript": "^4.0.3",
     "url-loader": "^4.1.0",
