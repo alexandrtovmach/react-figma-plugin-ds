@@ -66,7 +66,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
           {options &&
             options.map(({ value, label, divider }, i) =>
               divider ? (
-                <>
+                <React.Fragment key={`select-option-divider--${i}`}>
                   {divider !== true && (
                     <span className="select-menu__divider-label">
                       {divider}
@@ -76,7 +76,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
                     className="select-menu__divider"
                     key={`select-option--${i}`}
                   />
-                </>
+                </React.Fragment>
               ) : (
                 <li
                   className={`select-menu__item ${
