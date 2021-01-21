@@ -68,6 +68,7 @@ const Input = forwardRef<HTMLInputElement, InputWithIconProps>(
       return (
         <div className="input">
           <InputComponent
+            name={name}
             className={`${inputClass} ${className}`}
             type={type}
             defaultValue={defaultValue}
