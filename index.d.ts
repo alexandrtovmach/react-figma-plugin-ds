@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Ref } from "react";
 
 export type Icons =
   | "adjust"
@@ -137,6 +137,7 @@ export interface CheckboxProps extends BasicProps {
     value: boolean,
     event: React.ChangeEvent<HTMLInputElement>
   ) => void;
+  ref?: Ref<HTMLInputElement>;
 }
 
 export declare const Checkbox: React.FunctionComponent<CheckboxProps>;
@@ -160,6 +161,7 @@ export interface InputProps extends BasicProps {
     value: string,
     event: React.ChangeEvent<HTMLInputElement>
   ) => void;
+  ref?: Ref<HTMLInputElement>;
 }
 
 export interface InputWithIconProps extends InputProps, BasicProps {
@@ -178,6 +180,7 @@ export interface TextareaProps extends BasicProps {
     value: string,
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
+  ref?: Ref<HTMLTextAreaElement>;
 }
 
 export declare const Textarea: React.FunctionComponent<TextareaProps>;
