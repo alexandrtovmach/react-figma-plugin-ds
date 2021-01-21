@@ -161,6 +161,7 @@ export interface InputProps extends BasicProps {
     value: string,
     event: React.ChangeEvent<HTMLInputElement>
   ) => void;
+  name?: string;
   ref?: Ref<HTMLInputElement>;
 }
 
@@ -180,6 +181,7 @@ export interface TextareaProps extends BasicProps {
     value: string,
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
+  name?: string;
   ref?: Ref<HTMLTextAreaElement>;
 }
 
