@@ -53,6 +53,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
           className={`select-menu__button ${expandButtonClass} ${disabledColorClass}`}
           onClick={handleExpandClick}
           disabled={isDisabled}
+          title={selectedOption?.title}
         >
           <span className="select-menu__label">
             {(selectedOption && selectedOption.label) || placeholder}
@@ -64,7 +65,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
           style={{ top: "-24px" }}
         >
           {options &&
-            options.map(({ value, label, divider }, i) =>
+            options.map(({ value, label, divider, title }, i) =>
               divider ? (
                 <React.Fragment key={`select-option-divider--${i}`}>
                   {divider !== true && (
@@ -86,6 +87,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
                   }`}
                   onClick={() => handleSelectClick(value)}
                   key={`select-option--${i}`}
+                  title={title}
                 >
                   <span className="select-menu__item-icon"></span>
                   <span className="select-menu__item-label">{label}</span>

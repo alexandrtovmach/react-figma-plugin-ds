@@ -186,6 +186,7 @@ export interface SelectOption {
   divider?: string | boolean;
   value: string | number | boolean;
   label: string;
+  title?: string;
 }
 
 export interface SelectProps extends BasicProps {

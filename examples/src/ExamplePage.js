@@ -147,6 +147,15 @@ export default class ExaplePage extends React.Component {
                 ]}
               />
               <Select
+                  placeholder="Select item with titles"
+                  onSelectComponent={this.handleSelectComponent}
+                  options={[
+                    { value: 1, label: "Item 1", title: "Description for Item 1" },
+                    { value: 2, label: "Item 2", title: "Description for Item 2" },
+                    { value: 3, label: "Item 3", title: "Description for Item 3" },
+                  ]}
+              />
+              <Select
                 placeholder="Select item with groups"
                 onSelectComponent={this.handleSelectComponent}
                 options={[

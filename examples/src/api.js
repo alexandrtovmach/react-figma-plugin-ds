@@ -300,8 +300,8 @@ export const api = {
       name: "options",
       type: "SelectOption[]",
       defaultValue: [
-        { value: 1, label: "Item 1" },
-        { value: 2, label: "Item 2" },
+        { value: 1, label: "Item 1", title: "Item 1 description" },
+        { value: 2, label: "Item 2", title: "Item 2 description" },
       ],
       isRequired: true,
     },
