@@ -11,7 +11,8 @@
     "jsx": "react",
     "typeRoots": ["index.d.ts", "node_modules/@types"],
     "lib": ["dom", "es7"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
   "include": ["./src/**/*.tsx", "./src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
