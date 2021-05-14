@@ -20,7 +20,6 @@ figma-plugin-ds.css
 .env.development.local
 .env.test.local
 .env.production.local
-yarn.lock
 package-lock.json
 
 npm-debug.log*
