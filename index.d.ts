@@ -121,6 +121,7 @@ export interface ButtonProps extends BasicProps {
   isTertiary?: boolean;
   isDisabled?: boolean;
   isDestructive?: boolean;
+  type?: "submit" | "button" | "reset";
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
