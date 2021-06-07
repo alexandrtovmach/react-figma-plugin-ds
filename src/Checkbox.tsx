@@ -10,6 +10,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   label,
   name,
   defaultValue,
+  checked,
   onChange,
 }) => {
   className = className || "";
@@ -48,6 +49,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
       <input
         {...inputConfig}
         defaultChecked={defaultValue}
+        checked={checked}
         onChange={(event) => onChange && onChange(event.target.checked, event)}
         disabled={isDisabled}
       />
