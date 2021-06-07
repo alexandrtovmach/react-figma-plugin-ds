@@ -132,6 +132,7 @@ export interface CheckboxProps extends BasicProps {
   type?: CheckboxTypes;
   isDisabled?: boolean;
   defaultValue?: boolean;
+  checked?: boolean;
   name?: string;
   onChange?: (
     value: boolean,

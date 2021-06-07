@@ -10,6 +10,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   label,
   name,
   defaultValue,
+  checked,
   onChange,
 }) => {
   className = className || "";
@@ -17,6 +18,11 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   let inputConfig: any = {
     id: id || `${type}--${(Math.random() * 100000000).toFixed(0)}`,
   };
+  if (defaultValue && checked) {
+    console.warn(
+      `Use either "defaultValue" to create an uncontrolled component or "checked" to create a controlled component`
+    );
+  }
   switch (type) {
     case "switch":
       inputConfig = {
@@ -48,6 +54,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
       <input
         {...inputConfig}
         defaultChecked={defaultValue}
+        checked={checked}
         onChange={(event) => onChange && onChange(event.target.checked, event)}
         disabled={isDisabled}
       />
