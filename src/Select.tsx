@@ -54,6 +54,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
           onClick={handleExpandClick}
           disabled={isDisabled}
           title={selectedOption?.title}
+          type="button"
         >
           <span className="select-menu__label">
             {(selectedOption && selectedOption.label) || placeholder}
