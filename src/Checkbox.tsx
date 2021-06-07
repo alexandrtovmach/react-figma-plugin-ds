@@ -18,6 +18,11 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   let inputConfig: any = {
     id: id || `${type}--${(Math.random() * 100000000).toFixed(0)}`,
   };
+  if (defaultValue && checked) {
+    console.warn(
+      `Use either "defaultValue" to create an uncontrolled component or "checked" to create a controlled component`
+    );
+  }
   switch (type) {
     case "switch":
       inputConfig = {
