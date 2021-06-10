@@ -41,7 +41,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
 
   const expandButtonClass = isExpanded ? "select-menu__button--active" : "";
   const expanListClass = isExpanded ? "select-menu__menu--active" : "";
-  const disabledColorClass = isDisabled ? "icon--black-3" : "";
+  const disabledColorClass = isDisabled ? "icon--black3" : "";
 
   return (
     <OutsideClickHandler

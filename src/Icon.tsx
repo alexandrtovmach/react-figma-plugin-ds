@@ -13,7 +13,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
 }) => {
   className = className || "";
   const iconClass = text ? "" : `icon--${name}`;
-  const colorClass = !isDisabled && color ? `icon--${color}` : "icon--black-3";
+  const colorClass = !isDisabled && color ? `icon--${color}` : "icon--black3";
   const selectedClass = isSelected ? "icon-button--selected" : "";
 
   if (onClick) {
