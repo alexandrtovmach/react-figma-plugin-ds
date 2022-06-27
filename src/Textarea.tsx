@@ -9,10 +9,12 @@ const Textarea: React.FunctionComponent<TextareaProps> = ({
   placeholder,
   isDisabled,
   onChange,
+  ...htmlTextAreaProps
 }) => {
   className = className || "";
   return (
     <textarea
+      {...htmlTextAreaProps}
       rows={rows}
       className={`textarea ${className}`}
       placeholder={placeholder}

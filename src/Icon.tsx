@@ -10,6 +10,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
   isSelected,
   isDisabled,
   onClick,
+  iconButtonProps,
 }) => {
   className = className || "";
   const iconClass = text ? "" : `icon--${name}`;
@@ -19,6 +20,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
   if (onClick) {
     return (
       <button
+        {...iconButtonProps}
         style={{
           padding: 0,
           cursor: "default",

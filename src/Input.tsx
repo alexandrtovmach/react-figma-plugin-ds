@@ -10,8 +10,10 @@ const InputComponent: React.FunctionComponent<InputProps> = ({
   placeholder,
   isDisabled,
   onChange,
+  ...htmlInputProps
 }) => (
   <input
+  {...htmlInputProps}
     type={type}
     className={className}
     placeholder={placeholder}
@@ -30,6 +32,7 @@ const Input: React.FunctionComponent<InputWithIconProps> = ({
   placeholder,
   isDisabled,
   onChange,
+  ...htmlInputProps
 }) => {
   className = className || "";
   type = type || "text";
@@ -40,6 +43,7 @@ const Input: React.FunctionComponent<InputWithIconProps> = ({
       <div className="input input--with-icon">
         <Icon name={icon} color={iconColor} isDisabled={isDisabled} />
         <InputComponent
+          {...htmlInputProps}
           className={`${inputClass} ${className}`}
           type={type}
           defaultValue={defaultValue}
@@ -53,6 +57,7 @@ const Input: React.FunctionComponent<InputWithIconProps> = ({
     return (
       <div className="input">
         <InputComponent
+          {...htmlInputProps}
           className={`${inputClass} ${className}`}
           type={type}
           defaultValue={defaultValue}

@@ -115,7 +115,9 @@ export interface BasicProps {
   className?: string;
 }
 
-export interface ButtonProps extends BasicProps {
+export interface ButtonProps
+  extends BasicProps,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: any;
   isSecondary?: boolean;
   isTertiary?: boolean;
@@ -137,6 +139,7 @@ export interface CheckboxProps extends BasicProps {
     value: boolean,
     event: React.ChangeEvent<HTMLInputElement>
   ) => void;
+  initialHtmlInputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 export declare const Checkbox: React.FunctionComponent<CheckboxProps>;
@@ -151,7 +154,9 @@ export interface DisclosureProps extends BasicProps {
 
 export declare const Disclosure: React.FunctionComponent<DisclosureProps>;
 
-export interface InputProps extends BasicProps {
+export interface InputProps
+  extends BasicProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
   type?: "text" | "number" | "password";
   defaultValue?: any;
@@ -169,7 +174,9 @@ export interface InputWithIconProps extends InputProps, BasicProps {
 
 export declare const Input: React.FunctionComponent<InputWithIconProps>;
 
-export interface TextareaProps extends BasicProps {
+export interface TextareaProps
+  extends BasicProps,
+    React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   placeholder: string;
   rows: number;
   defaultValue?: any;
@@ -196,6 +203,7 @@ export interface SelectProps extends BasicProps {
   defaultValue?: string | number | boolean;
   onExpand?: (state: boolean) => void;
   onChange?: (option: SelectOption) => void;
+  unExpandedButtonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
 export declare const Select: React.FunctionComponent<SelectProps>;
@@ -234,6 +242,7 @@ export interface IconProps extends BasicProps {
   isDisabled?: boolean;
   text?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  iconButtonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
 export declare const Icon: React.FunctionComponent<IconProps>;

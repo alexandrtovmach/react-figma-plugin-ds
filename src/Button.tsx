@@ -3,13 +3,14 @@ import React from "react";
 import { ButtonProps } from "../index";
 
 const Button: React.FunctionComponent<ButtonProps> = ({
-  children,
+ children,
   className,
   isSecondary,
   isTertiary,
   isDisabled,
   onClick,
   isDestructive,
+  ...htmlButtonProps
 }) => {
   className = className || "";
   const level = isTertiary ? "tertiary" : isSecondary ? "secondary" : "primary";
@@ -22,6 +23,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
 
   return (
     <button
+      {...htmlButtonProps}
       onClick={onClick}
       className={`button button--${level}${modificator} ${className}`}
       disabled={isDisabled}
