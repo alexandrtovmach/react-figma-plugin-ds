@@ -8,10 +8,12 @@
 
 # production
 /build
-/dist
-/examples/dist
-/styles
-figma-plugin-ds.css
+
+###  THESE SHOULD BE IGNORED: PROJECT IS UNMAINTAINED AND PRs DON'T GET REVIEWED; SO USING GIT AS DEPENDENCY
+#/dist
+#/examples/dist
+#/styles
+#figma-plugin-ds.css
 
 # misc
 .idea
