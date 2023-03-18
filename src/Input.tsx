@@ -13,7 +13,7 @@ const InputComponent: React.FunctionComponent<InputProps> = ({
   ...htmlInputProps
 }) => (
   <input
-  {...htmlInputProps}
+    {...htmlInputProps}
     type={type}
     className={className}
     placeholder={placeholder}
@@ -32,6 +32,7 @@ const Input: React.FunctionComponent<InputWithIconProps> = ({
   placeholder,
   isDisabled,
   onChange,
+  children,
   ...htmlInputProps
 }) => {
   className = className || "";
@@ -51,6 +52,7 @@ const Input: React.FunctionComponent<InputWithIconProps> = ({
           isDisabled={isDisabled}
           onChange={onChange}
         />
+        {children}
       </div>
     );
   } else {
@@ -65,6 +67,7 @@ const Input: React.FunctionComponent<InputWithIconProps> = ({
           isDisabled={isDisabled}
           onChange={onChange}
         />
+        {children}
       </div>
     );
   }
