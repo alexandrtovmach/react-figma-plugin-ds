@@ -3,6 +3,11 @@ import React from "react";
 import { InputProps, InputWithIconProps } from "../index";
 import { Icon } from "./";
 
+export interface IconExtended {
+  iconComponent?: React.ReactNode
+}
+
+
 const InputComponent: React.FunctionComponent<InputProps> = ({
   className = "",
   type,
@@ -23,7 +28,7 @@ const InputComponent: React.FunctionComponent<InputProps> = ({
   />
 );
 
-const Input: React.FunctionComponent<InputWithIconProps> = ({
+const Input: React.FunctionComponent<InputWithIconProps & IconExtended> = ({
   className,
   type,
   icon,
@@ -33,6 +38,7 @@ const Input: React.FunctionComponent<InputWithIconProps> = ({
   isDisabled,
   onChange,
   children,
+  iconComponent,
   ...htmlInputProps
 }) => {
   className = className || "";
@@ -42,7 +48,7 @@ const Input: React.FunctionComponent<InputWithIconProps> = ({
   if (icon) {
     return (
       <div className="input input--with-icon">
-        <Icon name={icon} color={iconColor} isDisabled={isDisabled} />
+        <Icon name={icon} color={iconColor} isDisabled={isDisabled} iconComponent={iconComponent} />
         <InputComponent
           {...htmlInputProps}
           className={`${inputClass} ${className}`}

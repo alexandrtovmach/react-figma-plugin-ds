@@ -32,18 +32,20 @@ var InputComponent = function (_a) {
     return (react_1.default.createElement("input", __assign({}, htmlInputProps, { type: type, className: className, placeholder: placeholder, defaultValue: defaultValue, disabled: isDisabled, onChange: function (event) { return onChange && onChange(event.target.value, event); } })));
 };
 var Input = function (_a) {
-    var className = _a.className, type = _a.type, icon = _a.icon, _b = _a.iconColor, iconColor = _b === void 0 ? "black3" : _b, defaultValue = _a.defaultValue, placeholder = _a.placeholder, isDisabled = _a.isDisabled, onChange = _a.onChange, htmlInputProps = __rest(_a, ["className", "type", "icon", "iconColor", "defaultValue", "placeholder", "isDisabled", "onChange"]);
+    var className = _a.className, type = _a.type, icon = _a.icon, _b = _a.iconColor, iconColor = _b === void 0 ? "black3" : _b, defaultValue = _a.defaultValue, placeholder = _a.placeholder, isDisabled = _a.isDisabled, onChange = _a.onChange, children = _a.children, iconComponent = _a.iconComponent, htmlInputProps = __rest(_a, ["className", "type", "icon", "iconColor", "defaultValue", "placeholder", "isDisabled", "onChange", "children", "iconComponent"]);
     className = className || "";
     type = type || "text";
     var inputClass = "input__field";
     if (icon) {
         return (react_1.default.createElement("div", { className: "input input--with-icon" },
-            react_1.default.createElement(_1.Icon, { name: icon, color: iconColor, isDisabled: isDisabled }),
-            react_1.default.createElement(InputComponent, __assign({}, htmlInputProps, { className: inputClass + " " + className, type: type, defaultValue: defaultValue, placeholder: placeholder, isDisabled: isDisabled, onChange: onChange }))));
+            react_1.default.createElement(_1.Icon, { name: icon, color: iconColor, isDisabled: isDisabled, iconComponent: iconComponent }),
+            react_1.default.createElement(InputComponent, __assign({}, htmlInputProps, { className: inputClass + " " + className, type: type, defaultValue: defaultValue, placeholder: placeholder, isDisabled: isDisabled, onChange: onChange })),
+            children));
     }
     else {
         return (react_1.default.createElement("div", { className: "input" },
-            react_1.default.createElement(InputComponent, __assign({}, htmlInputProps, { className: inputClass + " " + className, type: type, defaultValue: defaultValue, placeholder: placeholder, isDisabled: isDisabled, onChange: onChange }))));
+            react_1.default.createElement(InputComponent, __assign({}, htmlInputProps, { className: inputClass + " " + className, type: type, defaultValue: defaultValue, placeholder: placeholder, isDisabled: isDisabled, onChange: onChange })),
+            children));
     }
 };
 exports.default = Input;
