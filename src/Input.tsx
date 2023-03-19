@@ -1,11 +1,7 @@
 import React from "react";
 
-import { InputProps, InputWithIconProps } from "../index";
+import { IconExtended, InputProps, InputWithIconProps } from "../index";
 import { Icon } from "./";
-
-export interface IconExtended {
-  iconComponent?: React.ReactNode
-}
 
 
 const InputComponent: React.FunctionComponent<InputProps> = ({

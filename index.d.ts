@@ -167,7 +167,11 @@ export interface InputProps
   ) => void;
 }
 
-export interface InputWithIconProps extends InputProps, BasicProps {
+export interface IconExtended {
+  iconComponent?: React.ReactNode
+}
+
+export interface InputWithIconProps extends InputProps, BasicProps, IconExtended {
   icon?: Icons;
   iconColor?: IconColors;
 }
@@ -235,7 +239,7 @@ export interface TipProps extends BasicProps {
 
 export declare const Tip: React.FunctionComponent<TipProps>;
 
-export interface IconProps extends BasicProps {
+export interface IconProps extends BasicProps, IconExtended {
   name: Icons;
   color?: IconColors;
   isSelected?: boolean;

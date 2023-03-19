@@ -1,9 +1,8 @@
 import React from "react";
 
-import { IconProps } from "../index";
-import { IconExtended } from "./Input";
+import { IconExtended, IconProps } from "../index";
 
-const Icon: React.FunctionComponent<IconProps & IconExtended> = ({
+const Icon: React.FunctionComponent<IconProps> = ({
   className,
   name,
   color,
