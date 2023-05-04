@@ -176,7 +176,7 @@ export interface InputWithIconProps extends InputProps, BasicProps, IconExtended
   iconColor?: IconColors;
 }
 
-export declare const Input: React.FunctionComponent<InputWithIconProps>;
+export declare const Input: React.ForwardRefExoticComponent<InputWithIconProps & React.RefAttributes<HTMLInputElement>>;
 
 export interface TextareaProps
   extends BasicProps,
