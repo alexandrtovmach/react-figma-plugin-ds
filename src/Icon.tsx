@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IconProps } from "../index";
+import { IconExtended, IconProps } from "../index";
 
 const Icon: React.FunctionComponent<IconProps> = ({
   className,
@@ -10,6 +10,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
   isSelected,
   isDisabled,
   onClick,
+  iconComponent,
   iconButtonProps,
 }) => {
   className = className || "";
@@ -29,12 +30,20 @@ const Icon: React.FunctionComponent<IconProps> = ({
         onClick={onClick}
         className={`icon-button ${selectedClass} ${className}`}
       >
-        <div className={`icon ${iconClass}`}>{text}</div>
+        <div className={`icon ${!iconComponent && iconClass}`}>
+          {iconComponent}
+          {text}
+        </div>
       </button>
     );
   } else {
     return (
-      <div className={`icon ${iconClass} ${colorClass} ${className}`}>
+      <div
+        className={`icon ${
+          !iconComponent && iconClass
+        } ${colorClass} ${className}`}
+      >
+        {iconComponent}
         {text}
       </div>
     );
