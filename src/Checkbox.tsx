@@ -11,10 +11,12 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   name,
   defaultValue,
   onChange,
+  initialHtmlInputProps
 }) => {
   className = className || "";
   type = type || "checkbox";
   let inputConfig: any = {
+    ...initialHtmlInputProps,
     id: id || `${type}--${(Math.random() * 100000000).toFixed(0)}`,
   };
   switch (type) {

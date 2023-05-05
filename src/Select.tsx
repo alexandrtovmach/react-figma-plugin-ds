@@ -11,6 +11,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
   defaultValue,
   onExpand,
   onChange,
+  unExpandedButtonProps
 }) => {
   const [isExpanded, onExpandedStateChange] = useState(false);
   const [selectedOption, onSelectOption] = useState(
@@ -50,6 +51,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
     >
       <div className={`select-menu ${className}`}>
         <button
+          {...unExpandedButtonProps}
           className={`select-menu__button ${expandButtonClass} ${disabledColorClass}`}
           onClick={handleExpandClick}
           disabled={isDisabled}
