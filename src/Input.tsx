@@ -35,6 +35,7 @@ const Input = forwardRef<HTMLInputElement, InputWithIconProps>(
       className,
       type,
       icon,
+      iconComponent,
       iconColor = "black3",
       defaultValue,
       placeholder,
@@ -52,7 +53,7 @@ const Input = forwardRef<HTMLInputElement, InputWithIconProps>(
     if (icon) {
       return (
         <div className="input input--with-icon">
-          <Icon name={icon} color={iconColor} isDisabled={isDisabled} />
+          <Icon name={icon} iconComponent={iconComponent} color={iconColor} isDisabled={isDisabled} />
           <InputComponent
             {...htmlInputProps}
             ref={ref}

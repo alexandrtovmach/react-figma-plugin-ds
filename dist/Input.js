@@ -48,13 +48,13 @@ var InputComponent = react_1.forwardRef(function (_a, ref) {
     return (react_1.default.createElement("input", __assign({}, htmlInputProps, { ref: ref, type: type, className: className, placeholder: placeholder, defaultValue: defaultValue, disabled: isDisabled, onChange: function (event) { return onChange && onChange(event.target.value, event); } })));
 });
 var Input = react_1.forwardRef(function (_a, ref) {
-    var className = _a.className, type = _a.type, icon = _a.icon, _b = _a.iconColor, iconColor = _b === void 0 ? "black3" : _b, defaultValue = _a.defaultValue, placeholder = _a.placeholder, isDisabled = _a.isDisabled, onChange = _a.onChange, children = _a.children, htmlInputProps = __rest(_a, ["className", "type", "icon", "iconColor", "defaultValue", "placeholder", "isDisabled", "onChange", "children"]);
+    var className = _a.className, type = _a.type, icon = _a.icon, iconComponent = _a.iconComponent, _b = _a.iconColor, iconColor = _b === void 0 ? "black3" : _b, defaultValue = _a.defaultValue, placeholder = _a.placeholder, isDisabled = _a.isDisabled, onChange = _a.onChange, children = _a.children, htmlInputProps = __rest(_a, ["className", "type", "icon", "iconComponent", "iconColor", "defaultValue", "placeholder", "isDisabled", "onChange", "children"]);
     className = className || "";
     type = type || "text";
     var inputClass = "input__field";
     if (icon) {
         return (react_1.default.createElement("div", { className: "input input--with-icon" },
-            react_1.default.createElement(_1.Icon, { name: icon, color: iconColor, isDisabled: isDisabled }),
+            react_1.default.createElement(_1.Icon, { name: icon, iconComponent: iconComponent, color: iconColor, isDisabled: isDisabled }),
             react_1.default.createElement(InputComponent, __assign({}, htmlInputProps, { ref: ref, className: inputClass + " " + className, type: type, defaultValue: defaultValue, placeholder: placeholder, isDisabled: isDisabled, onChange: onChange })),
             children));
     }
